@@ -17,7 +17,7 @@ const testimonials = [
   {
     quote:
       "Working with Hussain on our contract negotiations was a game-changer. His attention to detail and strategic approach protected our interests perfectly.",
-    author: "Fatima Malik",
+    author: "Asif Malik",
     title: "Director, Trading Corporation",
     rating: 5,
   },
@@ -31,7 +31,7 @@ const testimonials = [
   {
     quote:
       "His expertise in Shariah and civil law is remarkable. Hussain navigated complex legal matters with clarity and achieved excellent outcomes for our family.",
-    author: "Sara Abdullah",
+    author: "Ali Abdullah",
     title: "Private Client",
     rating: 5,
   },
@@ -83,20 +83,29 @@ const Testimonials = memo(function Testimonials() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="h-full"
                 >
-                  <Card className="border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full bg-card/50 backdrop-blur-sm">
-                    <CardContent className="pt-6 flex flex-col h-full">
-                      <Quote className="w-8 h-8 text-accent/30 mb-4" />
-                      <div className="flex gap-1 mb-4">
+                  <Card className="border border-border/50 hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-2 h-full glass group">
+                    <CardContent className="pt-6 flex flex-col h-full relative">
+                      <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                      <Quote className="w-10 h-10 text-accent/40 mb-4 relative z-10 group-hover:text-accent/60 transition-colors" />
+                      <div className="flex gap-1 mb-4 relative z-10">
                         {Array.from({ length: testimonial.rating }).map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, scale: 0 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: i * 0.1, type: "spring" }}
+                          >
+                            <Star className="w-4 h-4 fill-accent text-accent drop-shadow-sm" />
+                          </motion.div>
                         ))}
                       </div>
-                      <p className="text-muted-foreground italic mb-6 flex-grow leading-relaxed">
+                      <p className="text-muted-foreground italic mb-6 flex-grow leading-relaxed relative z-10">
                         "{testimonial.quote}"
                       </p>
-                      <div className="border-t border-border/50 pt-4">
+                      <div className="border-t border-border/50 pt-4 relative z-10">
                         <p className="font-semibold text-foreground text-sm">{testimonial.author}</p>
-                        <p className="text-xs text-muted-foreground mt-1">{testimonial.title}</p>
+                        <p className="text-xs text-accent/70 mt-1">{testimonial.title}</p>
                       </div>
                     </CardContent>
                   </Card>

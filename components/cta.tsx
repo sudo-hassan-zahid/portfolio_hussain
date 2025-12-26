@@ -48,19 +48,24 @@ const CTA = memo(function CTA() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Button
-            size="lg"
-            className="bg-white text-primary hover:bg-gray-100 transition-all hover:shadow-2xl hover:shadow-white/20 hover:-translate-y-1 font-semibold"
-          >
-            Schedule Consultation
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/20 bg-transparent transition-all hover:shadow-xl hover:-translate-y-1"
-          >
-            Contact Directly
-          </Button>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              size="lg"
+              className="bg-white text-primary hover:bg-gray-100 transition-all hover:shadow-2xl hover:shadow-white/20 font-semibold relative overflow-hidden group"
+            >
+              <span className="relative z-10">Schedule Consultation</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </Button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/20 bg-transparent transition-all hover:shadow-xl"
+            >
+              Contact Directly
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </section>

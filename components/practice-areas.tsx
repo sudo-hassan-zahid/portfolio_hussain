@@ -67,18 +67,19 @@ const PracticeAreas = memo(function PracticeAreas() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 cursor-pointer group h-full bg-card/50 backdrop-blur-sm">
-                  <CardHeader>
+                <Card className="relative border border-border/50 hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-3 cursor-pointer group h-full glass overflow-hidden">
+                  <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <CardHeader className="relative z-10">
                     <motion.div
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
-                      className="w-14 h-14 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:from-accent/30 group-hover:to-accent/20 transition-all shadow-lg"
+                      whileHover={{ rotate: 360, scale: 1.15 }}
+                      transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                      className="w-16 h-16 bg-gradient-to-br from-accent via-accent/80 to-primary rounded-2xl flex items-center justify-center mb-4 shadow-xl shadow-accent/30 group-hover:shadow-accent/50 transition-all"
                     >
-                      <Icon className="w-7 h-7 text-accent" />
+                      <Icon className="w-8 h-8 text-primary-foreground" />
                     </motion.div>
-                    <CardTitle className="text-foreground text-xl">{practice.title}</CardTitle>
+                    <CardTitle className="text-foreground text-xl font-serif">{practice.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="relative z-10">
                     <p className="text-muted-foreground leading-relaxed">{practice.description}</p>
                   </CardContent>
                 </Card>

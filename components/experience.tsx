@@ -81,14 +81,16 @@ const Experience = memo(function Experience() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 bg-card/50 backdrop-blur-sm">
+                  <Card className="border border-border/50 hover:border-accent/50 transition-all duration-500 hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 glass group">
                     <CardHeader>
                       <div className="flex justify-between items-start gap-4 mb-2">
                         <div>
-                          <CardTitle className="text-lg text-foreground">{exp.role}</CardTitle>
+                          <CardTitle className="text-lg text-foreground font-serif group-hover:text-primary transition-colors">
+                            {exp.role}
+                          </CardTitle>
                           <CardDescription className="text-accent mt-1 font-medium">{exp.firm}</CardDescription>
                         </div>
-                        <span className="text-sm text-muted-foreground whitespace-nowrap bg-gradient-to-r from-muted to-muted/50 px-3 py-1 rounded-full border border-border/50">
+                        <span className="text-sm text-muted-foreground whitespace-nowrap bg-gradient-to-r from-accent/10 to-primary/10 px-3 py-1.5 rounded-full border border-accent/20">
                           {exp.period}
                         </span>
                       </div>

@@ -11,25 +11,43 @@ const Navigation = memo(function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="sticky top-0 z-50 bg-white dark:bg-slate-950 border-b border-border">
+    <nav className="sticky top-0 z-50 glass shadow-lg shadow-primary/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg">
+          <Link href="/" className="flex items-center gap-3 group">
+            <motion.div
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 400 }}
+              className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg shadow-lg shadow-primary/30"
+            >
               HZ
-            </div>
-            <span className="font-semibold text-foreground hidden sm:inline">Hussain Zahid</span>
+            </motion.div>
+            <span className="font-semibold text-foreground hidden sm:inline group-hover:text-primary transition-colors">
+              Hussain Zahid
+            </span>
           </Link>
 
           <div className="hidden md:flex gap-8">
-            <Link href="#practice" className="text-foreground hover:text-primary transition">
+            <Link
+              href="#practice"
+              className="relative text-foreground hover:text-primary transition-all font-medium group"
+            >
               Practice Areas
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
             </Link>
-            <Link href="#experience" className="text-foreground hover:text-primary transition">
+            <Link
+              href="#experience"
+              className="relative text-foreground hover:text-primary transition-all font-medium group"
+            >
               Experience
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
             </Link>
-            <Link href="#contact" className="text-foreground hover:text-primary transition">
+            <Link
+              href="#contact"
+              className="relative text-foreground hover:text-primary transition-all font-medium group"
+            >
               Contact
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
             </Link>
           </div>
 
