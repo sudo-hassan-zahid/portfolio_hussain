@@ -2,22 +2,22 @@ import dynamic from "next/dynamic"
 import Navigation from "@/components/navigation"
 import Hero from "@/components/hero"
 import ScrollProgress from "@/components/scroll-progress"
+import SectionSkeleton from "@/components/section-skeleton"
 
-// Lazy load components that are below the fold for better initial page load
 const PracticeAreas = dynamic(() => import("@/components/practice-areas"), {
-  loading: () => <div className="h-screen" />,
+  loading: () => <SectionSkeleton type="cards" />,
 })
 const Experience = dynamic(() => import("@/components/experience"), {
-  loading: () => <div className="h-screen" />,
+  loading: () => <SectionSkeleton type="list" />,
 })
 const Testimonials = dynamic(() => import("@/components/testimonials"), {
-  loading: () => <div className="h-screen" />,
+  loading: () => <SectionSkeleton type="cards" />,
 })
 const CTA = dynamic(() => import("@/components/cta"), {
-  loading: () => <div className="h-64" />,
+  loading: () => <SectionSkeleton type="cta" />,
 })
 const Footer = dynamic(() => import("@/components/footer"), {
-  loading: () => <div className="h-32" />,
+  loading: () => <SectionSkeleton type="footer" />,
 })
 
 export default function Home() {

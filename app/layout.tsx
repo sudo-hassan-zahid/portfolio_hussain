@@ -4,7 +4,6 @@ import { Inter, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-// Professional sans-serif for body text
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -13,7 +12,6 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700"],
 })
 
-// Elegant serif for headings
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
@@ -73,6 +71,8 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://vercel.com" />
+        <link rel="preload" as="image" href="/images/lawyer/law2.jpg" />
       </head>
       <body className="font-sans antialiased">
         {children}
