@@ -41,9 +41,12 @@ const Footer = memo(function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Contact Info</h3>
-            <p className="text-sm text-primary-foreground/80 mb-2">DOB: February 14, 2006</p>
+            <h3 className="font-semibold mb-4">Get In Touch</h3>
+            <p className="text-sm text-primary-foreground/80 mb-2">Serving RWP/ISB</p>
             <p className="text-sm text-primary-foreground/80">Rawalpindi, Pakistan</p>
+            <button className="mt-4 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-all border border-primary-foreground/30 hover:border-primary-foreground px-4 py-2 rounded-lg hover:bg-primary-foreground/10">
+              Schedule Consultation
+            </button>
           </div>
         </div>
 

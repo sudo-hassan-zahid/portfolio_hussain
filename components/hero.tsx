@@ -112,16 +112,52 @@ export default function Hero() {
 
               <div className="relative h-full bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-2 border border-primary/20 backdrop-blur-sm overflow-hidden">
                 <div className="w-full h-full bg-card/80 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                  {/* Professional portrait - elegant placeholder until image is added */}
+                  <div className="flex flex-col items-center justify-center gap-6 text-center px-8">
+                    <motion.div
+                      animate={{
+                        scale: [1, 1.05, 1],
+                        boxShadow: [
+                          "0 20px 60px rgba(37, 99, 235, 0.3)",
+                          "0 30px 80px rgba(245, 158, 11, 0.4)",
+                          "0 20px 60px rgba(37, 99, 235, 0.3)"
+                        ]
+                      }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                      className="w-72 h-72 bg-gradient-to-br from-primary via-primary/80 to-accent rounded-full flex items-center justify-center shadow-2xl relative overflow-hidden"
+                    >
+                      {/* Animated rings */}
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-0 border-4 border-dashed border-primary-foreground/20 rounded-full"
+                      />
+                      <motion.div
+                        animate={{ rotate: -360 }}
+                        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-8 border-2 border-dotted border-primary-foreground/10 rounded-full"
+                      />
+
+                      <div className="relative z-10 flex flex-col items-center">
+                        <span className="text-8xl font-bold text-primary-foreground mb-2">HZ</span>
+                        <span className="text-sm text-primary-foreground/70 font-medium">Legal Expert</span>
+                      </div>
+                    </motion.div>
+                    <div className="text-muted-foreground">
+                      <p className="text-sm font-medium mb-1">Professional Portrait</p>
+                      <p className="text-xs opacity-60">Add your photo to /public/images/lawyer-portrait.jpg</p>
+                    </div>
+                  </div>
+
+                  {/* If you have the image, uncomment below and remove the placeholder above */}
                   <Image
-                    src="/images/lawyer-portrait.jpg"
+                    src="/images/lawyer/law2.jpg"
                     alt="Hussain Zahid - Legal Expert"
                     fill
                     className="object-cover rounded-2xl"
                     priority
                     quality={90}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                   />
                 </div>
               </div>

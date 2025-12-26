@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Legal Portfolio - Hussain Zahid
 
-## Getting Started
+A modern, high-performance portfolio website for a legal professional specializing in litigation, legal consultancy, and ADR services in Rawalpindi and Islamabad, Pakistan.
 
-First, run the development server:
+## Project Overview
 
+This portfolio website showcases professional legal services with a focus on:
+- Litigation and Court Practice
+- Legal Drafting and Consultancy
+- Alternative Dispute Resolution and Mediation
+
+Built with Next.js 16, React 19, and Framer Motion for smooth animations and optimal performance.
+
+## Technology Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **UI Library:** React 19
+- **Styling:** Tailwind CSS 4
+- **Animations:** Framer Motion
+- **TypeScript:** Full type safety
+- **Analytics:** Vercel Analytics
+
+## Performance Features
+
+- Dynamic code splitting for optimal bundle sizes
+- React.memo for preventing unnecessary re-renders
+- GPU-accelerated animations
+- Optimized font loading with display swap
+- Next.js Image component for automatic image optimization
+- Lazy loading for below-the-fold components
+
+## Setup Instructions
+
+### Prerequisites
+
+- Node.js 18.x or higher
+- npm, yarn, pnpm, or bun package manager
+
+### Installation
+
+1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd portfolio_hussain
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Add your professional photo (optional)
+```bash
+# Place your photo at: /public/images/lawyer-portrait.jpg
+# Recommended size: 600x800px (portrait orientation)
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Running the Project
 
-## Learn More
+### Development Mode
 
-To learn more about Next.js, take a look at the following resources:
+Start the development server:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Production Build
 
-## Deploy on Vercel
+Build for production:
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Start the production server:
+```bash
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Linting
+
+Run ESLint:
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```
+portfolio_hussain/
+├── app/                    # Next.js app directory
+│   ├── layout.tsx         # Root layout with metadata
+│   ├── page.tsx           # Home page
+│   └── globals.css        # Global styles
+├── components/            # React components
+│   ├── hero.tsx          # Hero section
+│   ├── navigation.tsx    # Navigation bar
+│   ├── practice-areas.tsx # Practice areas section
+│   ├── experience.tsx    # Experience section
+│   ├── testimonials.tsx  # Testimonials carousel
+│   ├── cta.tsx           # Call to action
+│   ├── footer.tsx        # Footer
+│   ├── scroll-progress.tsx # Scroll indicator
+│   └── ui/               # UI components (button, card, carousel)
+├── lib/                   # Utility functions
+└── public/               # Static assets
+    └── images/           # Image directory
+```
+
+## Customization
+
+### Updating Content
+
+- **Personal Information:** Edit `/components/hero.tsx`
+- **Experience:** Edit `/components/experience.tsx`
+- **Practice Areas:** Edit `/components/practice-areas.tsx`
+- **Testimonials:** Edit `/components/testimonials.tsx`
+- **Contact Information:** Edit `/components/footer.tsx`
+
+### Styling
+
+All styling is done through Tailwind CSS classes. Global theme colors are defined in `/app/globals.css`.
+
+### Adding Images
+
+Place your professional photo at `/public/images/lawyer-portrait.jpg`, then uncomment the Image component in `/components/hero.tsx` (lines 153-161).
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Import your repository on [Vercel](https://vercel.com)
+3. Deploy with default settings
+
+### Other Platforms
+
+This is a standard Next.js application and can be deployed to any platform that supports Node.js:
+- Netlify
+- AWS Amplify
+- Digital Ocean
+- Self-hosted with PM2
+
+## License
+
+All rights reserved. © 2025 Hussain Zahid
+
+## Support
+
+For issues or questions, please open an issue in the repository.

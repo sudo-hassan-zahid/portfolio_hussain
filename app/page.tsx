@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic"
 import Navigation from "@/components/navigation"
 import Hero from "@/components/hero"
+import ScrollProgress from "@/components/scroll-progress"
 
 // Lazy load components that are below the fold for better initial page load
 const PracticeAreas = dynamic(() => import("@/components/practice-areas"), {
@@ -22,6 +23,7 @@ const Footer = dynamic(() => import("@/components/footer"), {
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
+      <ScrollProgress />
       <Navigation />
       <Hero />
       <PracticeAreas />
