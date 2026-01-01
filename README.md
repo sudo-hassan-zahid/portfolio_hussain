@@ -49,12 +49,6 @@ cd portfolio_hussain
 npm install
 ```
 
-3. Add your professional photo (optional)
-```bash
-# Place your photo at: /public/images/lawyer-portrait.jpg
-# Recommended size: 600x800px (portrait orientation)
-```
-
 ## Running the Project
 
 ### Development Mode
