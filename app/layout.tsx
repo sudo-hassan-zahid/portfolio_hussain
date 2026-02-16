@@ -1,15 +1,16 @@
-import type React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
+// Preload critical fonts with font-display: swap
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
   preload: true,
   weight: ["300", "400", "500", "600", "700"],
+  adjustFontFallback: false,
 });
 
 const playfair = Playfair_Display({
@@ -18,7 +19,18 @@ const playfair = Playfair_Display({
   display: "swap",
   preload: true,
   weight: ["400", "500", "600", "700", "800"],
+  adjustFontFallback: false,
 });
+
+export function generateViewport(): Viewport {
+  return {
+    themeColor: '#000000',
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: true,
+  };
+}
 
 export const metadata: Metadata = {
   title:
@@ -64,18 +76,35 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${playfair.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
       <head>
+        <link
+          rel="preload"
+          href="/_next/static/css/app/layout.css"
+          as="style"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://vercel.com" />
         <link rel="preload" as="image" href="/images/lawyer/law1.png" />
       </head>
-      <body className="font-sans antialiased">
+      <body
+        className={`min-h-screen bg-background font-sans antialiased ${inter.variable} ${playfair.variable}`}
+      >
         {children}
         <Analytics />
       </body>
