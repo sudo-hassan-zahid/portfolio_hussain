@@ -71,7 +71,7 @@ export default function Testimonials() {
                           ))}
                         </div>
                         <p className="text-muted-foreground italic mb-6 flex-grow leading-relaxed text-sm">
-                          "{testimonial.quote}"
+                          &quot;{testimonial.quote}&quot;
                         </p>
                         <div className="border-t border-border/50 pt-4">
                           <p className="font-semibold text-foreground text-sm">{testimonial.author}</p>
