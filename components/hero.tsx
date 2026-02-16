@@ -59,7 +59,7 @@ export default function Hero() {
           <div className="relative mx-auto lg:ml-auto w-full max-w-[500px] aspect-[4/5] lg:aspect-[4/5] animate-fade-in animation-delay-200 group perspective-1000">
             <div className="relative h-full w-full rounded-3xl overflow-hidden border border-white/20 shadow-2xl transition-transform duration-700 ease-out group-hover:rotate-y-2 group-hover:rotate-x-2">
               <Image
-                src="/images/lawyer/law2.jpg"
+                src="/images/lawyer/law1.png"
                 alt="Hussain Zahid - Legal Expert"
                 fill
                 className="object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
