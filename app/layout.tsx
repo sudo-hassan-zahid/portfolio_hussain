@@ -72,7 +72,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://vercel.com" />
-        <link rel="preload" as="image" href="/images/lawyer/law2.jpg" />
+        <link rel="preload" as="image" href="/images/lawyer/law1.png" />
       </head>
       <body className="font-sans antialiased">
         {children}
