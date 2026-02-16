@@ -5,6 +5,7 @@ A modern, high-performance portfolio website for a legal professional specializi
 ## Project Overview
 
 This portfolio website showcases professional legal services with a focus on:
+
 - Litigation and Court Practice
 - Legal Drafting and Consultancy
 - Alternative Dispute Resolution and Mediation
@@ -39,12 +40,14 @@ Built with Next.js 16, React 19, and Framer Motion for smooth animations and opt
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone <repository-url>
 cd portfolio_hussain
 ```
 
 2. Install dependencies
+
 ```bash
 npm install
 ```
@@ -54,6 +57,7 @@ npm install
 ### Development Mode
 
 Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -63,11 +67,13 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ### Production Build
 
 Build for production:
+
 ```bash
 npm run build
 ```
 
 Start the production server:
+
 ```bash
 npm start
 ```
@@ -75,6 +81,7 @@ npm start
 ### Linting
 
 Run ESLint:
+
 ```bash
 npm run lint
 ```
@@ -131,6 +138,7 @@ Place your professional photo at `/public/images/lawyer-portrait.jpg`, then unco
 ### Other Platforms
 
 This is a standard Next.js application and can be deployed to any platform that supports Node.js:
+
 - Netlify
 - AWS Amplify
 - Digital Ocean

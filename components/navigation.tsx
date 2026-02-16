@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState, memo } from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { useState, memo } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
 const Navigation = memo(function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
@@ -59,7 +59,7 @@ const Navigation = memo(function Navigation() {
         )}
       </div>
     </nav>
-  )
-})
+  );
+});
 
-export default Navigation
+export default Navigation;

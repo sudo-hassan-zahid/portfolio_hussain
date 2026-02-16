@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Briefcase, Scale, Handshake } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Briefcase, Scale, Handshake } from "lucide-react";
 
 const practices = [
   {
@@ -7,28 +7,27 @@ const practices = [
     title: "Litigation & Court Practice",
     description:
       "Extensive courtroom experience in RWP/ISB district and high courts. Handling complex cases with precision and strategic expertise.",
-    gradient: "from-blue-500/20 to-indigo-500/20"
+    gradient: "from-blue-500/20 to-indigo-500/20",
   },
   {
     icon: Briefcase,
     title: "Legal Drafting & Consultancy",
     description:
       "Professional legal document drafting and comprehensive consultancy services for business and personal matters.",
-    gradient: "from-amber-500/20 to-orange-500/20"
+    gradient: "from-amber-500/20 to-orange-500/20",
   },
   {
     icon: Handshake,
     title: "ADR & Mediation",
     description:
       "Alternative Dispute Resolution specialist with proven mediation experience. Helping parties reach fair and efficient resolutions.",
-    gradient: "from-emerald-500/20 to-teal-500/20"
+    gradient: "from-emerald-500/20 to-teal-500/20",
   },
-]
+];
 
 export default function PracticeAreas() {
   return (
     <section id="practice" className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Background Ambience */}
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]" />
       <div className="bg-blob w-[50rem] h-[50rem] bg-indigo-500/20 -left-20 top-20 animate-pulse-slow" />
       <div className="bg-blob w-[40rem] h-[40rem] bg-rose-500/10 -right-20 bottom-0 animation-delay-2000" />
@@ -39,22 +38,24 @@ export default function PracticeAreas() {
             What We Do
           </div>
           <h2 className="text-4xl font-bold tracking-tight sm:text-5xl font-serif mb-6">
-            <span className="text-gradient-gold bg-clip-text text-transparent bg-gradient-to-r">Specialized Legal expertise</span>
+            <span className="text-gradient-gold bg-clip-text text-transparent bg-gradient-to-r">
+              Specialized Legal expertise
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Focused representation in litigation, meticulous drafting, and effective dispute resolution.
+            Focused representation in litigation, meticulous drafting, and
+            effective dispute resolution.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 perspective-1000">
           {practices.map((practice, index) => {
-            const Icon = practice.icon
+            const Icon = practice.icon;
             return (
-              <div
-                key={index}
-                className="group relative"
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${practice.gradient} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+              <div key={index} className="group relative">
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${practice.gradient} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                ></div>
 
                 <Card className="h-full border border-white/20 bg-white/40 dark:bg-black/20 backdrop-blur-xl hover:bg-white/60 dark:hover:bg-black/40 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden">
                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-150 duration-700">
@@ -79,10 +80,10 @@ export default function PracticeAreas() {
                   <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 </Card>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }

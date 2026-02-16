@@ -1,8 +1,8 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter, Playfair_Display } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -10,7 +10,7 @@ const inter = Inter({
   display: "swap",
   preload: true,
   weight: ["300", "400", "500", "600", "700"],
-})
+});
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -18,10 +18,11 @@ const playfair = Playfair_Display({
   display: "swap",
   preload: true,
   weight: ["400", "500", "600", "700", "800"],
-})
+});
 
 export const metadata: Metadata = {
-  title: "Hussain Zahid | Shariah & Law Specialist | Litigation & Legal Consultancy",
+  title:
+    "Hussain Zahid | Shariah & Law Specialist | Litigation & Legal Consultancy",
   description:
     "Professional legal services in Rawalpindi and Islamabad. Expert in litigation, legal drafting, consultancy, ADR, and mediation. Serving clients across RWP/ISB district and high courts.",
   keywords: [
@@ -59,12 +60,12 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
@@ -79,5 +80,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

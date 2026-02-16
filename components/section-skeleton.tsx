@@ -1,12 +1,14 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 interface SectionSkeletonProps {
-  type?: "cards" | "list" | "cta" | "footer"
+  type?: "cards" | "list" | "cta" | "footer";
 }
 
-export default function SectionSkeleton({ type = "cards" }: SectionSkeletonProps) {
+export default function SectionSkeleton({
+  type = "cards",
+}: SectionSkeletonProps) {
   if (type === "cta") {
     return (
       <div className="py-20 lg:py-32 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/5">
@@ -28,7 +30,7 @@ export default function SectionSkeleton({ type = "cards" }: SectionSkeletonProps
           />
         </div>
       </div>
-    )
+    );
   }
 
   if (type === "footer") {
@@ -42,7 +44,7 @@ export default function SectionSkeleton({ type = "cards" }: SectionSkeletonProps
           />
         </div>
       </div>
-    )
+    );
   }
 
   if (type === "list") {
@@ -66,7 +68,7 @@ export default function SectionSkeleton({ type = "cards" }: SectionSkeletonProps
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -89,5 +91,5 @@ export default function SectionSkeleton({ type = "cards" }: SectionSkeletonProps
         </div>
       </div>
     </div>
-  )
+  );
 }

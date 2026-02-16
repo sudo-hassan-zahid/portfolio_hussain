@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
-import { memo } from "react"
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { memo } from "react";
 
 const CTA = memo(function CTA() {
   return (
@@ -38,8 +38,9 @@ const CTA = memo(function CTA() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          Schedule a confidential consultation to discuss how I can assist with your legal needs. Serving Rawalpindi,
-          Islamabad, and beyond with professional expertise and dedication.
+          Schedule a confidential consultation to discuss how I can assist with
+          your legal needs. Serving Rawalpindi, Islamabad, and beyond with
+          professional expertise and dedication.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,7 +70,7 @@ const CTA = memo(function CTA() {
         </motion.div>
       </div>
     </section>
-  )
-})
+  );
+});
 
-export default CTA
+export default CTA;

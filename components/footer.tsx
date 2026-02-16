@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { memo } from "react"
+import Link from "next/link";
+import { memo } from "react";
 
 const Footer = memo(function Footer() {
   return (
@@ -11,8 +11,8 @@ const Footer = memo(function Footer() {
               HZ
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Specialized litigation attorney and legal consultant based in Rawalpindi. Dedicated to providing excellent
-              legal representation.
+              Specialized litigation attorney and legal consultant based in
+              Rawalpindi. Dedicated to providing excellent legal representation.
             </p>
           </div>
 
@@ -20,7 +20,10 @@ const Footer = memo(function Footer() {
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#practice" className="text-primary-foreground/80 hover:text-primary-foreground transition">
+                <Link
+                  href="#practice"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition"
+                >
                   Practice Areas
                 </Link>
               </li>
@@ -33,7 +36,10 @@ const Footer = memo(function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-primary-foreground/80 hover:text-primary-foreground transition">
+                <Link
+                  href="#contact"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition"
+                >
                   Contact
                 </Link>
               </li>
@@ -42,8 +48,12 @@ const Footer = memo(function Footer() {
 
           <div>
             <h3 className="font-semibold mb-4">Get In Touch</h3>
-            <p className="text-sm text-primary-foreground/80 mb-2">Serving RWP/ISB</p>
-            <p className="text-sm text-primary-foreground/80">Rawalpindi, Pakistan</p>
+            <p className="text-sm text-primary-foreground/80 mb-2">
+              Serving RWP/ISB
+            </p>
+            <p className="text-sm text-primary-foreground/80">
+              Rawalpindi, Pakistan
+            </p>
             <button className="mt-4 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-all border border-primary-foreground/30 hover:border-primary-foreground px-4 py-2 rounded-lg hover:bg-primary-foreground/10">
               Schedule Consultation
             </button>
@@ -52,12 +62,13 @@ const Footer = memo(function Footer() {
 
         <div className="border-t border-primary-foreground/20 pt-8">
           <p className="text-center text-sm text-primary-foreground/70">
-            © 2025 Hussain Zahid. All rights reserved. | Legal Services in RWP/ISB
+            © 2025 Hussain Zahid. All rights reserved. | Legal Services in
+            RWP/ISB
           </p>
         </div>
       </div>
     </footer>
-  )
-})
+  );
+});
 
-export default Footer
+export default Footer;

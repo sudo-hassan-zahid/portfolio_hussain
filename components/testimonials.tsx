@@ -1,46 +1,56 @@
-"use client"
+"use client";
 
-import { Card, CardContent } from "@/components/ui/card"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Star, Quote } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Hussain provided exceptional legal guidance for our business dispute. His expertise in corporate law and mediation helped us reach a favorable settlement quickly and efficiently.",
+    quote:
+      "Hussain provided exceptional legal guidance for our business dispute. His expertise in corporate law and mediation helped us reach a favorable settlement quickly and efficiently.",
     author: "Ahmed Khan",
     title: "CEO, Tech Solutions Ltd.",
     rating: 5,
   },
   {
-    quote: "Working with Hussain on our contract negotiations was a game-changer. His attention to detail and strategic approach protected our interests perfectly.",
+    quote:
+      "Working with Hussain on our contract negotiations was a game-changer. His attention to detail and strategic approach protected our interests perfectly.",
     author: "Asif Malik",
     title: "Director, Trading Corporation",
     rating: 5,
   },
   {
-    quote: "Hussain's courtroom skills are impressive. He represented us with professionalism and dedication, achieving results beyond our expectations.",
+    quote:
+      "Hussain's courtroom skills are impressive. He represented us with professionalism and dedication, achieving results beyond our expectations.",
     author: "Usman Rashid",
     title: "Business Owner",
     rating: 5,
   },
   {
-    quote: "His expertise in Shariah and civil law is remarkable. Hussain navigated complex legal matters with clarity and achieved excellent outcomes for our family.",
+    quote:
+      "His expertise in Shariah and civil law is remarkable. Hussain navigated complex legal matters with clarity and achieved excellent outcomes for our family.",
     author: "Ali Abdullah",
     title: "Private Client",
     rating: 5,
   },
   {
-    quote: "I highly recommend Hussain for any legal consultancy needs. His knowledge, dedication, and client-focused approach make him stand out.",
+    quote:
+      "I highly recommend Hussain for any legal consultancy needs. His knowledge, dedication, and client-focused approach make him stand out.",
     author: "Bilal Hassan",
     title: "Managing Partner, Real Estate Firm",
     rating: 5,
   },
-]
+];
 
 export default function Testimonials() {
   return (
     <section className="py-32 relative overflow-hidden bg-background">
-      {/* Immersive Background Effects */}
       <div className="bg-blob w-[50rem] h-[50rem] bg-gradient-to-tr from-cyan-400/20 to-blue-500/20 -left-40 top-1/4 animate-pulse-slow mix-blend-multiply" />
       <div className="bg-blob w-[45rem] h-[45rem] bg-gradient-to-tr from-amber-200/20 to-orange-400/20 -right-40 bottom-1/4 animation-delay-2000 mix-blend-multiply" />
 
@@ -56,10 +66,14 @@ export default function Testimonials() {
           <h2 className="text-4xl md:text-6xl font-black font-serif mb-6 tracking-tight leading-tight">
             Trusted by
             <br />
-            <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-primary via-indigo-500 to-primary"> Pakistan&apos;s Finest</span>
+            <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-primary via-indigo-500 to-primary">
+              {" "}
+              Pakistan&apos;s Finest
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Delivering excellence in legal representation and consultancy across private and corporate sectors.
+            Delivering excellence in legal representation and consultancy across
+            private and corporate sectors.
           </p>
         </div>
 
@@ -73,10 +87,12 @@ export default function Testimonials() {
           >
             <CarouselContent className="-ml-4 py-8">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <CarouselItem
+                  key={index}
+                  className="pl-4 md:basis-1/2 lg:basis-1/3"
+                >
                   <div className="h-full p-2 group perspective-1000">
                     <Card className="border border-white/40 dark:border-white/10 bg-white/60 dark:bg-black/40 backdrop-blur-xl hover:bg-white/90 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full relative overflow-hidden rounded-3xl group-hover:rotate-y-2">
-                      {/* Subtle Shine Effect */}
                       <div className="absolute inset-0 bg-gradient-to-tr from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
                       <CardContent className="pt-10 px-8 pb-8 flex flex-col h-full relative z-10">
@@ -91,8 +107,12 @@ export default function Testimonials() {
                             {testimonial.author.charAt(0)}
                           </div>
                           <div>
-                            <p className="font-bold text-foreground text-base group-hover:text-primary transition-colors">{testimonial.author}</p>
-                            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{testimonial.title}</p>
+                            <p className="font-bold text-foreground text-base group-hover:text-primary transition-colors">
+                              {testimonial.author}
+                            </p>
+                            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                              {testimonial.title}
+                            </p>
                           </div>
                         </div>
                       </CardContent>
@@ -114,5 +134,5 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }
