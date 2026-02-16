@@ -1,9 +1,5 @@
-"use client"
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Briefcase, Scale, Handshake } from "lucide-react"
-import { motion } from "framer-motion"
-import { memo } from "react"
 
 const practices = [
   {
@@ -26,70 +22,54 @@ const practices = [
   },
 ]
 
-const PracticeAreas = memo(function PracticeAreas() {
+export default function PracticeAreas() {
   return (
-    <section id="practice" className="py-20 lg:py-32 bg-gradient-to-br from-background via-accent/5 to-background relative overflow-hidden">
-      <motion.div
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 8, repeat: Infinity }}
-        className="absolute left-0 bottom-0 w-[500px] h-[500px] bg-gradient-to-br from-accent/20 to-transparent rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
-        transition={{ duration: 10, repeat: Infinity }}
-        className="absolute right-0 top-0 w-[600px] h-[600px] bg-gradient-to-bl from-primary/15 to-transparent rounded-full blur-3xl"
-      />
+    <section id="practice" className="py-24 lg:py-32 bg-background relative overflow-hidden">
+      {/* Optimized static background gradients using CSS */}
+      <div className="absolute left-0 bottom-0 w-[40rem] h-[40rem] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute right-0 top-0 w-[40rem] h-[40rem] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
-        >
-          <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent mb-4">
+      <div className="container px-4 sm:px-6 mx-auto relative z-10">
+        <div className="mb-16 text-center max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl font-serif text-foreground mb-6">
             Practice Areas
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground">
             Specialized expertise in litigation, legal drafting, consultancy, and alternative dispute resolution.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {practices.map((practice, index) => {
             const Icon = practice.icon
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group perspective-1000"
               >
-                <Card className="relative border border-border/50 hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-3 cursor-pointer group h-full glass overflow-hidden">
-                  <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <CardHeader className="relative z-10">
-                    <motion.div
-                      whileHover={{ rotate: 360, scale: 1.15 }}
-                      transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                      className="w-16 h-16 bg-gradient-to-br from-accent via-accent/80 to-primary rounded-2xl flex items-center justify-center mb-4 shadow-xl shadow-accent/30 group-hover:shadow-accent/50 transition-all"
-                    >
-                      <Icon className="w-8 h-8 text-primary-foreground" />
-                    </motion.div>
-                    <CardTitle className="text-foreground text-xl font-serif">{practice.title}</CardTitle>
+                <Card className="h-full border border-border/50 bg-card/50 hover:bg-card hover:border-accent/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  <CardHeader className="relative z-10 pb-4">
+                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                      <Icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                    </div>
+                    <CardTitle className="text-2xl font-serif text-foreground group-hover:text-primary transition-colors duration-300">
+                      {practice.title}
+                    </CardTitle>
                   </CardHeader>
+
                   <CardContent className="relative z-10">
-                    <p className="text-muted-foreground leading-relaxed">{practice.description}</p>
+                    <p className="text-muted-foreground leading-relaxed text-base group-hover:text-foreground/80 transition-colors duration-300">
+                      {practice.description}
+                    </p>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             )
           })}
         </div>
       </div>
     </section>
   )
-})
-
-export default PracticeAreas
+}
