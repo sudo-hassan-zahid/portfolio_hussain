@@ -117,7 +117,12 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-serif);
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -127,7 +132,51 @@
 
 .glass {
   @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+
   .dark & {
     @apply bg-black/40 border-white/10;
+  }
+}
+
+/* Performant Scroll-Driven Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.reveal-on-scroll {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: fade-in-up 0.6s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+    opacity: 0;
+  }
+}
+
+.reveal-scale-on-scroll {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: fade-in-scale 0.8s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+    opacity: 0;
   }
 }
