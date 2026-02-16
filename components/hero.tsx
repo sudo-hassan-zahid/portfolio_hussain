@@ -22,7 +22,7 @@ export default function Hero() {
           >
             <div className="space-y-4">
               <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary backdrop-blur-sm">
-                Pakistan's Legal Expert
+                Pakistan&apos;s Legal Expert
               </div>
               <h1 className="text-5xl font-bold tracking-tight sm:text-6xl xl:text-7xl font-serif text-foreground leading-tight">
                 Hussain Zahid
@@ -78,7 +78,7 @@ export default function Hero() {
 
             {/* Floating Card for Modern Look */}
             <div className="absolute bottom-8 right-8 left-8 p-4 backdrop-blur-md bg-white/10 dark:bg-black/40 border border-white/20 rounded-xl shadow-lg text-white">
-              <p className="font-serif font-medium text-lg">"Justice delayed is justice denied."</p>
+              <p className="font-serif font-medium text-lg">&quot;Justice delayed is justice denied.&quot;</p>
               <p className="text-sm opacity-80 mt-1">— Legal Philosophy</p>
             </div>
           </motion.div>
