@@ -184,6 +184,14 @@
 }
 
 .animate-fade-in {
+
+  /* Use immediate-end state for mobile/slow CPUs to fix LCP/FCP delay */
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
   animation: fade-in-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
@@ -193,6 +201,18 @@
 
 .animation-delay-400 {
   animation-delay: 0.4s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
 }
 
 .reveal-on-scroll {
@@ -217,4 +237,7 @@
 .bg-blob {
   @apply absolute rounded-full blur-[100px] -z-10 opacity-30 mix-blend-multiply dark:mix-blend-normal;
   animation: blob-float 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Optimization: will-change to hint browser compositor */
+  will-change: transform;
 }

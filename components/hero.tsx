@@ -64,6 +64,8 @@ export default function Hero() {
                 fill
                 className="object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
                 priority
+                fetchPriority="high"
+                decoding="async"
                 sizes="(max-width: 768px) 100vw, 600px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
