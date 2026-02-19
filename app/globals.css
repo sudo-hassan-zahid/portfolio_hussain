@@ -216,7 +216,9 @@
 }
 
 .bg-blob {
-  @apply absolute rounded-full blur-[100px] -z-10 opacity-30 mix-blend-multiply dark:mix-blend-normal;
+  @apply absolute rounded-full blur-[60px] md:blur-[100px] -z-10 opacity-30 mix-blend-multiply dark:mix-blend-normal;
   animation: blob-float 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }

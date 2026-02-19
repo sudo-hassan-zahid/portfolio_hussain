@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden bg-background">
-      <div className="bg-blob w-[40rem] h-[40rem] bg-primary/20 top-[-10rem] right-[-10rem] animate-pulse-slow" />
+      <div className="bg-blob w-[40rem] h-[40rem] bg-primary/20 top-[-10rem] right-[-10rem]" />
       <div className="bg-blob w-[35rem] h-[35rem] bg-secondary/30 bottom-[-5rem] left-[-8rem] animation-delay-2000" />
       <div className="bg-blob w-[30rem] h-[30rem] bg-accent/20 top-[40%] right-[20%] animation-delay-4000 opacity-20" />
 
@@ -89,14 +89,13 @@ export default function Hero() {
                 className="object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
                 priority
                 fetchPriority="high"
-                decoding="async"
-                sizes="(max-width: 768px) 100vw, 600px"
+                sizes="(max-width: 768px) 100vw, 500px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
             </div>
 
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-secondary to-accent rounded-full blur-2xl opacity-60 animate-pulse" />
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-primary to-blue-500 rounded-full blur-2xl opacity-60 animate-pulse animation-delay-1000" />
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-secondary to-accent rounded-full blur-2xl opacity-60" />
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-primary to-blue-500 rounded-full blur-2xl opacity-60 animation-delay-1000" />
 
             <div className="absolute bottom-8 right-8 left-8 p-6 glass rounded-2xl text-white transform transition-transform duration-500 hover:scale-105 border-l-4 border-l-secondary">
               <p className="font-serif font-medium text-lg leading-snug">
