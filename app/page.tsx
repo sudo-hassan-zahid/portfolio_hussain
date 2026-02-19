@@ -1,8 +1,11 @@
 import dynamic from "next/dynamic";
 import Navigation from "@/components/navigation";
 import Hero from "@/components/hero";
-import ScrollProgress from "@/components/scroll-progress";
 import SectionSkeleton from "@/components/section-skeleton";
+
+const ScrollProgress = dynamic(() => import("@/components/scroll-progress"), {
+  ssr: false,
+});
 
 const PracticeAreas = dynamic(() => import("@/components/practice-areas"), {
   loading: () => <SectionSkeleton type="cards" />,
