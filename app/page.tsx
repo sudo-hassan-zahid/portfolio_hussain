@@ -3,9 +3,7 @@ import Navigation from "@/components/navigation";
 import Hero from "@/components/hero";
 import SectionSkeleton from "@/components/section-skeleton";
 
-const ScrollProgress = dynamic(() => import("@/components/scroll-progress"), {
-  ssr: false,
-});
+import ScrollProgress from "@/components/scroll-progress-dynamic";
 
 const PracticeAreas = dynamic(() => import("@/components/practice-areas"), {
   loading: () => <SectionSkeleton type="cards" />,
