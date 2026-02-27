@@ -20,7 +20,6 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: false,
   experimental: {
-    optimizeCss: true,
     optimizeServerReact: true,
     optimizePackageImports: [
       'lucide-react',

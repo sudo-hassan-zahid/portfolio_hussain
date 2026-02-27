@@ -3,23 +3,17 @@ import { Inter, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
-// Preload critical fonts with font-display: swap
+// Use Next.js variable fonts optimization (single woff2 file instead of 10)
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  preload: true,
-  weight: ["300", "400", "500", "600", "700"],
-  adjustFontFallback: false,
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   display: "swap",
-  preload: true,
-  weight: ["400", "500", "600", "700", "800"],
-  adjustFontFallback: false,
 });
 
 export function generateViewport(): Viewport {

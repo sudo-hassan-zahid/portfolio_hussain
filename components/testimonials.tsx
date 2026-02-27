@@ -51,7 +51,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section className="py-32 relative overflow-hidden bg-background">
-      <div className="bg-blob w-[50rem] h-[50rem] bg-gradient-to-tr from-cyan-400/20 to-blue-500/20 -left-40 top-1/4 animate-pulse-slow mix-blend-multiply" />
+      <div className="bg-blob w-[50rem] h-[50rem] bg-gradient-to-tr from-cyan-400/20 to-blue-500/20 -left-40 top-1/4 mix-blend-multiply" />
       <div className="bg-blob w-[45rem] h-[45rem] bg-gradient-to-tr from-amber-200/20 to-orange-400/20 -right-40 bottom-1/4 animation-delay-2000 mix-blend-multiply" />
 
       <div className="container px-4 sm:px-6 mx-auto relative z-10">
