@@ -30,7 +30,7 @@ const ScrollProgress = memo(function ScrollProgress() {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary origin-left z-50 transition-transform duration-100 ease-out"
+      className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 origin-left z-50 transition-transform duration-100 ease-out shadow-lg shadow-purple-500/50"
       style={{ transform: `scaleX(${scrollProgress / 100})` }}
     />
   );
