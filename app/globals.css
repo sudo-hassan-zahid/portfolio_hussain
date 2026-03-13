@@ -152,6 +152,30 @@
   }
 }
 
+@keyframes blob-float-reverse {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.2) rotate(90deg);
+  }
+
+  33% {
+    transform: translate3d(-30px, 30px, 0) scale(1.25) rotate(120deg);
+  }
+
+  66% {
+    transform: translate3d(20px, -20px, 0) scale(1.15) rotate(60deg);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.2) rotate(90deg);
+  }
+}
+
+@keyframes spin-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
 .animate-fade-in {
   @media (prefers-reduced-motion: reduce) {
     animation: none;
@@ -160,8 +184,6 @@
   }
 
   animation: fade-in-up 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-  will-change: opacity,
-  transform;
 }
 
 .animation-delay-200 {
@@ -205,8 +227,25 @@
 .bg-blob {
   /* Heavily optimized for performance */
   @apply absolute rounded-full blur-[40px] -z-10 opacity-20 mix-blend-multiply dark:mix-blend-normal pointer-events-none;
-  animation: blob-float 25s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
+  contain: layout style paint;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bg-blob {
+    animation: blob-float 25s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.animate-blob-float {
+  animation: blob-float 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-blob-float-reverse {
+  animation: blob-float-reverse 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 1.5s linear infinite;
 }

@@ -90,6 +90,9 @@ export default function Hero() {
                 priority
                 fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, 500px"
+                placeholder="blur"
+                blurDataURL="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAQAcJaQAA3AA/v3AgAA="
+                quality={90}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
             </div>
