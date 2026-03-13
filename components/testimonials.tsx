@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const testimonials = [
   {
@@ -41,26 +41,74 @@ const testimonials = [
   },
 ];
 
+// Triple the testimonials for seamless infinite scroll
+const infiniteTestimonials = [...testimonials, ...testimonials, ...testimonials];
+
 export default function Testimonials() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const checkScroll = () => {
+  // Auto-scroll effect
+  useEffect(() => {
+    if (isPaused || !scrollRef.current) return;
+
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const cardWidth = scrollRef.current.clientWidth * 0.85; // Width of one card
+        const maxScroll = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+        const nextScroll = scrollRef.current.scrollLeft + cardWidth;
+
+        // If we've scrolled past 2/3, reset to the middle section for seamless loop
+        if (nextScroll >= maxScroll * 0.66) {
+          scrollRef.current.scrollLeft = maxScroll * 0.33;
+          setCurrentIndex(testimonials.length);
+        } else {
+          scrollRef.current.scrollBy({
+            left: cardWidth,
+            behavior: 'smooth'
+          });
+          setCurrentIndex(prev => prev + 1);
+        }
+      }
+    }, 4000); // Auto-scroll every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
+  // Initialize scroll position to middle section
+  useEffect(() => {
     if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+      const cardWidth = scrollRef.current.clientWidth * 0.85;
+      scrollRef.current.scrollLeft = cardWidth * testimonials.length;
     }
-  };
+  }, []);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = scrollRef.current.clientWidth * 0.8;
+      const cardWidth = scrollRef.current.clientWidth * 0.85;
+      const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
+
       scrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        left: scrollAmount,
         behavior: 'smooth'
       });
+
+      // Update index
+      setCurrentIndex(prev => direction === 'left' ? prev - 1 : prev + 1);
+
+      // Handle infinite loop wrapping
+      setTimeout(() => {
+        if (scrollRef.current) {
+          const maxScroll = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+
+          if (scrollRef.current.scrollLeft <= 0) {
+            scrollRef.current.scrollLeft = maxScroll * 0.33;
+          } else if (scrollRef.current.scrollLeft >= maxScroll * 0.66) {
+            scrollRef.current.scrollLeft = maxScroll * 0.33;
+          }
+        }
+      }, 500);
     }
   };
 
@@ -90,17 +138,20 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="reveal-on-scroll relative group">
+        <div
+          className="reveal-on-scroll relative group"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           <div
             ref={scrollRef}
-            onScroll={checkScroll}
             className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 -mx-4 px-4 md:px-0 md:mx-0"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
             }}
           >
-            {testimonials.map((testimonial, index) => (
+            {infiniteTestimonials.map((testimonial, index) => (
               <div
                 key={index}
                 className="min-w-[85%] md:min-w-[45%] lg:min-w-[31%] snap-center"
@@ -143,24 +194,30 @@ export default function Testimonials() {
 
           <button
             onClick={() => scroll('left')}
-            disabled={!canScrollLeft}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-14 h-14 rounded-full border-2 border-primary/20 bg-white/80 backdrop-blur hover:bg-primary hover:border-primary hover:text-white transition-all shadow-xl disabled:opacity-30 disabled:cursor-not-allowed items-center justify-center"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-14 h-14 rounded-full border-2 border-purple-200 dark:border-purple-800 bg-white/90 dark:bg-gray-900/90 backdrop-blur hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:border-transparent hover:text-white transition-all shadow-xl items-center justify-center group/btn"
             aria-label="Previous testimonial"
           >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <svg className="w-6 h-6 text-purple-600 group-hover/btn:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           <button
             onClick={() => scroll('right')}
-            disabled={!canScrollRight}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-14 h-14 rounded-full border-2 border-primary/20 bg-white/80 backdrop-blur hover:bg-primary hover:border-primary hover:text-white transition-all shadow-xl disabled:opacity-30 disabled:cursor-not-allowed items-center justify-center"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-14 h-14 rounded-full border-2 border-purple-200 dark:border-purple-800 bg-white/90 dark:bg-gray-900/90 backdrop-blur hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:border-transparent hover:text-white transition-all shadow-xl items-center justify-center group/btn"
             aria-label="Next testimonial"
           >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg className="w-6 h-6 text-purple-600 group-hover/btn:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </button>
+
+          {/* Auto-scroll indicator */}
+          {!isPaused && (
+            <div className="hidden md:flex absolute -bottom-4 left-1/2 -translate-x-1/2 items-center gap-2 text-xs text-purple-600 dark:text-purple-400 font-semibold">
+              <div className="w-2 h-2 rounded-full bg-purple-600 dark:bg-purple-400 animate-pulse"></div>
+              Auto-scrolling
+            </div>
+          )}
         </div>
       </div>
 
