@@ -65,30 +65,28 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-32 relative overflow-hidden bg-background">
-      <div className="bg-blob w-[50rem] h-[50rem] bg-gradient-to-tr from-cyan-400/20 to-blue-500/20 -left-40 top-1/4 mix-blend-multiply" />
-      <div className="bg-blob w-[45rem] h-[45rem] bg-gradient-to-tr from-amber-200/20 to-orange-400/20 -right-40 bottom-1/4 animation-delay-2000 mix-blend-multiply" />
+    <section className="py-32 relative overflow-hidden bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 dark:from-purple-950 dark:via-pink-950 dark:to-rose-950">
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full blur-3xl animate-blob-float"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-rose-400 to-orange-500 rounded-full blur-3xl animate-blob-float animation-delay-2000"></div>
+      </div>
 
       <div className="container px-4 sm:px-6 mx-auto relative z-10">
-        <div className="text-center mb-16 reveal-scale-on-scroll max-w-4xl mx-auto">
-          <div className="inline-flex items-center justify-center space-x-2 mb-4">
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+          <div className="inline-flex items-center justify-center space-x-1.5 mb-6">
             {[...Array(5)].map((_, i) => (
-              <svg key={i} className={`w-5 h-5 text-yellow-500 fill-yellow-500 animate-pulse ${i === 1 || i === 3 ? 'animation-delay-200' : i === 2 ? 'animation-delay-400' : ''}`} viewBox="0 0 24 24">
+              <svg key={i} className="w-8 h-8 text-amber-400 fill-amber-400 drop-shadow-lg" viewBox="0 0 24 24">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
             ))}
           </div>
-          <h2 className="text-4xl md:text-6xl font-black font-serif mb-6 tracking-tight leading-tight">
-            Trusted by
-            <br />
-            <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-primary via-indigo-500 to-primary">
-              {" "}
-              Pakistan&apos;s Finest
+          <h2 className="text-5xl md:text-6xl font-black font-serif mb-6 tracking-tight leading-tight">
+            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent">
+              Trusted by Pakistan&apos;s Finest
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Delivering excellence in legal representation and consultancy across
-            private and corporate sectors.
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Delivering excellence in legal representation and consultancy across private and corporate sectors.
           </p>
         </div>
 
@@ -107,28 +105,31 @@ export default function Testimonials() {
                 key={index}
                 className="min-w-[85%] md:min-w-[45%] lg:min-w-[31%] snap-center"
               >
-                <div className="h-full p-2 group/card perspective-1000">
-                  <Card className="border border-white/40 dark:border-white/10 bg-white/60 dark:bg-black/40 backdrop-blur-xl hover:bg-white/90 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full relative overflow-hidden rounded-3xl">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/40 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                <div className="h-full p-2 group/card">
+                  <Card className="border-2 border-white/60 dark:border-white/20 bg-gradient-to-br from-white/90 to-white/70 dark:from-gray-900/90 dark:to-gray-900/70 backdrop-blur-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-2 h-full relative overflow-hidden rounded-3xl">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-bl-full" />
+                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-rose-400/20 to-orange-400/20 rounded-tr-full" />
 
                     <CardContent className="pt-10 px-8 pb-8 flex flex-col h-full relative z-10">
-                      <svg className="w-12 h-12 text-primary/20 mb-6 group-hover/card:text-primary/40 transition-colors transform group-hover/card:scale-110 duration-500" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
-                      </svg>
+                      <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 shadow-xl">
+                        <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                        </svg>
+                      </div>
 
-                      <p className="text-foreground/80 italic mb-8 flex-grow leading-loose text-lg font-medium">
+                      <p className="text-gray-700 dark:text-gray-200 italic mb-8 flex-grow leading-relaxed text-lg font-medium">
                         &quot;{testimonial.quote}&quot;
                       </p>
 
-                      <div className="flex items-center gap-4 border-t border-primary/10 pt-6 mt-auto">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                      <div className="flex items-center gap-4 border-t-2 border-purple-100 dark:border-purple-900 pt-6 mt-auto">
+                        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600 flex items-center justify-center text-white font-bold text-xl shadow-lg ring-4 ring-purple-100 dark:ring-purple-900">
                           {testimonial.author.charAt(0)}
                         </div>
                         <div>
-                          <p className="font-bold text-foreground text-base group-hover/card:text-primary transition-colors">
+                          <p className="font-bold text-gray-900 dark:text-white text-base">
                             {testimonial.author}
                           </p>
-                          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                          <p className="text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider">
                             {testimonial.title}
                           </p>
                         </div>

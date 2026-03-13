@@ -5,7 +5,7 @@ import Experience from "@/components/experience";
 import Footer from "@/components/footer";
 import ScrollProgress from "@/components/scroll-progress";
 import Testimonials from "@/components/testimonials";
-import CTA from "@/components/cta";
+import ContactForm from "@/components/contact-form";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <PracticeAreas />
       <Experience />
       <Testimonials />
-      <CTA />
+      <ContactForm />
       <Footer />
     </main>
   );

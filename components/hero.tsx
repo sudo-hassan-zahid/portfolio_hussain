@@ -80,33 +80,33 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative mx-auto lg:ml-auto w-full max-w-[500px] aspect-[4/5] lg:aspect-[4/5] animate-fade-in animation-delay-200 group perspective-1000">
-            <div className="relative h-full w-full rounded-3xl overflow-hidden border border-white/20 shadow-2xl transition-transform duration-700 ease-out group-hover:rotate-y-2 group-hover:rotate-x-2">
+          <div className="relative mx-auto lg:ml-auto w-full max-w-[500px] aspect-[4/5] lg:aspect-[4/5] animate-fade-in animation-delay-200 group">
+            <div className="relative h-full w-full rounded-3xl overflow-hidden border-2 border-white/30 shadow-2xl shadow-primary/20 hover:shadow-primary/30 transition-all duration-500">
               <Image
                 src="/images/lawyer/law1.webp"
                 alt="Hussain Zahid - Legal Expert"
                 fill
-                className="object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
                 priority
                 fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, 500px"
-                placeholder="blur"
-                blurDataURL="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAQAcJaQAA3AA/v3AgAA="
-                quality={90}
+                quality={100}
+                unoptimized
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 mix-blend-overlay" />
             </div>
 
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-secondary to-accent rounded-full blur-2xl opacity-60" />
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-primary to-blue-500 rounded-full blur-2xl opacity-60 animation-delay-1000" />
+            <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-amber-400/30 via-orange-500/30 to-red-500/30 rounded-full blur-3xl" />
+            <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-gradient-to-tr from-blue-600/30 via-indigo-600/30 to-purple-600/30 rounded-full blur-3xl animation-delay-1000" />
 
-            <div className="absolute bottom-8 right-8 left-8 p-6 glass rounded-2xl text-white transform transition-transform duration-500 hover:scale-105 border-l-4 border-l-secondary">
-              <p className="font-serif font-medium text-lg leading-snug">
+            <div className="absolute bottom-8 right-8 left-8 p-6 bg-gradient-to-br from-white/90 via-white/85 to-white/80 dark:from-gray-900/90 dark:via-gray-900/85 dark:to-gray-900/80 backdrop-blur-xl rounded-2xl border border-white/40 dark:border-white/20 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl shadow-lg">
+              <p className="font-serif font-semibold text-lg leading-snug text-gray-900 dark:text-white">
                 &quot;Justice delayed is justice denied.&quot;
               </p>
               <div className="flex items-center gap-2 mt-3">
-                <div className="h-[1px] w-8 bg-secondary/80"></div>
-                <p className="text-xs uppercase tracking-widest opacity-90 font-semibold">
+                <div className="h-[2px] w-10 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></div>
+                <p className="text-xs uppercase tracking-widest font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">
                   Our Philosophy
                 </p>
               </div>
