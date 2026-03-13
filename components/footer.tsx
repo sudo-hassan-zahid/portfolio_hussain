@@ -21,7 +21,7 @@ const Footer = memo(function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="#practice"
+                  href="#practice-areas"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition"
                 >
                   Practice Areas
@@ -54,9 +54,12 @@ const Footer = memo(function Footer() {
             <p className="text-sm text-primary-foreground/80">
               Rawalpindi, Pakistan
             </p>
-            <button className="mt-4 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-all border border-primary-foreground/30 hover:border-primary-foreground px-4 py-2 rounded-lg hover:bg-primary-foreground/10">
+            <Link
+              href="#contact"
+              className="mt-4 inline-block text-sm text-primary-foreground/80 hover:text-primary-foreground transition-all border border-primary-foreground/30 hover:border-primary-foreground px-4 py-2 rounded-lg hover:bg-primary-foreground/10"
+            >
               Schedule Consultation
-            </button>
+            </Link>
           </div>
         </div>
 

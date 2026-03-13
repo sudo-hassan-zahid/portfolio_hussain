@@ -94,7 +94,7 @@ export default function ContactForm() {
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
       // Here you would typically send the data to your backend
-      console.log("Form submitted:", formData);
+      // TODO: Implement actual form submission to backend
 
       setSubmitStatus("success");
       setFormData({
@@ -106,7 +106,7 @@ export default function ContactForm() {
       });
       setErrors({});
     } catch (error) {
-      console.error("Submission error:", error);
+      // Handle error silently - user will see error message
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -169,6 +169,10 @@ export default function ContactForm() {
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
+                          required
+                          aria-required="true"
+                          aria-invalid={errors.name ? "true" : "false"}
+                          aria-describedby={errors.name ? "name-error" : undefined}
                           className={`w-full px-4 py-3 rounded-xl border-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all focus:outline-none focus:ring-4 ${
                             errors.name
                               ? "border-red-500 focus:ring-red-500/20"
@@ -177,7 +181,7 @@ export default function ContactForm() {
                           placeholder="John Doe"
                         />
                         {errors.name && (
-                          <p className="text-sm text-red-500 font-medium mt-1">{errors.name}</p>
+                          <p id="name-error" role="alert" className="text-sm text-red-500 font-medium mt-1">{errors.name}</p>
                         )}
                       </div>
 
@@ -194,6 +198,10 @@ export default function ContactForm() {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
+                          required
+                          aria-required="true"
+                          aria-invalid={errors.email ? "true" : "false"}
+                          aria-describedby={errors.email ? "email-error" : undefined}
                           className={`w-full px-4 py-3 rounded-xl border-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all focus:outline-none focus:ring-4 ${
                             errors.email
                               ? "border-red-500 focus:ring-red-500/20"
@@ -202,7 +210,7 @@ export default function ContactForm() {
                           placeholder="john@example.com"
                         />
                         {errors.email && (
-                          <p className="text-sm text-red-500 font-medium mt-1">{errors.email}</p>
+                          <p id="email-error" role="alert" className="text-sm text-red-500 font-medium mt-1">{errors.email}</p>
                         )}
                       </div>
                     </div>
@@ -221,6 +229,10 @@ export default function ContactForm() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
+                          required
+                          aria-required="true"
+                          aria-invalid={errors.phone ? "true" : "false"}
+                          aria-describedby={errors.phone ? "phone-error" : undefined}
                           className={`w-full px-4 py-3 rounded-xl border-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all focus:outline-none focus:ring-4 ${
                             errors.phone
                               ? "border-red-500 focus:ring-red-500/20"
@@ -229,7 +241,7 @@ export default function ContactForm() {
                           placeholder="+92 300 1234567"
                         />
                         {errors.phone && (
-                          <p className="text-sm text-red-500 font-medium mt-1">{errors.phone}</p>
+                          <p id="phone-error" role="alert" className="text-sm text-red-500 font-medium mt-1">{errors.phone}</p>
                         )}
                       </div>
 
@@ -245,6 +257,10 @@ export default function ContactForm() {
                           name="caseType"
                           value={formData.caseType}
                           onChange={handleChange}
+                          required
+                          aria-required="true"
+                          aria-invalid={errors.caseType ? "true" : "false"}
+                          aria-describedby={errors.caseType ? "caseType-error" : undefined}
                           className={`w-full px-4 py-3 rounded-xl border-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all focus:outline-none focus:ring-4 ${
                             errors.caseType
                               ? "border-red-500 focus:ring-red-500/20"
@@ -259,7 +275,7 @@ export default function ContactForm() {
                           ))}
                         </select>
                         {errors.caseType && (
-                          <p className="text-sm text-red-500 font-medium mt-1">{errors.caseType}</p>
+                          <p id="caseType-error" role="alert" className="text-sm text-red-500 font-medium mt-1">{errors.caseType}</p>
                         )}
                       </div>
                     </div>
@@ -276,6 +292,10 @@ export default function ContactForm() {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
+                        required
+                        aria-required="true"
+                        aria-invalid={errors.message ? "true" : "false"}
+                        aria-describedby={errors.message ? "message-error" : undefined}
                         rows={6}
                         className={`w-full px-4 py-3 rounded-xl border-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all focus:outline-none focus:ring-4 resize-none ${
                           errors.message
@@ -285,12 +305,12 @@ export default function ContactForm() {
                         placeholder="Please provide details about your legal matter..."
                       />
                       {errors.message && (
-                        <p className="text-sm text-red-500 font-medium mt-1">{errors.message}</p>
+                        <p id="message-error" role="alert" className="text-sm text-red-500 font-medium mt-1">{errors.message}</p>
                       )}
                     </div>
 
                     {submitStatus === "success" && (
-                      <div className="p-4 rounded-xl bg-green-50 dark:bg-green-950 border-2 border-green-200 dark:border-green-800">
+                      <div role="alert" aria-live="polite" className="p-4 rounded-xl bg-green-50 dark:bg-green-950 border-2 border-green-200 dark:border-green-800">
                         <p className="text-green-800 dark:text-green-200 font-semibold text-center">
                           Thank you! Your consultation request has been submitted. We will contact you within 24 hours.
                         </p>
@@ -298,7 +318,7 @@ export default function ContactForm() {
                     )}
 
                     {submitStatus === "error" && (
-                      <div className="p-4 rounded-xl bg-red-50 dark:bg-red-950 border-2 border-red-200 dark:border-red-800">
+                      <div role="alert" aria-live="assertive" className="p-4 rounded-xl bg-red-50 dark:bg-red-950 border-2 border-red-200 dark:border-red-800">
                         <p className="text-red-800 dark:text-red-200 font-semibold text-center">
                           Something went wrong. Please try again or contact us directly.
                         </p>
@@ -312,7 +332,7 @@ export default function ContactForm() {
                     >
                       {isSubmitting ? (
                         <span className="flex items-center justify-center gap-3">
-                          <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                          <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24" aria-hidden="true">
                             <circle
                               className="opacity-25"
                               cx="12"
@@ -350,7 +370,7 @@ export default function ContactForm() {
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
-                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                       </div>
@@ -363,7 +383,7 @@ export default function ContactForm() {
 
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
-                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
@@ -376,7 +396,7 @@ export default function ContactForm() {
 
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
-                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
@@ -390,7 +410,7 @@ export default function ContactForm() {
 
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
-                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
@@ -409,25 +429,25 @@ export default function ContactForm() {
                   <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Why Choose Us?</h3>
                   <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                     <li className="flex items-start gap-3">
-                      <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>8+ years of legal expertise</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>500+ successful cases</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>Free initial consultation</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>24-hour response time</span>
