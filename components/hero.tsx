@@ -26,7 +26,7 @@ export default function Hero() {
                 </span>
               </h1>
 
-              <p className="text-xl text-muted-foreground max-w-[600px] leading-relaxed">
+              <p className="text-xl font-sans text-muted-foreground max-w-[600px] leading-relaxed">
                 Shariah & Law Specialist | Litigation & Legal Consultancy based
                 in{" "}
                 <span className="font-semibold text-foreground border-b-2 border-primary/30">
@@ -60,20 +60,20 @@ export default function Hero() {
 
             <div className="pt-8 border-t border-border/60 grid grid-cols-3 gap-6 text-center">
               <div className="glass p-4 rounded-2xl border-none">
-                <p className="text-3xl font-bold text-foreground">500+</p>
-                <p className="text-sm font-medium text-muted-foreground mt-1">
+                <p className="text-3xl font-bold font-serif text-foreground">500+</p>
+                <p className="text-sm font-medium font-sans text-muted-foreground mt-1">
                   Cases Won
                 </p>
               </div>
               <div className="glass p-4 rounded-2xl border-none">
-                <p className="text-3xl font-bold text-foreground">8+</p>
-                <p className="text-sm font-medium text-muted-foreground mt-1">
+                <p className="text-3xl font-bold font-serif text-foreground">8+</p>
+                <p className="text-sm font-medium font-sans text-muted-foreground mt-1">
                   Years Exp.
                 </p>
               </div>
               <div className="glass p-4 rounded-2xl border-none">
-                <p className="text-3xl font-bold text-foreground">100%</p>
-                <p className="text-sm font-medium text-muted-foreground mt-1">
+                <p className="text-3xl font-bold font-serif text-foreground">100%</p>
+                <p className="text-sm font-medium font-sans text-muted-foreground mt-1">
                   Success Rate
                 </p>
               </div>

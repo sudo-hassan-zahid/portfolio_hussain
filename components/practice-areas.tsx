@@ -57,7 +57,7 @@ export default function PracticeAreas() {
               Specialized Legal Expertise
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p className="text-xl font-sans text-gray-600 dark:text-gray-300 leading-relaxed">
             Comprehensive legal services backed by years of experience and a proven track record of success.
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function PracticeAreas() {
                 </CardHeader>
 
                 <CardContent className="relative z-10 px-8 pb-8">
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
+                  <p className="font-sans text-gray-700 dark:text-gray-300 leading-relaxed text-base">
                     {practice.description}
                   </p>
                 </CardContent>

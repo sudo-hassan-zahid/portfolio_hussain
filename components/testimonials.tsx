@@ -133,7 +133,7 @@ export default function Testimonials() {
               Trusted by Pakistan&apos;s Finest
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl font-sans text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Delivering excellence in legal representation and consultancy across private and corporate sectors.
           </p>
         </div>
@@ -157,30 +157,44 @@ export default function Testimonials() {
                 className="min-w-[85%] md:min-w-[45%] lg:min-w-[31%] snap-center"
               >
                 <div className="h-full p-2 group/card">
-                  <Card className="border-2 border-white/60 dark:border-white/20 bg-gradient-to-br from-white/90 to-white/70 dark:from-gray-900/90 dark:to-gray-900/70 backdrop-blur-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-2 h-full relative overflow-hidden rounded-3xl">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-bl-full" />
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-rose-400/20 to-orange-400/20 rounded-tr-full" />
+                  <Card className="border-2 border-white/60 dark:border-white/20 bg-gradient-to-br from-white/95 to-white/80 dark:from-gray-900/95 dark:to-gray-900/80 backdrop-blur-xl hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] h-full relative overflow-hidden rounded-3xl group-hover/card:border-purple-300 dark:group-hover/card:border-purple-700">
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-400/20 via-pink-400/20 to-rose-400/20 rounded-bl-full opacity-50 group-hover/card:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-rose-400/20 via-orange-400/20 to-amber-400/20 rounded-tr-full opacity-50 group-hover/card:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-purple-500/5 to-pink-500/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
 
                     <CardContent className="pt-10 px-8 pb-8 flex flex-col h-full relative z-10">
-                      <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 shadow-xl">
-                        <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
-                        </svg>
+                      <div className="flex items-start justify-between mb-6">
+                        <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-xl transform -rotate-6 group-hover/card:rotate-0 transition-transform duration-500">
+                          <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                          </svg>
+                        </div>
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <svg key={i} className="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 24 24">
+                              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                          ))}
+                        </div>
                       </div>
 
-                      <p className="text-gray-700 dark:text-gray-200 italic mb-8 flex-grow leading-relaxed text-lg font-medium">
+                      <p className="text-gray-700 dark:text-gray-200 font-sans mb-8 flex-grow leading-relaxed text-lg">
                         &quot;{testimonial.quote}&quot;
                       </p>
 
-                      <div className="flex items-center gap-4 border-t-2 border-purple-100 dark:border-purple-900 pt-6 mt-auto">
-                        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600 flex items-center justify-center text-white font-bold text-xl shadow-lg ring-4 ring-purple-100 dark:ring-purple-900">
-                          {testimonial.author.charAt(0)}
+                      <div className="flex items-center gap-4 border-t-2 border-gradient-to-r from-purple-200 via-pink-200 to-rose-200 dark:from-purple-900 dark:via-pink-900 dark:to-rose-900 pt-6 mt-auto relative">
+                        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500"></div>
+                        <div className="relative">
+                          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600 flex items-center justify-center text-white font-bold text-xl shadow-lg ring-4 ring-white dark:ring-gray-900">
+                            {testimonial.author.charAt(0)}
+                          </div>
+                          <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white dark:border-gray-900"></div>
                         </div>
                         <div>
-                          <p className="font-bold text-gray-900 dark:text-white text-base">
+                          <p className="font-bold font-sans text-gray-900 dark:text-white text-base">
                             {testimonial.author}
                           </p>
-                          <p className="text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider">
+                          <p className="text-xs font-semibold font-sans text-purple-600 dark:text-purple-400 uppercase tracking-wider">
                             {testimonial.title}
                           </p>
                         </div>
