@@ -34,31 +34,6 @@ const nextConfig: NextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error'] } : false,
   },
-
-  headers: async () => [
-    {
-      source: "/:path*",
-      headers: [
-        {
-          key: "X-DNS-Prefetch-Control",
-          value: "on",
-        },
-        {
-          key: "X-Frame-Options",
-          value: "SAMEORIGIN",
-        },
-      ],
-    },
-    {
-      source: "/images/:path*",
-      headers: [
-        {
-          key: "Cache-Control",
-          value: "public, max-age=31536000, immutable",
-        },
-      ],
-    },
-  ],
 };
 
 export default nextConfig;

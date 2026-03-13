@@ -8,18 +8,12 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  preload: true,
-  weight: ["400", "500", "600", "700"],
-  fallback: ["system-ui", "-apple-system", "sans-serif"],
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   display: "swap",
-  preload: false,
-  weight: ["700"],
-  fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
 export function generateViewport(): Viewport {
