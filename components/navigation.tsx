@@ -7,19 +7,19 @@ const Navigation = memo(function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b-2 border-white/20 bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl shadow-lg">
+    <nav className="sticky top-0 z-50 w-full border-b border-[#D2D2D7] bg-white/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-2xl group-hover:shadow-purple-500/50">
+            <div className="w-9 h-9 bg-[#1D1D1F] rounded-lg flex items-center justify-center text-white font-bold text-sm tracking-wide transition-opacity duration-200 group-hover:opacity-70">
               HZ
             </div>
-            <span className="font-bold text-gray-900 dark:text-white text-lg hidden sm:inline group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+            <span className="font-semibold text-[#1D1D1F] text-sm hidden sm:inline tracking-tight transition-opacity duration-200 group-hover:opacity-60">
               Hussain Zahid
             </span>
           </Link>
 
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex items-center gap-8">
             {[
               { name: "Practice Areas", href: "#practice-areas" },
               { name: "Experience", href: "#experience" },
@@ -28,25 +28,25 @@ const Navigation = memo(function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="relative text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 group"
+                className="relative text-sm font-medium text-[#6E6E73] hover:text-[#1D1D1F] transition-colors duration-200 group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-0.5 left-0 w-0 h-[1.5px] bg-[#8B6914] group-hover:w-full transition-all duration-300 ease-out"></span>
               </Link>
             ))}
           </div>
 
           <button
-            className="md:hidden p-2 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 text-white hover:shadow-xl hover:shadow-purple-500/50 transition-all"
+            className="md:hidden p-2 rounded-md text-[#1D1D1F] hover:bg-[#F5F5F7] transition-colors duration-200"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
@@ -54,8 +54,8 @@ const Navigation = memo(function Navigation() {
         </div>
 
         {isOpen && (
-          <div className="md:hidden border-t-2 border-purple-100 dark:border-purple-900 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl">
-            <div className="flex flex-col gap-2 p-4">
+          <div className="md:hidden border-t border-[#D2D2D7] bg-white">
+            <div className="flex flex-col py-3">
               {[
                 { name: "Practice Areas", href: "#practice-areas" },
                 { name: "Experience", href: "#experience" },
@@ -64,7 +64,7 @@ const Navigation = memo(function Navigation() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="px-5 py-3.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-600 hover:text-white rounded-xl transition-all shadow-sm hover:shadow-lg"
+                  className="px-4 py-3 text-sm font-medium text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-[#F5F5F7] transition-colors duration-150"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

@@ -3,26 +3,28 @@ import { memo } from "react";
 
 const Footer = memo(function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
+    <footer className="bg-[#1D1D1F] py-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-12 mb-8">
+        <div className="grid md:grid-cols-3 gap-12 mb-10">
+
+          {/* Brand */}
           <div>
-            <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center font-bold mb-4 text-sm">
+            <div className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center font-bold text-white text-sm tracking-wide mb-5">
               HZ
             </div>
-            <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Specialized litigation attorney and legal consultant based in
-              Rawalpindi. Dedicated to providing excellent legal representation.
+            <p className="type-body text-white/40 leading-relaxed max-w-[240px]">
+              Specialized litigation attorney and legal consultant based in Rawalpindi. Dedicated to providing excellent legal representation.
             </p>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-xs font-semibold text-white/30 uppercase tracking-widest mb-5">Quick Links</h3>
+            <ul className="space-y-3">
               <li>
                 <Link
                   href="#practice-areas"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition"
+                  className="type-body text-white/50 hover:text-white transition-colors duration-200"
                 >
                   Practice Areas
                 </Link>
@@ -30,7 +32,7 @@ const Footer = memo(function Footer() {
               <li>
                 <Link
                   href="#experience"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition"
+                  className="type-body text-white/50 hover:text-white transition-colors duration-200"
                 >
                   Experience
                 </Link>
@@ -38,7 +40,7 @@ const Footer = memo(function Footer() {
               <li>
                 <Link
                   href="#contact"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition"
+                  className="type-body text-white/50 hover:text-white transition-colors duration-200"
                 >
                   Contact
                 </Link>
@@ -46,27 +48,24 @@ const Footer = memo(function Footer() {
             </ul>
           </div>
 
+          {/* Get In Touch */}
           <div>
-            <h3 className="font-semibold mb-4">Get In Touch</h3>
-            <p className="text-sm text-primary-foreground/80 mb-2">
-              Serving RWP/ISB
-            </p>
-            <p className="text-sm text-primary-foreground/80">
-              Rawalpindi, Pakistan
-            </p>
+            <h3 className="text-xs font-semibold text-white/30 uppercase tracking-widest mb-5">Get In Touch</h3>
+            <p className="text-sm text-white/40 mb-1">Serving RWP/ISB</p>
+            <p className="text-sm text-white/40 mb-5">Rawalpindi, Pakistan</p>
             <Link
               href="#contact"
-              className="mt-4 inline-block text-sm text-primary-foreground/80 hover:text-primary-foreground transition-all border border-primary-foreground/30 hover:border-primary-foreground px-4 py-2 rounded-lg hover:bg-primary-foreground/10"
+              className="inline-block text-sm font-medium text-white/60 hover:text-white transition-colors duration-200 border border-white/20 hover:border-white/40 px-4 py-2 rounded-lg"
             >
               Schedule Consultation
             </Link>
           </div>
+
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8">
-          <p className="text-center text-sm text-primary-foreground/70">
-            © 2025 Hussain Zahid. All rights reserved. | Legal Services in
-            RWP/ISB
+        <div className="border-t border-white/[0.08] pt-8">
+          <p className="text-center text-xs text-white/25">
+            &copy; 2025 Hussain Zahid. All rights reserved. | Legal Services in RWP/ISB
           </p>
         </div>
       </div>
