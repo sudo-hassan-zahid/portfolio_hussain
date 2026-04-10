@@ -63,10 +63,9 @@ const Footer = memo(function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8">
-          <p className="text-center text-sm text-primary-foreground/70">
-            © 2025 Hussain Zahid. All rights reserved. | Legal Services in
-            RWP/ISB
+        <div className="border-t border-white/[0.08] pt-8">
+          <p className="text-center text-xs text-white/25">
+            &copy; {new Date().getFullYear()} Hussain Zahid. All rights reserved. | Legal Services in RWP/ISB
           </p>
         </div>
       </div>
