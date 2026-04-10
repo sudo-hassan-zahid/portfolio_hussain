@@ -4,46 +4,84 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden bg-background">
-      <div className="bg-blob w-[40rem] h-[40rem] bg-primary/20 top-[-10rem] right-[-10rem]" />
-      <div className="bg-blob w-[35rem] h-[35rem] bg-secondary/30 bottom-[-5rem] left-[-8rem] animation-delay-2000" />
-      <div className="bg-blob w-[30rem] h-[30rem] bg-accent/20 top-[40%] right-[20%] animation-delay-4000 opacity-20" />
+    <section className="relative min-h-[90vh] flex items-center pt-20 pb-20 overflow-hidden" style={{ background: 'radial-gradient(ellipse 70% 60% at 30% 40%, rgba(139,105,20,0.06) 0%, #ffffff 65%)' }}>
+      {/* Extremely subtle warm tint blob — monochrome, near-invisible */}
+      <div
+        className="bg-blob w-[50rem] h-[50rem] top-[-12rem] right-[-14rem] opacity-[0.04]"
+        style={{ backgroundColor: '#8B6914' }}
+      />
+      <div
+        className="bg-blob w-[40rem] h-[40rem] bottom-[-8rem] left-[-10rem] opacity-[0.03] animation-delay-2000"
+        style={{ backgroundColor: '#1D1D1F' }}
+      />
 
       <div className="container px-4 md:px-6 mx-auto z-10">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 items-center">
-          <div className="flex flex-col justify-center space-y-8 animate-fade-in">
-            <div className="space-y-4">
-              <div className="inline-flex items-center rounded-full border border-primary/20 bg-white/40 dark:bg-white/5 backdrop-blur-md px-4 py-1.5 text-sm font-semibold text-primary shadow-sm hover:bg-white/60 transition-colors cursor-default">
-                <span className="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse" />
-                Pakistan&apos;s Legal Expert
+        <div className="grid gap-16 lg:grid-cols-2 lg:gap-20 items-center">
+
+          {/* Left column — photo (desktop: left, mobile: second) */}
+          <div className="relative mx-auto lg:mr-auto w-full max-w-[480px] aspect-[4/5] animate-fade-in animation-delay-200 group order-2 lg:order-1">
+            <div className="relative h-full w-full rounded-2xl overflow-hidden border border-[#D2D2D7] shadow-[0_8px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.14)] transition-shadow duration-500">
+              <Image
+                src="/images/lawyer/law1.webp"
+                alt="Hussain Zahid - Legal Expert"
+                fill
+                className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                priority
+                fetchPriority="high"
+                sizes="(max-width: 768px) 100vw, 480px"
+                quality={100}
+                unoptimized
+              />
+              {/* Subtle bottom scrim for quote readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+            </div>
+
+            {/* Quote card — clean white, gold accent line */}
+            <div className="absolute bottom-6 right-6 left-6 p-5 bg-white/95 backdrop-blur-sm rounded-xl border border-[#D2D2D7] shadow-[0_4px_20px_rgba(0,0,0,0.10)]">
+              <p className="font-serif font-semibold text-[15px] leading-snug text-[#1D1D1F]">
+                &quot;Justice delayed is justice denied.&quot;
+              </p>
+              <div className="flex items-center gap-2 mt-3">
+                <div className="h-[1.5px] w-8 rounded-full" style={{ backgroundColor: '#8B6914' }}></div>
+                <p className="label-eyebrow">Our Philosophy</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right column — text (desktop: right, mobile: first) */}
+          <div className="flex flex-col justify-center space-y-10 animate-fade-in order-1 lg:order-2">
+            <div className="space-y-6">
+              {/* Eyebrow */}
+              <div className="inline-flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#8B6914]" />
+                <span className="label-eyebrow">Pakistan&apos;s Legal Expert</span>
               </div>
 
-              <h1 className="text-5xl font-bold tracking-tight sm:text-6xl xl:text-7xl font-serif leading-[1.1]">
-                <span className="text-foreground">Expert Advocacy,</span>
+              {/* Display headline */}
+              <h1
+                className="type-display text-[#1D1D1F]"
+              >
+                Expert Advocacy,
                 <br />
-                <span className="text-gradient from-primary via-blue-700 to-accent bg-clip-text text-transparent bg-gradient-to-r">
-                  Hussain Zahid
-                </span>
+                <span style={{ color: '#8B6914' }}>Hussain Zahid</span>
               </h1>
 
-              <p className="text-xl font-sans text-muted-foreground max-w-[600px] leading-relaxed">
-                Shariah & Law Specialist | Litigation & Legal Consultancy based
-                in{" "}
-                <span className="font-semibold text-foreground border-b-2 border-primary/30">
-                  Rawalpindi
-                </span>{" "}
-                &{" "}
-                <span className="font-semibold text-foreground border-b-2 border-primary/30">
-                  Islamabad
-                </span>
-                .
+              <p
+                className="type-body-lg font-sans text-[#6E6E73] max-w-[480px]"
+              >
+                Shariah &amp; Law Specialist — Litigation &amp; Legal Consultancy
+                based in{" "}
+                <span className="font-medium text-[#1D1D1F]">Rawalpindi</span>{" "}
+                &amp;{" "}
+                <span className="font-medium text-[#1D1D1F]">Islamabad</span>.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-5">
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="text-base h-14 px-8 rounded-full shadow-xl shadow-primary/20 hover:shadow-primary/40 transition-all hover:scale-105 active:scale-95 bg-gradient-to-r from-primary to-blue-700 border-none"
+                className="text-[13px] h-11 px-7 rounded-full bg-[#1D1D1F] text-white hover:bg-[#2D2D2F] transition-colors duration-200 shadow-none border-none font-medium tracking-[0.01em]"
                 asChild
               >
                 <Link href="#contact">Schedule Consultation</Link>
@@ -51,67 +89,30 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="text-base h-14 px-8 rounded-full border-2 bg-transparent hover:bg-secondary/10 hover:border-secondary transition-all"
+                className="text-[13px] h-11 px-7 rounded-full border border-[#D2D2D7] text-[#1D1D1F] bg-transparent hover:bg-[#F5F5F7] transition-colors duration-200 shadow-none font-medium tracking-[0.01em]"
                 asChild
               >
                 <Link href="#experience">View Experience</Link>
               </Button>
             </div>
 
-            <div className="pt-8 border-t border-border/60 grid grid-cols-3 gap-6 text-center">
-              <div className="glass p-4 rounded-2xl border-none">
-                <p className="text-3xl font-bold font-serif text-foreground">500+</p>
-                <p className="text-sm font-medium font-sans text-muted-foreground mt-1">
-                  Cases Won
-                </p>
+            {/* Stats */}
+            <div className="pt-8 border-t border-[#D2D2D7] grid grid-cols-3 gap-6">
+              <div>
+                <p className="type-stat font-serif text-[#1D1D1F]">500+</p>
+                <p className="font-sans text-[#6E6E73] mt-2 uppercase tracking-[0.08em] text-[11px] font-semibold">Cases Won</p>
               </div>
-              <div className="glass p-4 rounded-2xl border-none">
-                <p className="text-3xl font-bold font-serif text-foreground">8+</p>
-                <p className="text-sm font-medium font-sans text-muted-foreground mt-1">
-                  Years Exp.
-                </p>
+              <div>
+                <p className="type-stat font-serif text-[#1D1D1F]">8+</p>
+                <p className="font-sans text-[#6E6E73] mt-2 uppercase tracking-[0.08em] text-[11px] font-semibold">Years Exp.</p>
               </div>
-              <div className="glass p-4 rounded-2xl border-none">
-                <p className="text-3xl font-bold font-serif text-foreground">100%</p>
-                <p className="text-sm font-medium font-sans text-muted-foreground mt-1">
-                  Success Rate
-                </p>
+              <div>
+                <p className="type-stat font-serif text-[#1D1D1F]">100%</p>
+                <p className="font-sans text-[#6E6E73] mt-2 uppercase tracking-[0.08em] text-[11px] font-semibold">Commitment</p>
               </div>
             </div>
           </div>
 
-          <div className="relative mx-auto lg:ml-auto w-full max-w-[500px] aspect-[4/5] lg:aspect-[4/5] animate-fade-in animation-delay-200 group">
-            <div className="relative h-full w-full rounded-3xl overflow-hidden border-2 border-white/30 shadow-2xl shadow-primary/20 hover:shadow-primary/30 transition-all duration-500">
-              <Image
-                src="/images/lawyer/law1.webp"
-                alt="Hussain Zahid - Legal Expert"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                priority
-                fetchPriority="high"
-                sizes="(max-width: 768px) 100vw, 500px"
-                quality={100}
-                unoptimized
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 mix-blend-overlay" />
-            </div>
-
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-amber-400/30 via-orange-500/30 to-red-500/30 rounded-full blur-3xl" />
-            <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-gradient-to-tr from-blue-600/30 via-indigo-600/30 to-purple-600/30 rounded-full blur-3xl animation-delay-1000" />
-
-            <div className="absolute bottom-8 right-8 left-8 p-6 bg-gradient-to-br from-white/90 via-white/85 to-white/80 dark:from-gray-900/90 dark:via-gray-900/85 dark:to-gray-900/80 backdrop-blur-xl rounded-2xl border border-white/40 dark:border-white/20 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl shadow-lg">
-              <p className="font-serif font-semibold text-lg leading-snug text-gray-900 dark:text-white">
-                &quot;Justice delayed is justice denied.&quot;
-              </p>
-              <div className="flex items-center gap-2 mt-3">
-                <div className="h-[2px] w-10 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></div>
-                <p className="text-xs uppercase tracking-widest font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">
-                  Our Philosophy
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

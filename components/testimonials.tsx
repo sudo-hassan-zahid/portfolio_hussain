@@ -113,31 +113,36 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-32 relative overflow-hidden bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 dark:from-purple-950 dark:via-pink-950 dark:to-rose-950">
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full blur-3xl animate-blob-float"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-rose-400 to-orange-500 rounded-full blur-3xl animate-blob-float animation-delay-2000"></div>
-      </div>
+    <section className="py-32 relative overflow-hidden bg-[#1D1D1F]">
+      {/* Subtle warm glow — very faint, monochrome */}
+      <div
+        className="bg-blob w-[50rem] h-[50rem] top-[-8rem] left-[10%] opacity-[0.06]"
+        style={{ backgroundColor: '#8B6914' }}
+      />
 
       <div className="container px-4 sm:px-6 mx-auto relative z-10">
-        <div className="text-center mb-16 max-w-4xl mx-auto">
-          <div className="inline-flex items-center justify-center space-x-1.5 mb-6">
+
+        {/* Section header */}
+        <div className="text-center mb-16 max-w-2xl mx-auto">
+          {/* Gold stars */}
+          <div className="inline-flex items-center justify-center space-x-1 mb-6">
             {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-8 h-8 text-amber-400 fill-amber-400 drop-shadow-lg" viewBox="0 0 24 24">
+              <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 24 24" style={{ color: '#8B6914' }}>
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
             ))}
           </div>
-          <h2 className="text-5xl md:text-6xl font-black font-serif mb-6 tracking-tight leading-tight">
-            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent">
-              Trusted by Pakistan&apos;s Finest
-            </span>
+          <h2
+            className="type-section font-serif text-white mb-5"
+          >
+            Trusted by Pakistan&apos;s Finest
           </h2>
-          <p className="text-xl font-sans text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="type-body-lg font-sans text-white/50 max-w-xl mx-auto">
             Delivering excellence in legal representation and consultancy across private and corporate sectors.
           </p>
         </div>
 
+        {/* Carousel */}
         <div
           className="reveal-on-scroll relative group"
           onMouseEnter={() => setIsPaused(true)}
@@ -156,45 +161,47 @@ export default function Testimonials() {
                 key={index}
                 className="min-w-[85%] md:min-w-[45%] lg:min-w-[31%] snap-center"
               >
-                <div className="h-full p-2 group/card">
-                  <Card className="border-2 border-white/60 dark:border-white/20 bg-gradient-to-br from-white/95 to-white/80 dark:from-gray-900/95 dark:to-gray-900/80 backdrop-blur-xl hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] h-full relative overflow-hidden rounded-3xl group-hover/card:border-purple-300 dark:group-hover/card:border-purple-700">
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-400/20 via-pink-400/20 to-rose-400/20 rounded-bl-full opacity-50 group-hover/card:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-rose-400/20 via-orange-400/20 to-amber-400/20 rounded-tr-full opacity-50 group-hover/card:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-purple-500/5 to-pink-500/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
+                <div className="h-full p-1.5 group/card">
+                  <Card className="border border-white/[0.08] bg-white/[0.05] hover:bg-white/[0.08] backdrop-blur-sm transition-all duration-400 hover:-translate-y-1 h-full relative overflow-hidden rounded-2xl shadow-none">
 
-                    <CardContent className="pt-10 px-8 pb-8 flex flex-col h-full relative z-10">
+                    <CardContent className="pt-8 px-7 pb-7 flex flex-col h-full relative z-10">
+
+                      {/* Quote icon + Stars */}
                       <div className="flex items-start justify-between mb-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-xl transform -rotate-6 group-hover/card:rotate-0 transition-transform duration-500">
-                          <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                        <div
+                          className="w-10 h-10 rounded-lg flex items-center justify-center"
+                          style={{ backgroundColor: 'rgba(139, 105, 20, 0.2)' }}
+                        >
+                          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#8B6914' }}>
                             <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
                           </svg>
                         </div>
-                        <div className="flex gap-1">
+                        <div className="flex gap-0.5">
                           {[...Array(5)].map((_, i) => (
-                            <svg key={i} className="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 24 24">
+                            <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 24 24" style={{ color: '#8B6914' }}>
                               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                             </svg>
                           ))}
                         </div>
                       </div>
 
-                      <p className="text-gray-700 dark:text-gray-200 font-sans mb-8 flex-grow leading-relaxed text-lg">
+                      <p className="type-body font-sans text-white/80 mb-7 flex-grow">
                         &quot;{testimonial.quote}&quot;
                       </p>
 
-                      <div className="flex items-center gap-4 border-t-2 border-gradient-to-r from-purple-200 via-pink-200 to-rose-200 dark:from-purple-900 dark:via-pink-900 dark:to-rose-900 pt-6 mt-auto relative">
-                        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500"></div>
-                        <div className="relative">
-                          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600 flex items-center justify-center text-white font-bold text-xl shadow-lg ring-4 ring-white dark:ring-gray-900">
-                            {testimonial.author.charAt(0)}
-                          </div>
-                          <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white dark:border-gray-900"></div>
+                      {/* Author */}
+                      <div className="flex items-center gap-4 border-t border-white/10 pt-5 mt-auto">
+                        <div
+                          className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
+                          style={{ backgroundColor: '#8B6914' }}
+                        >
+                          {testimonial.author.charAt(0)}
                         </div>
                         <div>
-                          <p className="font-bold font-sans text-gray-900 dark:text-white text-base">
+                          <p className="font-semibold font-sans text-white text-sm">
                             {testimonial.author}
                           </p>
-                          <p className="text-xs font-semibold font-sans text-purple-600 dark:text-purple-400 uppercase tracking-wider">
+                          <p className="text-[11px] font-medium font-sans text-white/40 uppercase tracking-wider mt-0.5">
                             {testimonial.title}
                           </p>
                         </div>
@@ -206,29 +213,30 @@ export default function Testimonials() {
             ))}
           </div>
 
+          {/* Navigation buttons */}
           <button
             onClick={() => scroll('left')}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-14 h-14 rounded-full border-2 border-purple-200 dark:border-purple-800 bg-white/90 dark:bg-gray-900/90 backdrop-blur hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:border-transparent hover:text-white transition-all shadow-xl items-center justify-center group/btn"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full border border-white/20 bg-white/10 backdrop-blur hover:bg-white/20 transition-colors duration-200 items-center justify-center"
             aria-label="Previous testimonial"
           >
-            <svg className="w-6 h-6 text-purple-600 group-hover/btn:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           <button
             onClick={() => scroll('right')}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-14 h-14 rounded-full border-2 border-purple-200 dark:border-purple-800 bg-white/90 dark:bg-gray-900/90 backdrop-blur hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:border-transparent hover:text-white transition-all shadow-xl items-center justify-center group/btn"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-11 h-11 rounded-full border border-white/20 bg-white/10 backdrop-blur hover:bg-white/20 transition-colors duration-200 items-center justify-center"
             aria-label="Next testimonial"
           >
-            <svg className="w-6 h-6 text-purple-600 group-hover/btn:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
           {/* Auto-scroll indicator */}
           {!isPaused && (
-            <div className="hidden md:flex absolute -bottom-4 left-1/2 -translate-x-1/2 items-center gap-2 text-xs text-purple-600 dark:text-purple-400 font-semibold">
-              <div className="w-2 h-2 rounded-full bg-purple-600 dark:bg-purple-400 animate-pulse"></div>
+            <div className="hidden md:flex absolute -bottom-4 left-1/2 -translate-x-1/2 items-center gap-2 text-[11px] text-white/30 font-medium">
+              <div className="w-1.5 h-1.5 rounded-full bg-white/30 animate-pulse"></div>
               Auto-scrolling
             </div>
           )}
