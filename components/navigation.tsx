@@ -7,7 +7,7 @@ const Navigation = memo(function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-[#D8B866]/35 bg-[var(--legal-ivory)]/88 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 w-full border-b border-[var(--legal-gold)]/35 bg-[var(--legal-ivory)]/92 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center gap-3 group">
@@ -62,7 +62,7 @@ const Navigation = memo(function Navigation() {
         </div>
 
         {isOpen && (
-          <div className="md:hidden border-t border-[#D8B866]/35 bg-[var(--legal-ivory)]">
+          <div className="md:hidden border-t border-[var(--legal-gold)]/35 bg-[var(--legal-ivory)]">
             <div className="flex flex-col py-3">
               {[
                 { name: "Practice Areas", href: "#practice-areas" },
