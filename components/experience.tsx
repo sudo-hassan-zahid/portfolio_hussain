@@ -63,11 +63,6 @@ export default function Experience() {
       id="experience"
       className="py-28 lg:py-36 bg-[#F5F5F7] relative overflow-hidden"
     >
-      <div
-        className="bg-blob w-[55rem] h-[55rem] -right-40 top-1/4 opacity-[0.025]"
-        style={{ backgroundColor: "#8B6914" }}
-      />
-
       <div className="container px-4 sm:px-6 mx-auto relative z-10">
         <div className="mb-20 text-center max-w-2xl mx-auto reveal-scale-on-scroll">
           <p className="label-eyebrow mb-5">Track Record</p>
