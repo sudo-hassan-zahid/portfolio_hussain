@@ -76,12 +76,12 @@ export default function Experience() {
             <h3 className="type-subsection text-[var(--legal-ink)] font-serif flex items-center gap-3 mb-10 reveal-on-scroll">
               <span
                 className="w-6 h-[1.5px] rounded-full"
-                style={{ backgroundColor: "#B8892D" }}
+                style={{ backgroundColor: "var(--legal-gold)" }}
               />
               Professional Journey
             </h3>
 
-            <div className="relative border-l border-[#D8B866]/45 ml-3 space-y-10 pb-4">
+            <div className="relative border-l border-[var(--legal-gold)]/45 ml-3 space-y-10 pb-4">
               {experiences.map((exp, index) => (
                 <div
                   key={exp.role}
@@ -90,10 +90,10 @@ export default function Experience() {
                 >
                   <div
                     className="absolute -left-[5px] top-[22px] w-[10px] h-[10px] rounded-full border-2 border-white"
-                    style={{ backgroundColor: "#B8892D" }}
+                    style={{ backgroundColor: "var(--legal-gold)" }}
                   />
 
-                  <Card className="border border-[#D8B866]/45 bg-[var(--legal-ivory)] hover:shadow-[0_4px_24px_rgba(23,32,46,0.10)] transition-all duration-300 shadow-none rounded-lg group">
+                  <Card className="border border-[var(--legal-gold)]/45 bg-[var(--legal-cream)] hover:shadow-[0_4px_24px_rgba(15,20,51,0.12)] transition-all duration-300 shadow-none rounded-lg group">
                     <CardHeader className="pb-2 pt-5 px-6">
                       <div className="flex flex-wrap justify-between items-start gap-3">
                         <div>
@@ -102,12 +102,12 @@ export default function Experience() {
                           </CardTitle>
                           <CardDescription
                             className="font-medium mt-1 text-sm"
-                            style={{ color: "#B8892D" }}
+                            style={{ color: "var(--legal-gold)" }}
                           >
                             {exp.firm}
                           </CardDescription>
                         </div>
-                        <span className="text-xs font-bold uppercase tracking-[0.08em] text-[var(--legal-slate)] bg-[var(--legal-parchment)] px-3 py-1 rounded-full border border-[#D8B866]/35">
+                        <span className="text-xs font-bold uppercase tracking-[0.08em] text-[var(--legal-slate)] bg-[var(--legal-parchment)] px-3 py-1 rounded-full border border-[var(--legal-gold)]/35">
                           {exp.period}
                         </span>
                       </div>
@@ -125,7 +125,7 @@ export default function Experience() {
 
           <div className="lg:col-span-5">
             <h3 className="type-subsection text-[var(--legal-ink)] font-serif flex items-center gap-3 mb-10 reveal-on-scroll">
-              <span className="w-6 h-[1.5px] rounded-full bg-[#B8892D]" />
+              <span className="w-6 h-[1.5px] rounded-full bg-[var(--legal-gold)]" />
               Education &amp; Licensing
             </h3>
 
@@ -136,18 +136,18 @@ export default function Experience() {
                   className="reveal-on-scroll group"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="p-5 rounded-lg bg-[var(--legal-ivory)] border border-transparent hover:border-[#D8B866]/45 hover:bg-[#FFF9EE] hover:shadow-[0_2px_16px_rgba(23,32,46,0.08)] transition-all duration-300">
+                  <div className="p-5 rounded-lg bg-[var(--legal-cream)] border border-transparent hover:border-[var(--legal-gold)]/45 hover:bg-[var(--legal-ivory)] hover:shadow-[0_2px_16px_rgba(15,20,51,0.10)] transition-all duration-300">
                     <p className="type-body font-semibold text-[var(--legal-ink)] leading-snug">
                       {cred.title}
                     </p>
                     <p className="type-caption text-[var(--legal-slate)] mt-1 mb-3">
                       {cred.issuer}
                     </p>
-                    <div className="flex items-center justify-between border-t border-[#D8B866]/35 pt-3">
+                    <div className="flex items-center justify-between border-t border-[var(--legal-gold)]/35 pt-3">
                       <p className="text-xs font-bold text-[var(--legal-gold)]">
                         {cred.year}
                       </p>
-                      <span className="text-xs font-semibold px-2 py-0.5 rounded bg-[#22324A]/[0.08] text-[var(--legal-navy)]">
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded bg-[var(--legal-navy)]/[0.08] text-[var(--legal-navy)]">
                         {cred.detail}
                       </span>
                     </div>
