@@ -61,12 +61,12 @@ export default function PracticeAreas() {
         <div className="grid md:grid-cols-3 gap-6">
           {practices.map((practice, index) => (
             <div key={index} className="group">
-              <Card className="h-full border border-white/[0.08] bg-white/[0.04] hover:bg-white/[0.08] shadow-none rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-[#8B6914]/30">
+              <Card className="h-full border border-white/[0.08] bg-white/[0.04] hover:bg-white/[0.08] shadow-none rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-[#8B6914]/30">
 
                 <CardHeader className="pb-4 pt-8 px-8">
                   {/* Icon — gold-tinted background */}
                   <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-white transition-all duration-300 group-hover:scale-105"
+                    className="w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-white transition-all duration-300 group-hover:scale-105"
                     style={{ backgroundColor: 'rgba(139, 105, 20, 0.2)' }}
                   >
                     <div style={{ color: '#8B6914' }}>{practice.icon}</div>
