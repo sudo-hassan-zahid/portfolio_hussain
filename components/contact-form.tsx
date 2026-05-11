@@ -42,6 +42,12 @@ export default function ContactForm() {
     "Other Legal Consultation",
   ];
 
+  const nextSteps = [
+    "Share the core facts of your matter",
+    "Receive a practical first response",
+    "Confirm documents, timelines, and next action",
+  ];
+
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
@@ -141,10 +147,12 @@ export default function ContactForm() {
             <h2
               className="type-section font-serif text-[#1D1D1F] mb-5"
             >
-              Schedule Your Consultation
+              Start With a Confidential Case Review
             </h2>
             <p className="type-body-lg text-[#6E6E73] max-w-xl mx-auto">
-              Discuss your legal matter with an experienced professional. Free initial consultation available for qualifying cases.
+              Send the essentials and get a clear next step. The intake is
+              designed for litigation, drafting, mediation, and Shariah law
+              questions across Rawalpindi and Islamabad.
             </p>
           </div>
 
@@ -154,6 +162,19 @@ export default function ContactForm() {
             <div className="lg:col-span-2">
               <Card className="border border-[#D2D2D7] bg-white shadow-none rounded-lg">
                 <CardContent className="p-8 md:p-10">
+                  <div className="mb-8 grid gap-3 border-b border-[#D2D2D7] pb-7 sm:grid-cols-3">
+                    {nextSteps.map((step, index) => (
+                      <div key={step} className="flex gap-3">
+                        <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#1D1D1F] text-xs font-bold text-white">
+                          {index + 1}
+                        </span>
+                        <p className="text-sm font-medium leading-snug text-[#6E6E73]">
+                          {step}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-5">
                       <div className="space-y-1.5">
@@ -174,7 +195,7 @@ export default function ContactForm() {
                           aria-invalid={errors.name ? "true" : "false"}
                           aria-describedby={errors.name ? "name-error" : undefined}
                           className={errors.name ? inputError : inputNormal}
-                          placeholder="John Doe"
+                          placeholder="Your full name"
                         />
                         {errors.name && (
                           <p id="name-error" role="alert" className="text-xs text-red-500 font-medium mt-1">{errors.name}</p>
@@ -199,7 +220,7 @@ export default function ContactForm() {
                           aria-invalid={errors.email ? "true" : "false"}
                           aria-describedby={errors.email ? "email-error" : undefined}
                           className={errors.email ? inputError : inputNormal}
-                          placeholder="john@example.com"
+                          placeholder="you@example.com"
                         />
                         {errors.email && (
                           <p id="email-error" role="alert" className="text-xs text-red-500 font-medium mt-1">{errors.email}</p>
@@ -282,7 +303,7 @@ export default function ContactForm() {
                         aria-describedby={errors.message ? "message-error" : undefined}
                         rows={6}
                         className={`${errors.message ? inputError : inputNormal} resize-none`}
-                        placeholder="Please provide details about your legal matter..."
+                        placeholder="Briefly explain what happened, deadlines, court dates, notices, or documents involved."
                       />
                       {errors.message && (
                         <p id="message-error" role="alert" className="text-xs text-red-500 font-medium mt-1">{errors.message}</p>
@@ -331,12 +352,14 @@ export default function ContactForm() {
                           Submitting...
                         </span>
                       ) : (
-                        "Submit Consultation Request"
+                        "Request Case Review"
                       )}
                     </Button>
 
                     <p className="text-center text-xs text-[#6E6E73]">
-                      By submitting this form, you agree to our confidentiality policy. All consultations are strictly confidential.
+                      Your details stay confidential. Avoid sharing passwords,
+                      bank credentials, or unrelated private records in this
+                      form.
                     </p>
                   </form>
                 </CardContent>
@@ -359,8 +382,8 @@ export default function ContactForm() {
                       </div>
                       <div>
                         <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-1.5">Phone</p>
-                        <p className="text-sm text-white/80">+92 300 1234567</p>
-                        <p className="text-sm text-white/80">+92 51 1234567</p>
+                        <a className="block text-sm text-white/80 hover:text-white" href="tel:+923001234567">+92 300 1234567</a>
+                        <a className="block text-sm text-white/80 hover:text-white" href="tel:+92511234567">+92 51 1234567</a>
                       </div>
                     </div>
 
@@ -372,8 +395,8 @@ export default function ContactForm() {
                       </div>
                       <div>
                         <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-1.5">Email</p>
-                        <p className="text-sm text-white/80">contact@hussainzahid.law</p>
-                        <p className="text-sm text-white/80">info@hussainzahid.com</p>
+                        <a className="block text-sm text-white/80 hover:text-white" href="mailto:contact@hussainzahid.law">contact@hussainzahid.law</a>
+                        <a className="block text-sm text-white/80 hover:text-white" href="mailto:info@hussainzahid.com">info@hussainzahid.com</a>
                       </div>
                     </div>
 
@@ -399,8 +422,8 @@ export default function ContactForm() {
                       </div>
                       <div>
                         <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-1.5">Working Hours</p>
-                        <p className="text-sm text-white/80">Mon – Fri: 9:00 AM – 6:00 PM</p>
-                        <p className="text-sm text-white/80">Sat: 10:00 AM – 2:00 PM</p>
+                        <p className="text-sm text-white/80">Mon - Fri: 9:00 AM - 6:00 PM</p>
+                        <p className="text-sm text-white/80">Sat: 10:00 AM - 2:00 PM</p>
                       </div>
                     </div>
                   </div>
@@ -410,7 +433,7 @@ export default function ContactForm() {
               {/* Why choose us — light card */}
               <Card className="border border-[#D2D2D7] bg-white shadow-none rounded-lg">
                 <CardContent className="p-8">
-                  <h3 className="type-subsection text-[#1D1D1F] mb-5 font-serif">Why Choose Us?</h3>
+                  <h3 className="type-subsection text-[#1D1D1F] mb-5 font-serif">What Clients Value</h3>
                   <ul className="space-y-3">
                     {[
                       "8+ years of legal expertise",
