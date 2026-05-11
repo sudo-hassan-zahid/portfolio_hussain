@@ -436,8 +436,8 @@ export default function ContactForm() {
                   <h3 className="type-subsection text-[var(--legal-ink)] mb-5 font-serif">What Clients Value</h3>
                   <ul className="space-y-3">
                     {[
-                      "8+ years of legal expertise",
-                      "500+ successful cases",
+                      "3-4 years of focused legal practice",
+                      "RWP/ISB session court practice",
                       "Free initial consultation",
                       "24-hour response time",
                     ].map((item) => (
