@@ -49,7 +49,7 @@ export default function PracticeAreas() {
           >
             Specialized Legal Expertise
           </h2>
-          <p className="mt-5 type-body-lg font-sans text-[#EEE1C9]/80">
+          <p className="mt-5 type-body-lg font-sans text-[var(--legal-parchment)]/88">
             Choose the route that fits your matter: courtroom advocacy,
             careful legal drafting, or resolution-focused mediation.
           </p>
@@ -59,7 +59,7 @@ export default function PracticeAreas() {
         <div className="grid md:grid-cols-3 gap-6">
           {practices.map((practice, index) => (
             <div key={index} className="group">
-              <Card className="h-full border border-[#D8B866]/18 bg-[#2E3E59] hover:bg-[#334660] shadow-none rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-[#D8B866]/45">
+              <Card className="h-full border border-[var(--legal-gold)]/22 bg-[#203777] hover:bg-[#243f88] shadow-none rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--legal-gold)]/50">
 
                 <CardHeader className="pb-4 pt-8 px-8">
                   {/* Icon — gold-tinted background */}
@@ -77,10 +77,10 @@ export default function PracticeAreas() {
                 </CardHeader>
 
                 <CardContent className="px-8 pb-8">
-                  <p className="mb-4 border-l-2 border-[var(--legal-gold)] pl-3 text-base font-semibold leading-snug text-[#EEE1C9]">
+                  <p className="mb-4 border-l-2 border-[var(--legal-gold)] pl-3 text-base font-semibold leading-snug text-[var(--legal-parchment)]">
                     {practice.outcome}
                   </p>
-                  <p className="type-body font-sans text-[#EEE1C9]/72">
+                  <p className="type-body font-sans text-[var(--legal-parchment)]/76">
                     {practice.description}
                   </p>
                   <a
@@ -94,7 +94,7 @@ export default function PracticeAreas() {
                 {/* Gold accent bottom line on hover */}
                 <div
                   className="h-[1.5px] w-0 group-hover:w-full transition-all duration-500 ease-out"
-                  style={{ backgroundColor: '#B8892D' }}
+                  style={{ backgroundColor: 'var(--legal-gold)' }}
                 />
               </Card>
             </div>
