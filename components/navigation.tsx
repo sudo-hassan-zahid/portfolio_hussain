@@ -23,6 +23,7 @@ const Navigation = memo(function Navigation() {
             {[
               { name: "Practice Areas", href: "#practice-areas" },
               { name: "Experience", href: "#experience" },
+              { name: "Reviews", href: "#reviews" },
               { name: "Contact", href: "#contact" }
             ].map((item) => (
               <Link
@@ -35,6 +36,13 @@ const Navigation = memo(function Navigation() {
               </Link>
             ))}
           </div>
+
+          <Link
+            href="#contact"
+            className="hidden md:inline-flex h-10 items-center rounded-full bg-[#1D1D1F] px-5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#8B6914]"
+          >
+            Book Now
+          </Link>
 
           <button
             className="md:hidden p-2 rounded-md text-[#1D1D1F] hover:bg-[#F5F5F7] transition-colors duration-200"
@@ -59,6 +67,7 @@ const Navigation = memo(function Navigation() {
               {[
                 { name: "Practice Areas", href: "#practice-areas" },
                 { name: "Experience", href: "#experience" },
+                { name: "Reviews", href: "#reviews" },
                 { name: "Contact", href: "#contact" }
               ].map((item) => (
                 <Link
