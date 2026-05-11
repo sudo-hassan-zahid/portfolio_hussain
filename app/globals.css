@@ -125,7 +125,7 @@
     font-family: var(--font-serif);
     font-weight: 700;
     line-height: 1.05;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
   }
 }
 
@@ -150,6 +150,67 @@
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   contain: layout style paint;
+}
+
+.type-display {
+  font-size: clamp(3rem, 8vw, 6.25rem);
+  line-height: 0.95;
+}
+
+.type-section {
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  line-height: 1;
+}
+
+.type-subsection {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.15;
+}
+
+.type-card-heading {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.2;
+}
+
+.type-body-lg {
+  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.type-body {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.type-caption {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.type-stat {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-progress {
+  transform: scaleX(0);
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: scroll-progress linear forwards;
+    animation-timeline: scroll(root);
+  }
+}
+
+@keyframes scroll-progress {
+  to {
+    transform: scaleX(1);
+  }
 }
 
 @keyframes fade-in-up {
