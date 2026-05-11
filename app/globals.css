@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
   --ink: #0c0a09;
   --primary: #292524;
@@ -50,28 +48,6 @@
   --ring: var(--primary);
   --section-dark: var(--surface-dark);
   --radius: 1rem;
-}
-
-.dark {
-  --ink: #fafafa;
-  --primary: #f5f5f5;
-  --primary-active: #ffffff;
-  --body: #d6d3d1;
-  --body-strong: #f5f5f5;
-  --muted-copy: #a8a29e;
-  --muted-soft: #78716c;
-  --hairline: rgba(245, 245, 245, 0.12);
-  --hairline-soft: rgba(245, 245, 245, 0.08);
-  --hairline-strong: rgba(245, 245, 245, 0.22);
-  --canvas: #0c0a09;
-  --canvas-soft: #151210;
-  --surface-card: #1c1917;
-  --surface-strong: #292524;
-  --surface-dark: #f5f5f5;
-  --surface-dark-elevated: #ffffff;
-  --on-primary: #0c0a09;
-  --on-dark: #0c0a09;
-  --on-dark-soft: #57534e;
 }
 
 @theme inline {
@@ -229,8 +205,8 @@
 .orb-field {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(32px);
-  opacity: 0.58;
+  filter: blur(24px);
+  opacity: 0.42;
   pointer-events: none;
 }
 
