@@ -3,6 +3,7 @@
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { memo, useState } from "react";
+import BrandMark from "@/components/brand-mark";
 import ThemeToggle from "@/components/theme-toggle";
 
 const navItems = [
@@ -20,9 +21,7 @@ const Navigation = memo(function Navigation() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="group flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--primary)] text-sm font-medium tracking-wide text-[var(--on-primary)] transition-opacity duration-200 group-hover:opacity-85">
-              HZ
-            </span>
+            <BrandMark compact className="transition-opacity duration-200 group-hover:opacity-85" />
             <span className="hidden text-[15px] font-medium tracking-0 text-[var(--ink)] transition-opacity duration-200 group-hover:opacity-70 sm:inline">
               Hussain Zahid
             </span>
