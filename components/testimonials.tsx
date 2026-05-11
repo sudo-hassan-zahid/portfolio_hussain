@@ -60,7 +60,7 @@ export default function Testimonials() {
                 key={i}
                 className="w-5 h-5 fill-current"
                 viewBox="0 0 24 24"
-                style={{ color: "var(--legal-gold-soft)" }}
+                style={{ color: "var(--legal-accent-soft)" }}
                 aria-hidden="true"
               >
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -80,7 +80,7 @@ export default function Testimonials() {
             <button
               type="button"
               onClick={() => scroll("left")}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--legal-gold)]/35 bg-[var(--legal-ivory)]/12 text-[var(--legal-ivory)] backdrop-blur transition-colors duration-200 hover:bg-[var(--legal-ivory)]/20"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--legal-accent)]/35 bg-[var(--legal-ivory)]/12 text-[var(--legal-ivory)] backdrop-blur transition-colors duration-200 hover:bg-[var(--legal-ivory)]/20"
               aria-label="Previous testimonial"
             >
               <svg
@@ -101,7 +101,7 @@ export default function Testimonials() {
             <button
               type="button"
               onClick={() => scroll("right")}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--legal-gold)]/35 bg-[var(--legal-ivory)]/12 text-[var(--legal-ivory)] backdrop-blur transition-colors duration-200 hover:bg-[var(--legal-ivory)]/20"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--legal-accent)]/35 bg-[var(--legal-ivory)]/12 text-[var(--legal-ivory)] backdrop-blur transition-colors duration-200 hover:bg-[var(--legal-ivory)]/20"
               aria-label="Next testimonial"
             >
               <svg
@@ -134,7 +134,7 @@ export default function Testimonials() {
                 className="min-w-[85%] md:min-w-[45%] lg:min-w-[31%] snap-center"
               >
                 <div className="h-full p-1.5 group/card">
-                  <Card className="border border-[var(--legal-gold)]/24 bg-[#a6264b] hover:bg-[#b52d55] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 h-full relative overflow-hidden rounded-lg shadow-none">
+                  <Card className="border border-[var(--legal-accent)]/26 bg-[#84283a] hover:bg-[#923043] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 h-full relative overflow-hidden rounded-lg shadow-none">
                     <CardContent className="pt-8 px-7 pb-7 flex flex-col h-full relative z-10">
                       <div className="flex items-start justify-between mb-6">
                         <div
@@ -147,7 +147,7 @@ export default function Testimonials() {
                             className="w-5 h-5"
                             viewBox="0 0 24 24"
                             fill="currentColor"
-                            style={{ color: "var(--legal-gold-soft)" }}
+                            style={{ color: "var(--legal-accent-soft)" }}
                             aria-hidden="true"
                           >
                             <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
@@ -159,7 +159,7 @@ export default function Testimonials() {
                               key={i}
                               className="w-4 h-4 fill-current"
                               viewBox="0 0 24 24"
-                              style={{ color: "var(--legal-gold-soft)" }}
+                              style={{ color: "var(--legal-accent-soft)" }}
                               aria-hidden="true"
                             >
                               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -172,10 +172,10 @@ export default function Testimonials() {
                         &quot;{testimonial.quote}&quot;
                       </p>
 
-                      <div className="flex items-center gap-4 border-t border-[var(--legal-gold)]/24 pt-5 mt-auto">
+                      <div className="flex items-center gap-4 border-t border-[var(--legal-accent)]/24 pt-5 mt-auto">
                         <div
                           className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
-                          style={{ backgroundColor: "var(--legal-gold)" }}
+                          style={{ backgroundColor: "var(--legal-accent)" }}
                         >
                           {testimonial.author.charAt(0)}
                         </div>
