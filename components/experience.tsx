@@ -8,52 +8,58 @@ import {
 
 const experiences = [
   {
-    period: "2023 - Present",
-    role: "Chapter Head",
-    firm: "Young Lawyer's Association",
+    period: "2028 - Present",
+    role: "Court Practice",
+    firm: "RWP/ISB Session Courts",
     description:
-      "Leading the chapter as Chapter Head after previously serving as a member. Managing initiatives and advocating for young legal professionals.",
+      "Practicing before Rawalpindi and Islamabad session courts with a focus on criminal matters, case preparation, drafting, and client representation.",
   },
   {
-    period: "2021 - Present",
-    role: "Litigation & Consultancy Attorney",
-    firm: "Independent Practice",
+    period: "2028 - Present",
+    role: "Licensed Mediator",
+    firm: "Dispute Resolution Practice",
     description:
-      "Actively practicing litigation across RWP/ISB district and high courts. Providing specialized legal consultancy and drafting services. Handling mediation and ADR matters.",
+      "Supporting clients through structured mediation and settlement-focused dispute resolution where practical, efficient outcomes are possible.",
   },
   {
-    period: "2020 - 2021",
-    role: "Legal Associate",
-    firm: "Professional Development",
+    period: "2027 - 2028",
+    role: "Legal Training & Case Support",
+    firm: "Criminal Litigation Preparation",
     description:
-      "Developed expertise in court procedures, litigation strategy, and legal documentation. Built foundation in dispute resolution and client representation.",
+      "Built practical courtroom preparation skills through legal research, drafting support, case file organization, and procedural learning.",
   },
 ];
 
 const credentials = [
   {
-    title: "LLB Shariah and Law",
-    issuer: "5-Year Program",
-    year: "2019-2024",
+    title: "BA/LLB (Hons) Shariah and Law",
+    issuer: "International Islamic University Islamabad",
+    year: "2023-2028",
     detail: "CGPA: 3.5",
   },
   {
-    title: "FSc (Pre-Engineering)",
-    issuer: "Higher Secondary Education",
-    year: "2018",
-    detail: "Grade: A",
+    title: "LLM (Criminal Law)",
+    issuer: "Bahria University, Islamabad",
+    year: "2028-2030",
+    detail: "Specialization",
   },
   {
-    title: "Matric with Computer Science",
-    issuer: "Secondary Education",
-    year: "2016",
-    detail: "Grade: A+",
+    title: "Member of Punjab Bar Council",
+    issuer: "Punjab Bar Council",
+    year: "Since 2028",
+    detail: "Licensed Advocate",
   },
   {
-    title: "RWP/ISB High Court Admission",
-    issuer: "District & High Courts",
-    year: "2020",
-    detail: "Active Practitioner",
+    title: "Licensed Mediator",
+    issuer: "Mediation Practice",
+    year: "Active",
+    detail: "ADR",
+  },
+  {
+    title: "RWP/ISB Session Courts Practice",
+    issuer: "Rawalpindi & Islamabad",
+    year: "Active",
+    detail: "Session Courts",
   },
 ];
 
