@@ -3,43 +3,53 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --legal-ink: #17202e;
+  --legal-navy: #22324a;
+  --legal-mahogany: #5a2728;
+  --legal-gold: #b8892d;
+  --legal-gold-soft: #d8b866;
+  --legal-ivory: #f8f1e3;
+  --legal-parchment: #eee1c9;
+  --legal-sage: #6f7d69;
+  --legal-slate: #5f6673;
+
   /* Base surfaces — Apple off-white system */
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.12 0.005 285);
+  --background: oklch(0.96 0.026 84);
+  --foreground: oklch(0.21 0.032 260);
 
   /* Card & popover surfaces */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.12 0.005 285);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.12 0.005 285);
+  --card: oklch(0.985 0.018 84);
+  --card-foreground: oklch(0.21 0.032 260);
+  --popover: oklch(0.985 0.018 84);
+  --popover-foreground: oklch(0.21 0.032 260);
 
   /* Primary accent — deep prestige gold (#8B6914) */
-  --primary: oklch(0.48 0.09 75);
-  --primary-foreground: oklch(1 0 0);
+  --primary: oklch(0.58 0.116 75);
+  --primary-foreground: oklch(0.21 0.032 260);
 
   /* Secondary — same gold family, slightly lighter */
-  --secondary: oklch(0.55 0.08 75);
-  --secondary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.34 0.072 25);
+  --secondary-foreground: oklch(0.96 0.026 84);
 
   /* Muted — Apple section gray (#F5F5F7) */
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.45 0.005 285);
+  --muted: oklch(0.91 0.035 84);
+  --muted-foreground: oklch(0.47 0.023 260);
 
   /* Accent — kept mapped to gold for any legacy usage */
-  --accent: oklch(0.48 0.09 75);
-  --accent-foreground: oklch(1 0 0);
+  --accent: oklch(0.54 0.05 145);
+  --accent-foreground: oklch(0.96 0.026 84);
 
   /* System */
   --destructive: oklch(0.55 0.2 25);
   --destructive-foreground: oklch(0.98 0 0);
 
   /* Apple hairline border (#D2D2D7) */
-  --border: oklch(0.87 0.003 285);
-  --input: oklch(0.95 0 0);
-  --ring: oklch(0.48 0.09 75);
+  --border: oklch(0.79 0.035 82);
+  --input: oklch(0.98 0.014 84);
+  --ring: oklch(0.58 0.116 75);
 
   /* Dark section (#1D1D1F) */
-  --section-dark: oklch(0.13 0.005 285);
+  --section-dark: oklch(0.22 0.05 260);
 
   --radius: 0.75rem;
 }
@@ -108,8 +118,8 @@
 
   body {
     @apply bg-background text-foreground;
-    font-size: 17px;
-    line-height: 1.65;
+    font-size: 16px;
+    line-height: 1.62;
     overflow-x: hidden;
     font-feature-settings: "kern", "liga", "calt";
     -webkit-font-smoothing: antialiased;
@@ -137,52 +147,52 @@
 /* Utility: Apple-style section label (eyebrow text) */
 .label-eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--primary);
 }
 
 /* Subtle background blob — monochrome only, very faint */
 .type-display {
-  font-size: clamp(3rem, 8vw, 6.25rem);
-  line-height: 0.95;
+  font-size: clamp(3.25rem, 7vw, 5.75rem);
+  line-height: 0.98;
 }
 
 .type-section {
-  font-size: clamp(2.25rem, 5vw, 4.5rem);
-  line-height: 1;
+  font-size: clamp(2.25rem, 4.2vw, 3.55rem);
+  line-height: 1.06;
 }
 
 .type-subsection {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  line-height: 1.15;
+  font-size: clamp(1.45rem, 2.2vw, 2.2rem);
+  line-height: 1.18;
 }
 
 .type-card-heading {
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
-  line-height: 1.2;
+  font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+  line-height: 1.24;
 }
 
 .type-body-lg {
-  font-size: clamp(1.0625rem, 2vw, 1.25rem);
-  line-height: 1.65;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.7;
 }
 
 .type-body {
-  font-size: 0.9375rem;
-  line-height: 1.65;
+  font-size: 1rem;
+  line-height: 1.62;
 }
 
 .type-caption {
-  font-size: 0.8125rem;
-  line-height: 1.45;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 .type-stat {
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  line-height: 1;
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
+  line-height: 1.04;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
