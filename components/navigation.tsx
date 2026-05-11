@@ -7,7 +7,7 @@ const Navigation = memo(function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-[var(--legal-gold)]/35 bg-[var(--legal-ivory)]/92 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 w-full border-b border-[var(--legal-accent)]/35 bg-[var(--legal-ivory)]/92 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center gap-3 group">
@@ -32,7 +32,7 @@ const Navigation = memo(function Navigation() {
                 className="relative text-sm font-semibold text-[var(--legal-slate)] hover:text-[var(--legal-navy)] transition-colors duration-200 group"
               >
                 {item.name}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-[1.5px] bg-[var(--legal-gold)] group-hover:w-full transition-all duration-300 ease-out"></span>
+                <span className="absolute -bottom-0.5 left-0 w-0 h-[1.5px] bg-[var(--legal-accent)] group-hover:w-full transition-all duration-300 ease-out"></span>
               </Link>
             ))}
           </div>
@@ -62,7 +62,7 @@ const Navigation = memo(function Navigation() {
         </div>
 
         {isOpen && (
-          <div className="md:hidden border-t border-[var(--legal-gold)]/35 bg-[var(--legal-ivory)]">
+          <div className="md:hidden border-t border-[var(--legal-accent)]/35 bg-[var(--legal-ivory)]">
             <div className="flex flex-col py-3">
               {[
                 { name: "Practice Areas", href: "#practice-areas" },
