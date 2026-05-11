@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { EB_Garamond, Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
-import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 // Use Next.js variable fonts optimization (single woff2 file instead of 10)
@@ -25,10 +23,7 @@ const ebGaramond = EB_Garamond({
 
 export function generateViewport(): Viewport {
   return {
-    themeColor: [
-      { media: "(prefers-color-scheme: light)", color: "#f5f5f5" },
-      { media: "(prefers-color-scheme: dark)", color: "#0c0a09" },
-    ],
+    themeColor: "#f5f5f5",
     width: "device-width",
     initialScale: 1,
     maximumScale: 1,
@@ -60,21 +55,7 @@ export const metadata: Metadata = {
     locale: "en_PK",
   },
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: "/favicon.ico",
   },
 };
 
@@ -84,21 +65,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${ebGaramond.variable} scroll-smooth`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={`${inter.variable} ${ebGaramond.variable} scroll-smooth`}>
       <head>
         <link rel="dns-prefetch" href="https://vercel.com" />
       </head>
       <body
         className={`min-h-screen bg-background font-sans antialiased ${inter.variable} ${ebGaramond.variable}`}
       >
-        <ThemeProvider>
-          {children}
-          <Analytics />
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );
