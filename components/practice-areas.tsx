@@ -5,6 +5,7 @@ const practices = [
     title: "Litigation & Court Practice",
     description:
       "Extensive courtroom experience in RWP/ISB district and high courts. Handling complex cases with precision and strategic expertise.",
+    outcome: "For disputes that need a clear court strategy",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
@@ -15,6 +16,7 @@ const practices = [
     title: "Legal Drafting & Consultancy",
     description:
       "Professional legal document drafting and comprehensive consultancy services for business and personal matters.",
+    outcome: "For contracts, notices, pleadings, and legal opinions",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -25,6 +27,7 @@ const practices = [
     title: "ADR & Mediation",
     description:
       "Alternative Dispute Resolution specialist with proven mediation experience. Helping parties reach fair and efficient resolutions.",
+    outcome: "For matters that can be resolved before they escalate",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -36,12 +39,6 @@ const practices = [
 export default function PracticeAreas() {
   return (
     <section id="practice-areas" className="py-28 lg:py-36 bg-[#1D1D1F] relative overflow-hidden">
-      {/* Subtle gold glow */}
-      <div
-        className="bg-blob w-[50rem] h-[50rem] top-[-10rem] left-[10%] opacity-[0.05]"
-        style={{ backgroundColor: '#8B6914' }}
-      />
-
       <div className="container px-4 sm:px-6 mx-auto relative z-10">
 
         {/* Section header */}
@@ -52,8 +49,9 @@ export default function PracticeAreas() {
           >
             Specialized Legal Expertise
           </h2>
-          <p className="mt-5 type-body-lg font-sans text-white/50">
-            Comprehensive legal services backed by years of experience and a proven track record of success.
+          <p className="mt-5 type-body-lg font-sans text-white/55">
+            Choose the route that fits your matter: courtroom advocacy,
+            careful legal drafting, or resolution-focused mediation.
           </p>
         </div>
 
@@ -79,9 +77,18 @@ export default function PracticeAreas() {
                 </CardHeader>
 
                 <CardContent className="px-8 pb-8">
+                  <p className="mb-4 border-l-2 border-[#8B6914] pl-3 text-sm font-semibold leading-snug text-white/80">
+                    {practice.outcome}
+                  </p>
                   <p className="type-body font-sans text-white/50">
                     {practice.description}
                   </p>
+                  <a
+                    href="#contact"
+                    className="mt-7 inline-flex text-sm font-semibold text-[#C9A84C] transition-colors duration-200 hover:text-white"
+                  >
+                    Discuss this service
+                  </a>
                 </CardContent>
 
                 {/* Gold accent bottom line on hover */}
