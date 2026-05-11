@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { memo } from "react";
+import BrandMark from "@/components/brand-mark";
 
 const Footer = memo(function Footer() {
   return (
@@ -9,9 +10,7 @@ const Footer = memo(function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="mb-5 flex h-9 w-9 items-center justify-center rounded-full bg-[var(--primary)] text-sm font-medium tracking-wide text-[var(--on-primary)]">
-              HZ
-            </div>
+            <BrandMark compact className="mb-5" />
             <p className="type-body max-w-[240px] leading-relaxed text-[var(--body)]">
               Specialized litigation attorney and legal consultant based in Rawalpindi. Dedicated to providing excellent legal representation.
             </p>
