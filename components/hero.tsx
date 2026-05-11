@@ -20,7 +20,7 @@ export default function Hero() {
 
           {/* Left column — photo (desktop: left, mobile: second) */}
           <div className="relative mx-auto lg:mr-auto w-full max-w-[480px] aspect-[4/5] animate-fade-in animation-delay-200 group order-2 lg:order-1">
-            <div className="relative h-full w-full rounded-2xl overflow-hidden border border-[#D2D2D7] shadow-[0_8px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.14)] transition-shadow duration-500">
+            <div className="relative h-full w-full rounded-lg overflow-hidden border border-[#D2D2D7] shadow-[0_8px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.14)] transition-shadow duration-500">
               <Image
                 src="/images/lawyer/law1.webp"
                 alt="Hussain Zahid - Legal Expert"
@@ -29,15 +29,14 @@ export default function Hero() {
                 priority
                 fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, 480px"
-                quality={100}
-                unoptimized
+                quality={82}
               />
               {/* Subtle bottom scrim for quote readability */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
             </div>
 
             {/* Quote card — clean white, gold accent line */}
-            <div className="absolute bottom-6 right-6 left-6 p-5 bg-white/95 backdrop-blur-sm rounded-xl border border-[#D2D2D7] shadow-[0_4px_20px_rgba(0,0,0,0.10)]">
+            <div className="absolute bottom-6 right-6 left-6 p-5 bg-white/95 backdrop-blur-sm rounded-lg border border-[#D2D2D7] shadow-[0_4px_20px_rgba(0,0,0,0.10)]">
               <p className="font-serif font-semibold text-[15px] leading-snug text-[#1D1D1F]">
                 &quot;Justice delayed is justice denied.&quot;
               </p>
