@@ -38,18 +38,18 @@ const practices = [
 
 export default function PracticeAreas() {
   return (
-    <section id="practice-areas" className="py-28 lg:py-36 bg-[#1D1D1F] relative overflow-hidden">
+    <section id="practice-areas" className="py-28 lg:py-36 bg-[var(--legal-navy)] relative overflow-hidden">
       <div className="container px-4 sm:px-6 mx-auto relative z-10">
 
         {/* Section header */}
         <div className="mb-20 text-center max-w-2xl mx-auto">
-          <p className="label-eyebrow mb-5" style={{ color: '#8B6914' }}>Areas of Practice</p>
+          <p className="label-eyebrow mb-5 text-[var(--legal-gold-soft)]">Areas of Practice</p>
           <h2
             className="type-section font-serif text-white"
           >
             Specialized Legal Expertise
           </h2>
-          <p className="mt-5 type-body-lg font-sans text-white/55">
+          <p className="mt-5 type-body-lg font-sans text-[#EEE1C9]/80">
             Choose the route that fits your matter: courtroom advocacy,
             careful legal drafting, or resolution-focused mediation.
           </p>
@@ -59,33 +59,33 @@ export default function PracticeAreas() {
         <div className="grid md:grid-cols-3 gap-6">
           {practices.map((practice, index) => (
             <div key={index} className="group">
-              <Card className="h-full border border-white/[0.08] bg-white/[0.04] hover:bg-white/[0.08] shadow-none rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-[#8B6914]/30">
+              <Card className="h-full border border-[#D8B866]/18 bg-[#2E3E59] hover:bg-[#334660] shadow-none rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-[#D8B866]/45">
 
                 <CardHeader className="pb-4 pt-8 px-8">
                   {/* Icon — gold-tinted background */}
                   <div
                     className="w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-white transition-all duration-300 group-hover:scale-105"
-                    style={{ backgroundColor: 'rgba(139, 105, 20, 0.2)' }}
+                    style={{ backgroundColor: 'rgba(216, 184, 102, 0.16)' }}
                   >
-                    <div style={{ color: '#8B6914' }}>{practice.icon}</div>
+                    <div className="text-[var(--legal-gold-soft)]">{practice.icon}</div>
                   </div>
                   <CardTitle
-                    className="type-card-heading font-serif text-white group-hover:text-[#C9A84C] transition-colors duration-300"
+                    className="type-card-heading font-serif text-[var(--legal-ivory)] group-hover:text-[var(--legal-gold-soft)] transition-colors duration-300"
                   >
                     {practice.title}
                   </CardTitle>
                 </CardHeader>
 
                 <CardContent className="px-8 pb-8">
-                  <p className="mb-4 border-l-2 border-[#8B6914] pl-3 text-sm font-semibold leading-snug text-white/80">
+                  <p className="mb-4 border-l-2 border-[var(--legal-gold)] pl-3 text-base font-semibold leading-snug text-[#EEE1C9]">
                     {practice.outcome}
                   </p>
-                  <p className="type-body font-sans text-white/50">
+                  <p className="type-body font-sans text-[#EEE1C9]/72">
                     {practice.description}
                   </p>
                   <a
                     href="#contact"
-                    className="mt-7 inline-flex text-sm font-semibold text-[#C9A84C] transition-colors duration-200 hover:text-white"
+                    className="mt-7 inline-flex text-base font-semibold text-[var(--legal-gold-soft)] transition-colors duration-200 hover:text-[var(--legal-ivory)]"
                   >
                     Discuss this service
                   </a>
@@ -94,7 +94,7 @@ export default function PracticeAreas() {
                 {/* Gold accent bottom line on hover */}
                 <div
                   className="h-[1.5px] w-0 group-hover:w-full transition-all duration-500 ease-out"
-                  style={{ backgroundColor: '#8B6914' }}
+                  style={{ backgroundColor: '#B8892D' }}
                 />
               </Card>
             </div>
