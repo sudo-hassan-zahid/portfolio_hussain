@@ -131,9 +131,9 @@ export default function ContactForm() {
     }
   };
 
-  // Shared input class — clean, gold focus ring
+  // Shared input class with a restrained accent focus ring.
   const inputBase = "w-full px-4 py-3 rounded-lg border bg-[var(--legal-cream)] text-[var(--legal-ink)] text-base transition-all duration-200 focus:outline-none focus:ring-2 placeholder:text-[var(--legal-slate)]/60";
-  const inputNormal = `${inputBase} border-[var(--legal-gold)]/45 focus:border-[var(--legal-gold)] focus:ring-[var(--legal-gold)]/20`;
+  const inputNormal = `${inputBase} border-[var(--legal-accent)]/45 focus:border-[var(--legal-accent)] focus:ring-[var(--legal-accent)]/20`;
   const inputError = `${inputBase} border-red-400 focus:ring-red-400/20`;
 
   return (
@@ -160,9 +160,9 @@ export default function ContactForm() {
 
             {/* Form */}
             <div className="lg:col-span-2">
-              <Card className="border border-[var(--legal-gold)]/45 bg-[var(--legal-cream)] shadow-none rounded-lg">
+              <Card className="border border-[var(--legal-accent)]/45 bg-[var(--legal-cream)] shadow-none rounded-lg">
                 <CardContent className="p-8 md:p-10">
-                  <div className="mb-8 grid gap-3 border-b border-[var(--legal-gold)]/35 pb-7 sm:grid-cols-3">
+                  <div className="mb-8 grid gap-3 border-b border-[var(--legal-accent)]/35 pb-7 sm:grid-cols-3">
                     {nextSteps.map((step, index) => (
                       <div key={step} className="flex gap-3">
                         <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[var(--legal-navy)] text-xs font-bold text-[var(--legal-ivory)]">
@@ -376,7 +376,7 @@ export default function ContactForm() {
                   <div className="space-y-5">
                     <div className="flex items-start gap-4">
                       <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(139, 105, 20, 0.2)' }}>
-                        <svg className="w-4 h-4 text-[var(--legal-gold-soft)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <svg className="w-4 h-4 text-[var(--legal-accent-soft)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                       </div>
@@ -389,7 +389,7 @@ export default function ContactForm() {
 
                     <div className="flex items-start gap-4">
                       <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(139, 105, 20, 0.2)' }}>
-                        <svg className="w-4 h-4 text-[var(--legal-gold-soft)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <svg className="w-4 h-4 text-[var(--legal-accent-soft)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
@@ -402,7 +402,7 @@ export default function ContactForm() {
 
                     <div className="flex items-start gap-4">
                       <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(139, 105, 20, 0.2)' }}>
-                        <svg className="w-4 h-4 text-[var(--legal-gold-soft)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <svg className="w-4 h-4 text-[var(--legal-accent-soft)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
@@ -416,7 +416,7 @@ export default function ContactForm() {
 
                     <div className="flex items-start gap-4">
                       <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(139, 105, 20, 0.2)' }}>
-                        <svg className="w-4 h-4 text-[var(--legal-gold-soft)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <svg className="w-4 h-4 text-[var(--legal-accent-soft)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
@@ -431,7 +431,7 @@ export default function ContactForm() {
               </Card>
 
               {/* Why choose us — light card */}
-              <Card className="border border-[var(--legal-gold)]/45 bg-[var(--legal-cream)] shadow-none rounded-lg">
+              <Card className="border border-[var(--legal-accent)]/45 bg-[var(--legal-cream)] shadow-none rounded-lg">
                 <CardContent className="p-8">
                   <h3 className="type-subsection text-[var(--legal-ink)] mb-5 font-serif">What Clients Value</h3>
                   <ul className="space-y-3">
@@ -446,7 +446,7 @@ export default function ContactForm() {
                           className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                           style={{ backgroundColor: 'rgba(139, 105, 20, 0.15)' }}
                         >
-                          <svg className="w-2.5 h-2.5 text-[var(--legal-gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <svg className="w-2.5 h-2.5 text-[var(--legal-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
