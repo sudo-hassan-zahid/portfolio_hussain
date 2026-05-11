@@ -1,84 +1,88 @@
 "use client";
 
-import { useState, memo } from "react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { memo, useState } from "react";
+import ThemeToggle from "@/components/theme-toggle";
+
+const navItems = [
+  { name: "Practice Areas", href: "#practice-areas" },
+  { name: "Experience", href: "#experience" },
+  { name: "Reviews", href: "#reviews" },
+  { name: "Contact", href: "#contact" },
+];
 
 const Navigation = memo(function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-[var(--legal-accent)]/35 bg-[var(--legal-ivory)]/92 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 bg-[var(--legal-navy)] rounded-lg flex items-center justify-center text-[var(--legal-ivory)] font-bold text-sm tracking-wide transition-opacity duration-200 group-hover:opacity-80">
+    <nav className="sticky top-0 z-50 w-full border-b border-[var(--hairline)] bg-[var(--canvas)]/92 backdrop-blur-md">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <Link href="/" className="group flex items-center gap-3">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--primary)] text-sm font-medium tracking-wide text-[var(--on-primary)] transition-opacity duration-200 group-hover:opacity-85">
               HZ
-            </div>
-            <span className="font-semibold text-[var(--legal-ink)] text-base hidden sm:inline tracking-tight transition-opacity duration-200 group-hover:opacity-70">
+            </span>
+            <span className="hidden text-[15px] font-medium tracking-0 text-[var(--ink)] transition-opacity duration-200 group-hover:opacity-70 sm:inline">
               Hussain Zahid
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
-            {[
-              { name: "Practice Areas", href: "#practice-areas" },
-              { name: "Experience", href: "#experience" },
-              { name: "Reviews", href: "#reviews" },
-              { name: "Contact", href: "#contact" }
-            ].map((item) => (
+          <div className="hidden items-center gap-8 md:flex">
+            {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="relative text-sm font-semibold text-[var(--legal-slate)] hover:text-[var(--legal-navy)] transition-colors duration-200 group"
+                className="text-[15px] font-medium text-[var(--body)] transition-colors duration-200 hover:text-[var(--ink)]"
               >
                 {item.name}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-[1.5px] bg-[var(--legal-accent)] group-hover:w-full transition-all duration-300 ease-out"></span>
               </Link>
             ))}
           </div>
 
-          <Link
-            href="#contact"
-            className="hidden md:inline-flex h-10 items-center rounded-full bg-[var(--legal-mahogany)] px-5 text-sm font-semibold text-[var(--legal-ivory)] transition-colors duration-200 hover:bg-[var(--legal-navy)]"
-          >
-            Book Now
-          </Link>
+          <div className="hidden items-center gap-3 md:flex">
+            <ThemeToggle />
+            <Link
+              href="#contact"
+              className="inline-flex h-10 items-center rounded-full bg-[var(--primary)] px-5 text-[15px] font-medium text-[var(--on-primary)] transition-colors duration-200 hover:bg-[var(--primary-active)]"
+            >
+              Book Now
+            </Link>
+          </div>
 
-          <button
-            className="md:hidden p-2 rounded-md text-[var(--legal-ink)] hover:bg-[var(--legal-parchment)] transition-colors duration-200"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? (
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            <button
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--hairline-strong)] text-[var(--ink)] transition-colors duration-200 hover:bg-[var(--surface-strong)]"
+              onClick={() => setIsOpen((open) => !open)}
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X aria-hidden="true" size={18} /> : <Menu aria-hidden="true" size={18} />}
+            </button>
+          </div>
         </div>
 
         {isOpen && (
-          <div className="md:hidden border-t border-[var(--legal-accent)]/35 bg-[var(--legal-ivory)]">
+          <div className="md:hidden border-t border-[var(--hairline)] bg-[var(--canvas)]">
             <div className="flex flex-col py-3">
-              {[
-                { name: "Practice Areas", href: "#practice-areas" },
-                { name: "Experience", href: "#experience" },
-                { name: "Reviews", href: "#reviews" },
-                { name: "Contact", href: "#contact" }
-              ].map((item) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-3 text-sm font-semibold text-[var(--legal-slate)] hover:text-[var(--legal-navy)] hover:bg-[var(--legal-parchment)] transition-colors duration-150"
+                  className="px-4 py-3 text-sm font-medium text-[var(--body)] transition-colors duration-150 hover:bg-[var(--surface-strong)] hover:text-[var(--ink)]"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
+              <Link
+                href="#contact"
+                className="mx-4 mt-2 inline-flex h-10 items-center justify-center rounded-full bg-[var(--primary)] px-5 text-sm font-medium text-[var(--on-primary)]"
+                onClick={() => setIsOpen(false)}
+              >
+                Book Now
+              </Link>
             </div>
           </div>
         )}

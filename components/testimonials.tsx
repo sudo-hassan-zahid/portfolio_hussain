@@ -1,7 +1,8 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { useRef } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
   {
@@ -41,7 +42,6 @@ export default function Testimonials() {
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
-
     const cardWidth = scrollRef.current.clientWidth * 0.85;
     scrollRef.current.scrollBy({
       left: direction === "left" ? -cardWidth : cardWidth,
@@ -50,74 +50,41 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="reviews" className="py-32 relative overflow-hidden bg-[var(--legal-mahogany)]">
-      <div className="container px-4 sm:px-6 mx-auto relative z-10">
+    <section id="reviews" className="relative overflow-hidden bg-[var(--canvas)] py-24 lg:py-28">
+      <div className="orb-field orb-lavender left-[-7rem] top-20 h-72 w-72" />
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <div className="mb-12 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
           <div className="max-w-2xl">
-          <div className="inline-flex items-center justify-center space-x-1 mb-6">
-            {[...Array(5)].map((_, i) => (
-              <svg
-                key={i}
-                className="w-5 h-5 fill-current"
-                viewBox="0 0 24 24"
-                style={{ color: "var(--legal-accent-soft)" }}
-                aria-hidden="true"
-              >
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-            ))}
-          </div>
-          <h2 className="type-section font-serif text-white mb-5">
-            Trusted by Pakistan&apos;s Finest
-          </h2>
-          <p className="type-body-lg font-sans text-[var(--legal-parchment)]/82 max-w-xl">
-            Delivering excellence in legal representation and consultancy
-            across private and corporate sectors.
-          </p>
+            <div className="mb-6 inline-flex items-center justify-center gap-1 text-[var(--ink)]">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={17} fill="currentColor" aria-hidden="true" />
+              ))}
+            </div>
+            <h2 className="type-section mb-5 font-serif text-[var(--ink)]">
+              Trusted for calm, focused representation
+            </h2>
+            <p className="type-body-lg max-w-xl font-sans text-[var(--body)]">
+              Practical legal support across private and corporate matters,
+              shaped around clarity, discretion, and preparation.
+            </p>
           </div>
 
           <div className="flex gap-3">
             <button
               type="button"
               onClick={() => scroll("left")}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--legal-accent)]/35 bg-[var(--legal-ivory)]/12 text-[var(--legal-ivory)] backdrop-blur transition-colors duration-200 hover:bg-[var(--legal-ivory)]/20"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--hairline-strong)] bg-transparent text-[var(--ink)] transition-colors duration-200 hover:bg-[var(--surface-strong)]"
               aria-label="Previous testimonial"
             >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
+              <ChevronLeft size={18} aria-hidden="true" />
             </button>
             <button
               type="button"
               onClick={() => scroll("right")}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--legal-accent)]/35 bg-[var(--legal-ivory)]/12 text-[var(--legal-ivory)] backdrop-blur transition-colors duration-200 hover:bg-[var(--legal-ivory)]/20"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--hairline-strong)] bg-transparent text-[var(--ink)] transition-colors duration-200 hover:bg-[var(--surface-strong)]"
               aria-label="Next testimonial"
             >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
+              <ChevronRight size={18} aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -125,72 +92,46 @@ export default function Testimonials() {
         <div className="reveal-on-scroll relative">
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 -mx-4 px-4 md:px-0 md:mx-0"
+            className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-8 scrollbar-hide md:mx-0 md:px-0"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {testimonials.map((testimonial) => (
               <div
                 key={testimonial.author}
-                className="min-w-[85%] md:min-w-[45%] lg:min-w-[31%] snap-center"
+                className="min-w-[85%] snap-center md:min-w-[45%] lg:min-w-[31%]"
               >
-                <div className="h-full p-1.5 group/card">
-                  <Card className="border border-[var(--legal-accent)]/26 bg-[#84283a] hover:bg-[#923043] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 h-full relative overflow-hidden rounded-lg shadow-none">
-                    <CardContent className="pt-8 px-7 pb-7 flex flex-col h-full relative z-10">
-                      <div className="flex items-start justify-between mb-6">
-                        <div
-                          className="w-10 h-10 rounded-lg flex items-center justify-center"
-                          style={{
-                            backgroundColor: "rgba(216, 184, 102, 0.18)",
-                          }}
-                        >
-                          <svg
-                            className="w-5 h-5"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            style={{ color: "var(--legal-accent-soft)" }}
-                            aria-hidden="true"
-                          >
-                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
-                          </svg>
-                        </div>
-                        <div className="flex gap-0.5" aria-label="5 star rating">
-                          {[...Array(5)].map((_, i) => (
-                            <svg
-                              key={i}
-                              className="w-4 h-4 fill-current"
-                              viewBox="0 0 24 24"
-                              style={{ color: "var(--legal-accent-soft)" }}
-                              aria-hidden="true"
-                            >
-                              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg>
-                          ))}
-                        </div>
+                <Card className="editorial-card h-full py-0">
+                  <CardContent className="relative z-10 flex h-full flex-col p-8">
+                    <div className="mb-6 flex items-start justify-between">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--surface-strong)] text-[var(--ink)]">
+                        <Quote size={18} aria-hidden="true" />
                       </div>
-
-                      <p className="type-body font-sans text-[var(--legal-ivory)]/90 mb-7 flex-grow">
-                        &quot;{testimonial.quote}&quot;
-                      </p>
-
-                      <div className="flex items-center gap-4 border-t border-[var(--legal-accent)]/24 pt-5 mt-auto">
-                        <div
-                          className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
-                          style={{ backgroundColor: "var(--legal-accent)" }}
-                        >
-                          {testimonial.author.charAt(0)}
-                        </div>
-                        <div>
-                          <p className="font-semibold font-sans text-white text-sm">
-                            {testimonial.author}
-                          </p>
-                          <p className="text-xs font-semibold font-sans text-[var(--legal-parchment)]/70 uppercase tracking-[0.08em] mt-0.5">
-                            {testimonial.title}
-                          </p>
-                        </div>
+                      <div className="flex gap-0.5 text-[var(--ink)]" aria-label="5 star rating">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={14} fill="currentColor" aria-hidden="true" />
+                        ))}
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                    </div>
+
+                    <p className="type-body mb-7 flex-grow font-sans text-[var(--body)]">
+                      &quot;{testimonial.quote}&quot;
+                    </p>
+
+                    <div className="mt-auto flex items-center gap-4 border-t border-[var(--hairline)] pt-5">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-sm font-medium text-[var(--on-primary)]">
+                        {testimonial.author.charAt(0)}
+                      </div>
+                      <div>
+                        <p className="font-sans text-sm font-medium text-[var(--ink)]">
+                          {testimonial.author}
+                        </p>
+                        <p className="mt-0.5 font-sans text-xs font-semibold uppercase tracking-[0.08em] text-[var(--muted-copy)]">
+                          {testimonial.title}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             ))}
           </div>
