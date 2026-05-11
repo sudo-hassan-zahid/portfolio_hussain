@@ -8,13 +8,7 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
+    minimumCacheTTL: 31536000,
   },
 
   reactStrictMode: true,
@@ -22,13 +16,11 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeServerReact: true,
     optimizePackageImports: [
-      'lucide-react',
-      '@radix-ui/react-dialog',
-      '@radix-ui/react-slot',
-      'class-variance-authority',
-      'clsx',
-      'tailwind-merge',
-      'tailwindcss-animate'
+      "lucide-react",
+      "@radix-ui/react-slot",
+      "class-variance-authority",
+      "clsx",
+      "tailwind-merge",
     ]
   },
   compiler: {
