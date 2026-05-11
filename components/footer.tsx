@@ -3,7 +3,7 @@ import { memo } from "react";
 
 const Footer = memo(function Footer() {
   return (
-    <footer className="bg-[#1D1D1F] py-16">
+    <footer className="bg-[var(--legal-ink)] py-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-12 mb-10">
 
