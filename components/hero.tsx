@@ -11,8 +11,8 @@ const assurances = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[var(--canvas)]">
-      <div className="orb-field orb-mint left-[-8rem] top-14 h-72 w-72 animate-blob-float" />
-      <div className="orb-field orb-peach right-[-4rem] top-28 h-80 w-80 animate-blob-float-reverse" />
+      <div className="orb-field orb-mint left-[-8rem] top-14 h-72 w-72" />
+      <div className="orb-field orb-peach right-[-4rem] top-28 h-80 w-80" />
       <div className="orb-field orb-lavender bottom-4 left-1/2 h-72 w-72 -translate-x-1/2" />
 
       <div className="container relative z-10 mx-auto px-4 py-24 md:px-6 lg:py-28">
