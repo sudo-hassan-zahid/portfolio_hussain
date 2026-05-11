@@ -67,27 +67,27 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-28 lg:py-36 bg-[var(--legal-parchment)] relative overflow-hidden"
+      className="relative overflow-hidden bg-[var(--canvas)] py-24 lg:py-28"
     >
+      <div className="orb-field orb-rose left-[-8rem] top-28 h-72 w-72" />
       <div className="container px-4 sm:px-6 mx-auto relative z-10">
         <div className="mb-20 text-center max-w-2xl mx-auto reveal-scale-on-scroll">
           <p className="label-eyebrow mb-5">Track Record</p>
-          <h2 className="type-section font-serif text-[var(--legal-ink)]">
+          <h2 className="type-section font-serif text-[var(--ink)]">
             Experience &amp; Credentials
           </h2>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-7">
-            <h3 className="type-subsection text-[var(--legal-ink)] font-serif flex items-center gap-3 mb-10 reveal-on-scroll">
+            <h3 className="type-subsection text-[var(--ink)] font-serif flex items-center gap-3 mb-10 reveal-on-scroll">
               <span
-                className="w-6 h-[1.5px] rounded-full"
-                style={{ backgroundColor: "var(--legal-accent)" }}
+                className="w-6 h-[1.5px] rounded-full bg-[var(--hairline-strong)]"
               />
               Professional Journey
             </h3>
 
-            <div className="relative border-l border-[var(--legal-accent)]/45 ml-3 space-y-10 pb-4">
+            <div className="relative border-l border-[var(--hairline-strong)] ml-3 space-y-10 pb-4">
               {experiences.map((exp, index) => (
                 <div
                   key={exp.role}
@@ -95,31 +95,30 @@ export default function Experience() {
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
                   <div
-                    className="absolute -left-[5px] top-[22px] w-[10px] h-[10px] rounded-full border-2 border-white"
-                    style={{ backgroundColor: "var(--legal-accent)" }}
+                    className="absolute -left-[5px] top-[22px] w-[10px] h-[10px] rounded-full border-2 border-[var(--canvas)] bg-[var(--ink)]"
                   />
 
-                  <Card className="border border-[var(--legal-accent)]/45 bg-[var(--legal-cream)] hover:shadow-[0_4px_24px_rgba(15,20,51,0.12)] transition-all duration-300 shadow-none rounded-lg group">
+                  <Card className="editorial-card transition-all duration-300 group">
                     <CardHeader className="pb-2 pt-5 px-6">
                       <div className="flex flex-wrap justify-between items-start gap-3">
                         <div>
-                          <CardTitle className="type-card-heading font-serif text-[var(--legal-ink)]">
+                          <CardTitle className="type-card-heading text-[var(--ink)]">
                             {exp.role}
                           </CardTitle>
                           <CardDescription
                             className="font-medium mt-1 text-sm"
-                            style={{ color: "var(--legal-accent)" }}
+                            style={{ color: "var(--muted-copy)" }}
                           >
                             {exp.firm}
                           </CardDescription>
                         </div>
-                        <span className="text-xs font-bold uppercase tracking-[0.08em] text-[var(--legal-slate)] bg-[var(--legal-parchment)] px-3 py-1 rounded-full border border-[var(--legal-accent)]/35">
+                        <span className="text-xs font-semibold uppercase tracking-[0.08em] text-[var(--body)] bg-[var(--surface-strong)] px-3 py-1 rounded-full border border-[var(--hairline)]">
                           {exp.period}
                         </span>
                       </div>
                     </CardHeader>
                     <CardContent className="px-6 pb-5">
-                      <p className="type-body text-[var(--legal-slate)]">
+                      <p className="type-body text-[var(--body)]">
                         {exp.description}
                       </p>
                     </CardContent>
@@ -130,8 +129,8 @@ export default function Experience() {
           </div>
 
           <div className="lg:col-span-5">
-            <h3 className="type-subsection text-[var(--legal-ink)] font-serif flex items-center gap-3 mb-10 reveal-on-scroll">
-              <span className="w-6 h-[1.5px] rounded-full bg-[var(--legal-accent)]" />
+            <h3 className="type-subsection text-[var(--ink)] font-serif flex items-center gap-3 mb-10 reveal-on-scroll">
+              <span className="w-6 h-[1.5px] rounded-full bg-[var(--hairline-strong)]" />
               Education &amp; Licensing
             </h3>
 
@@ -142,18 +141,18 @@ export default function Experience() {
                   className="reveal-on-scroll group"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="p-5 rounded-lg bg-[var(--legal-cream)] border border-transparent hover:border-[var(--legal-accent)]/45 hover:bg-[var(--legal-ivory)] hover:shadow-[0_2px_16px_rgba(15,20,51,0.10)] transition-all duration-300">
-                    <p className="type-body font-semibold text-[var(--legal-ink)] leading-snug">
+                  <div className="rounded-2xl border border-[var(--hairline)] bg-[var(--surface-card)] p-5 transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
+                    <p className="type-body font-medium text-[var(--ink)] leading-snug">
                       {cred.title}
                     </p>
-                    <p className="type-caption text-[var(--legal-slate)] mt-1 mb-3">
+                    <p className="type-caption text-[var(--body)] mt-1 mb-3">
                       {cred.issuer}
                     </p>
-                    <div className="flex items-center justify-between border-t border-[var(--legal-accent)]/35 pt-3">
-                      <p className="text-xs font-bold text-[var(--legal-accent)]">
+                    <div className="flex items-center justify-between border-t border-[var(--hairline)] pt-3">
+                      <p className="text-xs font-semibold text-[var(--body-strong)]">
                         {cred.year}
                       </p>
-                      <span className="text-xs font-semibold px-2 py-0.5 rounded bg-[var(--legal-navy)]/[0.08] text-[var(--legal-navy)]">
+                      <span className="rounded-full bg-[var(--surface-strong)] px-2 py-0.5 text-xs font-medium text-[var(--body)]">
                         {cred.detail}
                       </span>
                     </div>

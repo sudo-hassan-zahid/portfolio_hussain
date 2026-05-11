@@ -3,38 +3,42 @@ import Image from "next/image";
 import Link from "next/link";
 
 const assurances = [
-  "Clear next steps before you leave",
   "Court-ready drafting and strategy",
-  "Discreet handling of sensitive matters",
+  "Confidential client intake",
+  "Clear next steps before you leave",
 ];
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[var(--legal-ivory)]">
+    <section className="relative overflow-hidden bg-[var(--canvas)]">
+      <div className="orb-field orb-mint left-[-8rem] top-14 h-72 w-72 animate-blob-float" />
+      <div className="orb-field orb-peach right-[-4rem] top-28 h-80 w-80 animate-blob-float-reverse" />
+      <div className="orb-field orb-lavender bottom-4 left-1/2 h-72 w-72 -translate-x-1/2" />
+
       <div className="container relative z-10 mx-auto px-4 py-24 md:px-6 lg:py-28">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.02fr_0.98fr]">
-          <div className="max-w-2xl animate-fade-in text-[var(--legal-ink)]">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--legal-accent)]/40 bg-[var(--legal-parchment)]/70 px-4 py-2">
-              <span className="h-2 w-2 rounded-full bg-[var(--legal-mahogany)]" />
-              <span className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--legal-plum)]">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="max-w-2xl animate-fade-in text-[var(--ink)]">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[var(--surface-strong)] px-4 py-2">
+              <span className="h-2 w-2 rounded-full bg-[var(--gradient-mint)]" />
+              <span className="text-xs font-semibold uppercase tracking-[0.08em] text-[var(--body-strong)]">
                 Litigation, drafting, mediation
               </span>
             </div>
 
-            <h1 className="type-display mt-7 max-w-[12ch] text-[var(--legal-plum)]">
-              Legal clarity, delivered with royal composure.
+            <h1 className="type-display mt-7 max-w-[12ch] text-[var(--ink)]">
+              Legal clarity with editorial composure.
             </h1>
 
-            <p className="type-body-lg mt-7 max-w-xl text-[var(--legal-slate)]">
-              Hussain Zahid helps clients in Rawalpindi and Islamabad move from
-              confusion to a practical legal plan, with focused advocacy across
-              litigation, consultancy, and Shariah law matters.
+            <p className="type-body-lg mt-7 max-w-xl text-[var(--body)]">
+              Hussain Zahid helps clients in Rawalpindi and Islamabad turn
+              difficult legal questions into a practical plan across litigation,
+              consultancy, mediation, and Shariah law matters.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button
                 size="lg"
-                className="h-12 rounded-full bg-[var(--legal-plum)] px-7 text-base font-semibold text-[var(--legal-ivory)] shadow-none transition-colors duration-200 hover:bg-[var(--legal-mahogany)]"
+                className="ink-button h-10 px-5 text-[15px] font-medium shadow-none"
                 asChild
               >
                 <Link href="#contact">Book a Consultation</Link>
@@ -42,18 +46,21 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="h-12 rounded-full border-[var(--legal-accent)]/60 bg-[var(--legal-cream)] px-7 text-base font-semibold text-[var(--legal-plum)] shadow-none transition-colors duration-200 hover:bg-[var(--legal-parchment)] hover:text-[var(--legal-plum)]"
+                className="outline-button h-10 px-5 text-[15px] font-medium shadow-none hover:bg-[var(--surface-strong)] hover:text-[var(--ink)]"
                 asChild
               >
                 <Link href="#practice-areas">Explore Services</Link>
               </Button>
             </div>
 
-            <div className="mt-9 grid gap-4 border-t border-[var(--legal-accent)]/35 pt-7 sm:grid-cols-3">
+            <div className="mt-9 grid gap-3 border-t border-[var(--hairline)] pt-7 sm:grid-cols-3">
               {assurances.map((item) => (
-                <div key={item} className="flex items-start gap-2 rounded-lg border border-[var(--legal-accent)]/20 bg-[var(--legal-parchment)]/55 p-3">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--legal-accent)]" />
-                  <p className="text-sm font-bold leading-snug text-[var(--legal-plum)]">
+                <div
+                  key={item}
+                  className="rounded-2xl border border-[var(--hairline)] bg-[var(--surface-card)]/80 p-4"
+                >
+                  <span className="mb-3 block h-1.5 w-8 rounded-full bg-[var(--gradient-peach)]" />
+                  <p className="text-sm font-medium leading-snug text-[var(--body-strong)]">
                     {item}
                   </p>
                 </div>
@@ -62,39 +69,35 @@ export default function Hero() {
           </div>
 
           <div className="relative mx-auto w-full max-w-[500px] animate-fade-in animation-delay-200">
-            <div className="absolute -left-6 top-8 z-20 hidden rounded-lg border border-[var(--legal-accent-soft)]/45 bg-[var(--legal-plum)] px-5 py-4 text-[var(--legal-ivory)] shadow-[0_18px_60px_rgba(15,20,51,0.26)] md:block">
-              <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--legal-parchment)]/75">
-                Consultation Focus
-              </p>
+            <div className="absolute -left-5 top-10 z-20 hidden rounded-2xl border border-[var(--hairline)] bg-[var(--surface-card)] px-5 py-4 text-[var(--ink)] shadow-[0_4px_16px_rgba(0,0,0,0.04)] md:block">
+              <p className="label-eyebrow">Consultation Focus</p>
               <p className="mt-1 font-serif text-2xl leading-none">Strategy</p>
             </div>
 
-            <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-[var(--legal-accent)]/55 bg-[var(--legal-parchment)] shadow-[0_26px_80px_rgba(15,20,51,0.18)]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-[var(--hairline)] bg-[var(--canvas-soft)] shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
               <Image
                 src="/images/lawyer/law1.webp"
                 alt="Hussain Zahid - Legal Expert"
                 fill
-                className="object-cover"
+                className="object-cover grayscale-[8%]"
                 priority
                 fetchPriority="high"
                 sizes="(max-width: 768px) 92vw, 500px"
                 quality={84}
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0F1433]/84 via-[#0F1433]/30 to-transparent p-6 text-[var(--legal-ivory)]">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0c0a09]/82 via-[#0c0a09]/24 to-transparent p-6 text-white">
                 <p className="font-serif text-2xl leading-tight">
                   Hussain Zahid
                 </p>
-                <p className="mt-1 text-sm font-medium text-[var(--legal-parchment)]">
+                <p className="mt-1 text-sm font-medium text-white/72">
                   Shariah &amp; Law Specialist
                 </p>
               </div>
             </div>
 
-            <div className="absolute -bottom-5 right-4 z-20 rounded-lg border border-[var(--legal-accent)]/55 bg-[var(--legal-cream)] px-5 py-4 shadow-[0_16px_50px_rgba(15,20,51,0.14)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--legal-slate)]">
-                Serving
-              </p>
-              <p className="mt-1 font-serif text-2xl leading-none text-[var(--legal-plum)]">
+            <div className="absolute -bottom-5 right-4 z-20 rounded-2xl border border-[var(--hairline)] bg-[var(--surface-card)] px-5 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
+              <p className="label-eyebrow">Serving</p>
+              <p className="mt-1 font-serif text-2xl leading-none text-[var(--ink)]">
                 RWP / ISB
               </p>
             </div>

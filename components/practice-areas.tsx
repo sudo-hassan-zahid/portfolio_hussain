@@ -38,18 +38,19 @@ const practices = [
 
 export default function PracticeAreas() {
   return (
-    <section id="practice-areas" className="py-28 lg:py-36 bg-[var(--legal-navy)] relative overflow-hidden">
+    <section id="practice-areas" className="relative overflow-hidden bg-[var(--canvas-soft)] py-24 lg:py-28">
+      <div className="orb-field orb-sky right-[-9rem] top-16 h-72 w-72" />
       <div className="container px-4 sm:px-6 mx-auto relative z-10">
 
         {/* Section header */}
         <div className="mb-20 text-center max-w-2xl mx-auto">
-          <p className="label-eyebrow mb-5 text-[var(--legal-accent-soft)]">Areas of Practice</p>
+          <p className="label-eyebrow mb-5">Areas of Practice</p>
           <h2
-            className="type-section font-serif text-white"
+            className="type-section font-serif text-[var(--ink)]"
           >
             Specialized Legal Expertise
           </h2>
-          <p className="mt-5 type-body-lg font-sans text-[var(--legal-parchment)]/88">
+          <p className="mt-5 type-body-lg font-sans text-[var(--body)]">
             Choose the route that fits your matter: courtroom advocacy,
             careful legal drafting, or resolution-focused mediation.
           </p>
@@ -59,33 +60,32 @@ export default function PracticeAreas() {
         <div className="grid md:grid-cols-3 gap-6">
           {practices.map((practice, index) => (
             <div key={index} className="group">
-              <Card className="h-full border border-[var(--legal-accent)]/28 bg-[#1c2f57] hover:bg-[#203963] shadow-none rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--legal-accent)]/55">
+              <Card className="editorial-card h-full overflow-hidden py-0 transition-all duration-300 hover:-translate-y-1">
 
                 <CardHeader className="pb-4 pt-8 px-8">
                   {/* Icon accent background */}
                   <div
-                    className="w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-white transition-all duration-300 group-hover:scale-105"
-                    style={{ backgroundColor: 'rgba(216, 184, 102, 0.16)' }}
+                    className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--surface-strong)] text-[var(--ink)] transition-all duration-300 group-hover:scale-105"
                   >
-                    <div className="text-[var(--legal-accent-soft)]">{practice.icon}</div>
+                    <div>{practice.icon}</div>
                   </div>
                   <CardTitle
-                    className="type-card-heading font-serif text-[var(--legal-ivory)] group-hover:text-[var(--legal-accent-soft)] transition-colors duration-300"
+                    className="type-card-heading text-[var(--ink)] transition-colors duration-300"
                   >
                     {practice.title}
                   </CardTitle>
                 </CardHeader>
 
                 <CardContent className="px-8 pb-8">
-                  <p className="mb-4 border-l-2 border-[var(--legal-accent)] pl-3 text-base font-semibold leading-snug text-[var(--legal-parchment)]">
+                  <p className="mb-4 border-l border-[var(--hairline-strong)] pl-3 text-base font-medium leading-snug text-[var(--body-strong)]">
                     {practice.outcome}
                   </p>
-                  <p className="type-body font-sans text-[var(--legal-parchment)]/76">
+                  <p className="type-body font-sans text-[var(--body)]">
                     {practice.description}
                   </p>
                   <a
                     href="#contact"
-                    className="mt-7 inline-flex text-base font-semibold text-[var(--legal-accent-soft)] transition-colors duration-200 hover:text-[var(--legal-ivory)]"
+                    className="mt-7 inline-flex text-[15px] font-medium text-[var(--ink)] transition-opacity duration-200 hover:opacity-60"
                   >
                     Discuss this service
                   </a>
@@ -94,7 +94,7 @@ export default function PracticeAreas() {
                 {/* Gold accent bottom line on hover */}
                 <div
                   className="h-[1.5px] w-0 group-hover:w-full transition-all duration-500 ease-out"
-                  style={{ backgroundColor: 'var(--legal-accent)' }}
+                  style={{ backgroundColor: "var(--gradient-peach)" }}
                 />
               </Card>
             </div>

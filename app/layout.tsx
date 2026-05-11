@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { EB_Garamond, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 // Use Next.js variable fonts optimization (single woff2 file instead of 10)
@@ -13,19 +14,22 @@ const inter = Inter({
   fallback: ["system-ui", "-apple-system", "sans-serif"],
 });
 
-const playfair = Playfair_Display({
+const ebGaramond = EB_Garamond({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-eb-garamond",
   display: "swap",
   preload: false,
-  weight: ["700"],
+  weight: ["400"],
   fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
 export function generateViewport(): Viewport {
   return {
-    themeColor: '#000000',
-    width: 'device-width',
+    themeColor: [
+      { media: "(prefers-color-scheme: light)", color: "#f5f5f5" },
+      { media: "(prefers-color-scheme: dark)", color: "#0c0a09" },
+    ],
+    width: "device-width",
     initialScale: 1,
     maximumScale: 1,
     userScalable: true,
@@ -82,17 +86,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} scroll-smooth`}
+      className={`${inter.variable} ${ebGaramond.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
         <link rel="dns-prefetch" href="https://vercel.com" />
       </head>
       <body
-        className={`min-h-screen bg-background font-sans antialiased ${inter.variable} ${playfair.variable}`}
+        className={`min-h-screen bg-background font-sans antialiased ${inter.variable} ${ebGaramond.variable}`}
       >
-        {children}
-        <Analytics />
+        <ThemeProvider>
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
