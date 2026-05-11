@@ -20,7 +20,7 @@ Last reviewed: 2026-05-11
 - **Contact form is fake.** `components/contact-form.tsx` simulates a submit with a 2-second delay and never sends data to an API or email service. This is a functional bug, but it needs a destination before it can be completed.
 - **Placeholder contact details may be wrong.** Phone numbers and emails look generic, so users may not be able to reach the lawyer.
 - **Testimonials may be unverified.** The names and companies may be placeholders. Real legal-service testimonials should be verified before launch.
-- **Claims may need substantiation.** Stats like `500+ Cases Won`, `8+ Years Exp.`, and `100% Commitment` should be confirmed for legal marketing accuracy.
+- **Claims may need substantiation.** Experience, court-practice, mediation, and licensing claims should be confirmed for legal marketing accuracy.
 
 ## Performance Notes
 
