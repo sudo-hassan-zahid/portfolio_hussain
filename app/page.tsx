@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import ScrollProgress from "@/components/scroll-progress";
 import Testimonials from "@/components/testimonials";
 import ContactForm from "@/components/contact-form";
+import TrustStrip from "@/components/trust-strip";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <ScrollProgress />
       <Navigation />
       <Hero />
+      <TrustStrip />
       <PracticeAreas />
       <Experience />
       <Testimonials />
