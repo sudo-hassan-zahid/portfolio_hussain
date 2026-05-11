@@ -3,53 +3,55 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --legal-ink: #17202e;
-  --legal-navy: #22324a;
-  --legal-mahogany: #5a2728;
-  --legal-gold: #b8892d;
-  --legal-gold-soft: #d8b866;
-  --legal-ivory: #f8f1e3;
-  --legal-parchment: #eee1c9;
-  --legal-sage: #6f7d69;
-  --legal-slate: #5f6673;
+  --legal-ink: #0f1433;
+  --legal-navy: #182b63;
+  --legal-plum: #3b1768;
+  --legal-mahogany: #8c1d40;
+  --legal-gold: #d6a72e;
+  --legal-gold-soft: #f0c85a;
+  --legal-ivory: #fff7e6;
+  --legal-parchment: #f1dfb8;
+  --legal-cream: #fffaf0;
+  --legal-sage: #5c7050;
+  --legal-slate: #4f5368;
 
   /* Base surfaces — Apple off-white system */
-  --background: oklch(0.96 0.026 84);
-  --foreground: oklch(0.21 0.032 260);
+  --background: oklch(0.985 0.028 88);
+  --foreground: oklch(0.18 0.07 280);
 
   /* Card & popover surfaces */
-  --card: oklch(0.985 0.018 84);
-  --card-foreground: oklch(0.21 0.032 260);
-  --popover: oklch(0.985 0.018 84);
-  --popover-foreground: oklch(0.21 0.032 260);
+  --card: oklch(0.99 0.018 88);
+  --card-foreground: oklch(0.18 0.07 280);
+  --popover: oklch(0.99 0.018 88);
+  --popover-foreground: oklch(0.18 0.07 280);
 
   /* Primary accent — deep prestige gold (#8B6914) */
-  --primary: oklch(0.58 0.116 75);
-  --primary-foreground: oklch(0.21 0.032 260);
+  --primary: oklch(0.72 0.15 82);
+  --primary-foreground: oklch(0.18 0.07 280);
 
   /* Secondary — same gold family, slightly lighter */
-  --secondary: oklch(0.34 0.072 25);
-  --secondary-foreground: oklch(0.96 0.026 84);
+  --secondary: oklch(0.42 0.17 350);
+  --secondary-foreground: oklch(0.985 0.028 88);
 
   /* Muted — Apple section gray (#F5F5F7) */
-  --muted: oklch(0.91 0.035 84);
-  --muted-foreground: oklch(0.47 0.023 260);
+  --muted: oklch(0.92 0.052 88);
+  --muted-foreground: oklch(0.43 0.055 280);
 
   /* Accent — kept mapped to gold for any legacy usage */
-  --accent: oklch(0.54 0.05 145);
-  --accent-foreground: oklch(0.96 0.026 84);
+  --accent: oklch(0.49 0.09 145);
+  --accent-foreground: oklch(0.985 0.028 88);
 
   /* System */
   --destructive: oklch(0.55 0.2 25);
   --destructive-foreground: oklch(0.98 0 0);
 
   /* Apple hairline border (#D2D2D7) */
-  --border: oklch(0.79 0.035 82);
-  --input: oklch(0.98 0.014 84);
-  --ring: oklch(0.58 0.116 75);
+  --border: oklch(0.82 0.062 86);
+  --input: oklch(0.99 0.016 88);
+  --ring: oklch(0.72 0.15 82);
 
   /* Dark section (#1D1D1F) */
-  --section-dark: oklch(0.22 0.05 260);
+  --section-dark: oklch(0.28 0.13 280);
 
   --radius: 0.75rem;
 }
