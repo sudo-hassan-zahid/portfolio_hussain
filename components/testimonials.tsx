@@ -50,14 +50,10 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-32 relative overflow-hidden bg-[#1D1D1F]">
-      <div
-        className="bg-blob w-[50rem] h-[50rem] top-[-8rem] left-[10%] opacity-[0.06]"
-        style={{ backgroundColor: "#8B6914" }}
-      />
-
+    <section id="reviews" className="py-32 relative overflow-hidden bg-[#1D1D1F]">
       <div className="container px-4 sm:px-6 mx-auto relative z-10">
-        <div className="text-center mb-16 max-w-2xl mx-auto">
+        <div className="mb-12 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+          <div className="max-w-2xl">
           <div className="inline-flex items-center justify-center space-x-1 mb-6">
             {[...Array(5)].map((_, i) => (
               <svg
@@ -74,10 +70,56 @@ export default function Testimonials() {
           <h2 className="type-section font-serif text-white mb-5">
             Trusted by Pakistan&apos;s Finest
           </h2>
-          <p className="type-body-lg font-sans text-white/50 max-w-xl mx-auto">
+          <p className="type-body-lg font-sans text-white/50 max-w-xl">
             Delivering excellence in legal representation and consultancy
             across private and corporate sectors.
           </p>
+          </div>
+
+          <div className="flex gap-3">
+            <button
+              type="button"
+              onClick={() => scroll("left")}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur transition-colors duration-200 hover:bg-white/20"
+              aria-label="Previous testimonial"
+            >
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={() => scroll("right")}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur transition-colors duration-200 hover:bg-white/20"
+              aria-label="Next testimonial"
+            >
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
 
         <div className="reveal-on-scroll relative">
@@ -152,49 +194,6 @@ export default function Testimonials() {
               </div>
             ))}
           </div>
-
-          <button
-            type="button"
-            onClick={() => scroll("left")}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full border border-white/20 bg-white/10 backdrop-blur hover:bg-white/20 transition-colors duration-200 items-center justify-center"
-            aria-label="Previous testimonial"
-          >
-            <svg
-              className="w-4 h-4 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-          <button
-            type="button"
-            onClick={() => scroll("right")}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-11 h-11 rounded-full border border-white/20 bg-white/10 backdrop-blur hover:bg-white/20 transition-colors duration-200 items-center justify-center"
-            aria-label="Next testimonial"
-          >
-            <svg
-              className="w-4 h-4 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
         </div>
       </div>
     </section>
