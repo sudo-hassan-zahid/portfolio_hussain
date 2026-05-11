@@ -145,13 +145,6 @@
 }
 
 /* Subtle background blob — monochrome only, very faint */
-.bg-blob {
-  @apply absolute rounded-full blur-[80px] -z-10 pointer-events-none;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  contain: layout style paint;
-}
-
 .type-display {
   font-size: clamp(3rem, 8vw, 6.25rem);
   line-height: 0.95;
