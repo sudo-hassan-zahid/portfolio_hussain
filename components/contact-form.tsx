@@ -105,7 +105,7 @@ export default function ContactForm() {
         message: "",
       });
       setErrors({});
-    } catch (error) {
+    } catch {
       // Handle error silently - user will see error message
       setSubmitStatus("error");
     } finally {
@@ -126,7 +126,7 @@ export default function ContactForm() {
   };
 
   // Shared input class — clean, gold focus ring
-  const inputBase = "w-full px-4 py-3 rounded-xl border bg-white text-[#1D1D1F] text-sm transition-all duration-200 focus:outline-none focus:ring-2 placeholder:text-[#6E6E73]/60";
+  const inputBase = "w-full px-4 py-3 rounded-lg border bg-white text-[#1D1D1F] text-sm transition-all duration-200 focus:outline-none focus:ring-2 placeholder:text-[#6E6E73]/60";
   const inputNormal = `${inputBase} border-[#D2D2D7] focus:border-[#8B6914] focus:ring-[#8B6914]/15`;
   const inputError = `${inputBase} border-red-400 focus:ring-red-400/20`;
 
@@ -152,7 +152,7 @@ export default function ContactForm() {
 
             {/* Form */}
             <div className="lg:col-span-2">
-              <Card className="border border-[#D2D2D7] bg-white shadow-none rounded-2xl">
+              <Card className="border border-[#D2D2D7] bg-white shadow-none rounded-lg">
                 <CardContent className="p-8 md:p-10">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-5">
@@ -290,7 +290,7 @@ export default function ContactForm() {
                     </div>
 
                     {submitStatus === "success" && (
-                      <div role="alert" aria-live="polite" className="p-4 rounded-xl bg-green-50 border border-green-200">
+                      <div role="alert" aria-live="polite" className="p-4 rounded-lg bg-green-50 border border-green-200">
                         <p className="text-green-800 font-medium text-sm text-center">
                           Thank you. Your consultation request has been submitted. We will contact you within 24 hours.
                         </p>
@@ -298,7 +298,7 @@ export default function ContactForm() {
                     )}
 
                     {submitStatus === "error" && (
-                      <div role="alert" aria-live="assertive" className="p-4 rounded-xl bg-red-50 border border-red-200">
+                      <div role="alert" aria-live="assertive" className="p-4 rounded-lg bg-red-50 border border-red-200">
                         <p className="text-red-800 font-medium text-sm text-center">
                           Something went wrong. Please try again or contact us directly.
                         </p>
@@ -308,7 +308,7 @@ export default function ContactForm() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-6 text-sm font-semibold rounded-xl bg-[#1D1D1F] hover:bg-[#2D2D2F] text-white shadow-none transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed tracking-wide"
+                      className="w-full py-6 text-sm font-semibold rounded-lg bg-[#1D1D1F] hover:bg-[#2D2D2F] text-white shadow-none transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed tracking-wide"
                     >
                       {isSubmitting ? (
                         <span className="flex items-center justify-center gap-3">
@@ -347,7 +347,7 @@ export default function ContactForm() {
             <div className="space-y-5">
 
               {/* Contact info — dark card */}
-              <Card className="border-0 bg-[#1D1D1F] shadow-none rounded-2xl overflow-hidden">
+              <Card className="border-0 bg-[#1D1D1F] shadow-none rounded-lg overflow-hidden">
                 <CardContent className="p-8">
                   <h3 className="type-subsection text-white mb-6 font-serif">Contact Information</h3>
                   <div className="space-y-5">
@@ -408,7 +408,7 @@ export default function ContactForm() {
               </Card>
 
               {/* Why choose us — light card */}
-              <Card className="border border-[#D2D2D7] bg-white shadow-none rounded-2xl">
+              <Card className="border border-[#D2D2D7] bg-white shadow-none rounded-lg">
                 <CardContent className="p-8">
                   <h3 className="type-subsection text-[#1D1D1F] mb-5 font-serif">Why Choose Us?</h3>
                   <ul className="space-y-3">
