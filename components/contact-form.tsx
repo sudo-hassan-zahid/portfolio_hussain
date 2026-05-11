@@ -132,8 +132,8 @@ export default function ContactForm() {
   };
 
   // Shared input class — clean, gold focus ring
-  const inputBase = "w-full px-4 py-3 rounded-lg border bg-[#FFF9EE] text-[var(--legal-ink)] text-base transition-all duration-200 focus:outline-none focus:ring-2 placeholder:text-[var(--legal-slate)]/60";
-  const inputNormal = `${inputBase} border-[#D8B866]/45 focus:border-[var(--legal-gold)] focus:ring-[#B8892D]/15`;
+  const inputBase = "w-full px-4 py-3 rounded-lg border bg-[var(--legal-cream)] text-[var(--legal-ink)] text-base transition-all duration-200 focus:outline-none focus:ring-2 placeholder:text-[var(--legal-slate)]/60";
+  const inputNormal = `${inputBase} border-[var(--legal-gold)]/45 focus:border-[var(--legal-gold)] focus:ring-[var(--legal-gold)]/20`;
   const inputError = `${inputBase} border-red-400 focus:ring-red-400/20`;
 
   return (
@@ -160,9 +160,9 @@ export default function ContactForm() {
 
             {/* Form */}
             <div className="lg:col-span-2">
-              <Card className="border border-[#D8B866]/45 bg-[#FFF9EE] shadow-none rounded-lg">
+              <Card className="border border-[var(--legal-gold)]/45 bg-[var(--legal-cream)] shadow-none rounded-lg">
                 <CardContent className="p-8 md:p-10">
-                  <div className="mb-8 grid gap-3 border-b border-[#D8B866]/35 pb-7 sm:grid-cols-3">
+                  <div className="mb-8 grid gap-3 border-b border-[var(--legal-gold)]/35 pb-7 sm:grid-cols-3">
                     {nextSteps.map((step, index) => (
                       <div key={step} className="flex gap-3">
                         <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[var(--legal-navy)] text-xs font-bold text-[var(--legal-ivory)]">
@@ -431,7 +431,7 @@ export default function ContactForm() {
               </Card>
 
               {/* Why choose us — light card */}
-              <Card className="border border-[#D8B866]/45 bg-[#FFF9EE] shadow-none rounded-lg">
+              <Card className="border border-[var(--legal-gold)]/45 bg-[var(--legal-cream)] shadow-none rounded-lg">
                 <CardContent className="p-8">
                   <h3 className="type-subsection text-[var(--legal-ink)] mb-5 font-serif">What Clients Value</h3>
                   <ul className="space-y-3">
@@ -450,7 +450,7 @@ export default function ContactForm() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <span className="type-body text-[#6E6E73]">{item}</span>
+                        <span className="type-body text-[var(--legal-slate)]">{item}</span>
                       </li>
                     ))}
                   </ul>
