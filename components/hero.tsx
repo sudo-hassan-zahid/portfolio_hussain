@@ -76,7 +76,7 @@ export default function Hero() {
 
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-[var(--hairline)] bg-[var(--canvas-soft)] shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
               <Image
-                src="/images/lawyer/law1.webp"
+                src="/images/lawyer/law1.jpg"
                 alt="Hussain Zahid - Legal Expert"
                 fill
                 className="object-cover grayscale-[8%]"
