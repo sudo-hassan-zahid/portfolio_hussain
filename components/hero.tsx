@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import LawyerCarousel from "@/components/lawyer-carousel";
 import Link from "next/link";
 
 const assurances = [
@@ -74,26 +74,7 @@ export default function Hero() {
               <p className="mt-1 font-serif text-2xl leading-none">Strategy</p>
             </div>
 
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-[var(--hairline)] bg-[var(--canvas-soft)] shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
-              <Image
-                src="/images/lawyer/law1.webp"
-                alt="Hussain Zahid - Legal Expert"
-                fill
-                className="object-cover grayscale-[8%]"
-                priority
-                fetchPriority="high"
-                sizes="(max-width: 768px) 92vw, 500px"
-                quality={84}
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0c0a09]/82 via-[#0c0a09]/24 to-transparent p-6 text-white">
-                <p className="font-serif text-2xl leading-tight">
-                  Hussain Zahid
-                </p>
-                <p className="mt-1 text-sm font-medium text-white/72">
-                  Shariah &amp; Law Specialist
-                </p>
-              </div>
-            </div>
+            <LawyerCarousel />
 
             <div className="absolute -bottom-5 right-4 z-20 rounded-2xl border border-[var(--hairline)] bg-[var(--surface-card)] px-5 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
               <p className="label-eyebrow">Serving</p>
