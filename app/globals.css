@@ -185,6 +185,15 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
+.admin-panel {
+  display: grid;
+  gap: 1rem;
+  border: 1px solid var(--hairline);
+  background: var(--surface-card);
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+
 .ink-button {
   border-radius: 9999px;
   background: var(--primary);
