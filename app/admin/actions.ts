@@ -40,15 +40,21 @@ export async function signInAction(formData: FormData) {
   const email = getString(formData, "email");
   const password = getString(formData, "password");
 
+  let errorType: "config" | "invalid" | null = null;
+
   try {
     const supabase = await createSupabaseServerClient();
     const { error } = await supabase.auth.signInWithPassword({ email, password });
 
     if (error) {
-      redirect("/admin/login?error=invalid");
+      errorType = "invalid";
     }
   } catch {
-    redirect("/admin/login?error=config");
+    errorType = "config";
+  }
+
+  if (errorType) {
+    redirect(`/admin/login?error=${errorType}`);
   }
 
   redirect("/admin/dashboard");
