@@ -34,20 +34,14 @@ const credentials = [
   {
     title: "BA/LLB (Hons) Shariah and Law",
     issuer: "International Islamic University Islamabad",
-    year: "2023-2028",
-    detail: "CGPA: 3.5",
+    year: "Education",
+    detail: "Shariah & Law",
   },
   {
-    title: "LLM (Criminal Law)",
-    issuer: "Bahria University, Islamabad",
-    year: "2028-2030",
-    detail: "Specialization",
-  },
-  {
-    title: "Member of Punjab Bar Council",
-    issuer: "Punjab Bar Council",
-    year: "Since 2028",
-    detail: "Licensed Advocate",
+    title: "Certified Tax Advisor",
+    issuer: "Institute of Corporate and Taxation (ICT) Pakistan",
+    year: "Certification",
+    detail: "Tax Advisory",
   },
   {
     title: "Licensed Mediator",

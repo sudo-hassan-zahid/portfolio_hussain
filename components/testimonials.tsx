@@ -4,33 +4,21 @@ import { Card, CardContent } from "@/components/ui/card";
 const testimonials = [
   {
     quote:
-      "Hussain provided exceptional legal guidance for our business dispute. His expertise in corporate law and mediation helped us reach a favorable settlement quickly and efficiently.",
-    author: "Ahmed Khan",
-    title: "CEO, Tech Solutions Ltd.",
+      "Hussain handles our FBR business tax filing with excellent work quality, speed, and accuracy. The process has been smooth and reliable from start to finish.",
+    author: "Khawar Shehzab",
+    title: "Owner, Golden Five Star General Store, Rawalpindi",
   },
   {
     quote:
-      "Working with Hussain on our contract negotiations was a game-changer. His attention to detail and strategic approach protected our interests perfectly.",
-    author: "Asif Malik",
-    title: "Director, Trading Corporation",
+      "He helped with FBR NTN business tax filing, returns, and tax consultancy from business registration through regular filings. I was confused at the start, but he made everything clear.",
+    author: "Jallal Khan Khattak",
+    title: "Owner, Khan Super Store, Rawalpindi",
   },
   {
     quote:
-      "Hussain's courtroom skills are impressive. He represented us with professionalism and dedication, achieving results beyond our expectations.",
-    author: "Usman Rashid",
-    title: "Business Owner",
-  },
-  {
-    quote:
-      "His expertise in Shariah and civil law is remarkable. Hussain navigated complex legal matters with clarity and achieved excellent outcomes for our family.",
-    author: "Ali Abdullah",
-    title: "Private Client",
-  },
-  {
-    quote:
-      "I highly recommend Hussain for any legal consultancy needs. His knowledge, dedication, and client-focused approach make him stand out.",
-    author: "Bilal Hassan",
-    title: "Managing Partner, Real Estate Firm",
+      "I needed to become a filer and was very anxious about the process. Hussain handled the work calmly and made it much easier than I expected.",
+    author: "Rehan Nafees",
+    title: "Government Employee",
   },
 ];
 
@@ -46,11 +34,11 @@ export default function Testimonials() {
             ))}
           </div>
           <h2 className="type-section mb-5 font-serif text-[var(--ink)]">
-            Trusted for calm, focused representation
+            Trusted for practical tax support
           </h2>
           <p className="type-body-lg max-w-xl font-sans text-[var(--body)]">
-            Practical legal support across private and corporate matters,
-            shaped around clarity, discretion, and preparation.
+            FBR filing, NTN registration, business returns, and filer support
+            shaped around clarity, accuracy, and steady guidance.
           </p>
         </div>
 

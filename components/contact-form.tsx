@@ -40,14 +40,14 @@ const contactItems = [
   {
     label: "Phone",
     icon: Phone,
-    lines: ["+92 300 1234567", "+92 51 1234567"],
-    hrefs: ["tel:+923001234567", "tel:+92511234567"],
+    lines: ["+92-306-5353880"],
+    hrefs: ["tel:+923065353880"],
   },
   {
     label: "Email",
     icon: Mail,
-    lines: ["contact@hussainzahid.law", "info@hussainzahid.com"],
-    hrefs: ["mailto:contact@hussainzahid.law", "mailto:info@hussainzahid.com"],
+    lines: ["hussainzahidadv@gmail.com"],
+    hrefs: ["mailto:hussainzahidadv@gmail.com"],
   },
   {
     label: "Office",
@@ -175,7 +175,7 @@ export default function ContactForm() {
 
                     <div className="grid gap-5 md:grid-cols-2">
                       <Field label="Phone Number" error={errors.phone} htmlFor="phone">
-                        <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} required aria-invalid={errors.phone ? "true" : "false"} className={errors.phone ? inputError : inputNormal} placeholder="+92 300 1234567" />
+                        <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} required aria-invalid={errors.phone ? "true" : "false"} className={errors.phone ? inputError : inputNormal} placeholder="+92-306-5353880" />
                       </Field>
                       <Field label="Case Type" error={errors.caseType} htmlFor="caseType">
                         <select id="caseType" name="caseType" value={formData.caseType} onChange={handleChange} required aria-invalid={errors.caseType ? "true" : "false"} className={errors.caseType ? inputError : inputNormal}>
