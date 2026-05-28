@@ -9,6 +9,8 @@ import ContactForm from "@/components/contact-form";
 import TrustStrip from "@/components/trust-strip";
 import { getSiteContent } from "@/lib/data/site-content";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const content = await getSiteContent();
 
