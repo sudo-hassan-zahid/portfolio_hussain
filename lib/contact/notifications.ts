@@ -21,10 +21,10 @@ async function sendEmailNotification(
   submission: ContactNotification,
 ): Promise<NotificationResult> {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_NOTIFY_EMAIL;
+  const to = getNotificationRecipients();
   const from = process.env.CONTACT_NOTIFY_FROM_EMAIL ?? "Portfolio Contact <onboarding@resend.dev>";
 
-  if (!apiKey || !to) {
+  if (!apiKey || !to.length) {
     return { status: "not_configured" };
   }
 
@@ -48,6 +48,13 @@ async function sendEmailNotification(
   }
 
   return { status: "sent" };
+}
+
+function getNotificationRecipients() {
+  return (process.env.CONTACT_NOTIFY_EMAIL ?? "")
+    .split(",")
+    .map((email) => email.trim())
+    .filter(Boolean);
 }
 
 function formatNotificationText(submission: ContactNotification) {

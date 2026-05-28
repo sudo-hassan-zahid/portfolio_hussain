@@ -64,6 +64,7 @@ ADMIN_EMAILS=
 
 # Optional contact email notifications
 RESEND_API_KEY=
+# Comma-separated recipients are supported.
 CONTACT_NOTIFY_EMAIL=
 CONTACT_NOTIFY_FROM_EMAIL=
 ```
