@@ -40,7 +40,7 @@ async function sendEmailNotification(
       from,
       to,
       reply_to: submission.email,
-      subject: `New portfolio contact: ${submission.caseType}`,
+      subject: `New client contact: ${submission.caseType}`,
       text: formatNotificationText(submission),
     }),
   });
