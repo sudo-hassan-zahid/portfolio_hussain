@@ -60,7 +60,9 @@ npm install
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
 SUPABASE_DATABASE_URL=
+SUPABASE_SERVICE_ROLE_KEY=
 ADMIN_EMAILS=
+ADMIN_BOOTSTRAP_PASSWORD=
 
 # Optional contact email notifications
 RESEND_API_KEY=
@@ -79,6 +81,12 @@ supabase/migrations/001_initial_site_content.sql
 
 Create the admin login user in Supabase Auth. If `ADMIN_EMAILS` is set, only
 those comma-separated email addresses can access `/admin/dashboard`.
+
+To create or reset the first admin user from `.env.local`, run:
+
+```bash
+npm run admin:create
+```
 
 ## Running the Project
 
