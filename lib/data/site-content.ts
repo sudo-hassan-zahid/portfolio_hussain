@@ -9,7 +9,7 @@ import {
 } from "@/db/schema";
 import { staticSiteContent, type SiteContent } from "./static-content";
 
-async function withTimeout<T>(promise: Promise<T>, timeoutMs = 1500) {
+async function withTimeout<T>(promise: Promise<T>, timeoutMs = 8000): Promise<T> {
   let timeout: ReturnType<typeof setTimeout>;
 
   const timeoutPromise = new Promise<T>((_, reject) => {

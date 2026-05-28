@@ -21,7 +21,12 @@ export function db() {
   }
 
   if (!client) {
-    client = postgres(connectionString, { max: 3, prepare: false });
+    client = postgres(connectionString, {
+      connect_timeout: 10,
+      max: 3,
+      prepare: false,
+      ssl: "require",
+    });
   }
 
   if (!database) {
