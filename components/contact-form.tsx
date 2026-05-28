@@ -103,7 +103,18 @@ export default function ContactForm() {
     setSubmitStatus("idle");
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1200));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Contact request failed");
+      }
+
       setSubmitStatus("success");
       setFormData({ name: "", email: "", phone: "", caseType: "", message: "" });
       setErrors({});

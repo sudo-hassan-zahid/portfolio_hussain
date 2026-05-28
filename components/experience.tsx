@@ -6,58 +6,33 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const experiences = [
-  {
-    period: "2024 - Present",
-    role: "Certified Tax Advisor",
-    firm: "FBR Tax Filing & Consultancy",
-    description:
-      "Advising individuals and businesses on NTN registration, FBR tax filing, returns, filer status, and regular tax compliance.",
-  },
-  {
-    period: "2023 - Present",
-    role: "Court Practice",
-    firm: "RWP/ISB Session Courts",
-    description:
-      "Practicing before Rawalpindi and Islamabad session courts with a focus on criminal matters, case preparation, drafting, and client representation.",
-  },
-  {
-    period: "2023 - Present",
-    role: "Licensed Mediator",
-    firm: "Dispute Resolution Practice",
-    description:
-      "Supporting clients through structured mediation and settlement-focused dispute resolution where practical, efficient outcomes are possible.",
-  },
-];
+type ExperienceItem = {
+  id: number;
+  period: string;
+  role: string;
+  firm: string;
+  description: string;
+};
 
-const credentials = [
-  {
-    title: "BA/LLB (Hons) Shariah and Law",
-    issuer: "International Islamic University Islamabad",
-    year: "Education",
-    detail: "Shariah & Law",
-  },
-  {
-    title: "Certified Tax Advisor",
-    issuer: "Institute of Corporate and Taxation (ICT) Pakistan",
-    year: "Certification",
-    detail: "Tax Advisory",
-  },
-  {
-    title: "Licensed Mediator",
-    issuer: "Mediation Practice",
-    year: "Active",
-    detail: "ADR",
-  },
-  {
-    title: "RWP/ISB Session Courts Practice",
-    issuer: "Rawalpindi & Islamabad",
-    year: "Active",
-    detail: "Session Courts",
-  },
-];
+type CredentialItem = {
+  id: number;
+  title: string;
+  issuer: string;
+  year: string;
+  detail: string;
+};
 
-export default function Experience() {
+export default function Experience({
+  certifications,
+  educations,
+  experiences,
+}: {
+  certifications: CredentialItem[];
+  educations: CredentialItem[];
+  experiences: ExperienceItem[];
+}) {
+  const credentials = [...educations, ...certifications];
+
   return (
     <section
       id="experience"
@@ -84,7 +59,7 @@ export default function Experience() {
             <div className="relative border-l border-[var(--hairline-strong)] ml-3 space-y-10 pb-4">
               {experiences.map((exp, index) => (
                 <div
-                  key={exp.role}
+                  key={exp.id}
                   className="relative pl-8 reveal-on-scroll"
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
@@ -131,7 +106,7 @@ export default function Experience() {
             <div className="grid gap-3">
               {credentials.map((cred, index) => (
                 <div
-                  key={cred.title}
+                  key={`${cred.year}-${cred.id}`}
                   className="reveal-on-scroll group"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >

@@ -8,7 +8,14 @@ const assurances = [
   "Clear next steps before you leave",
 ];
 
-export default function Hero() {
+type HeroImageContent = {
+  imageUrl: string;
+  alt: string;
+  captionName: string;
+  captionTitle: string;
+};
+
+export default function Hero({ image }: { image: HeroImageContent }) {
   return (
     <section className="relative overflow-hidden bg-[var(--canvas)]">
       <div className="orb-field orb-mint left-[-8rem] top-14 h-72 w-72" />
@@ -76,8 +83,8 @@ export default function Hero() {
 
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-[var(--hairline)] bg-[var(--canvas-soft)] shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
               <Image
-                src="/images/lawyer/law1.jpg"
-                alt="Hussain Zahid - Legal Expert"
+                src={image.imageUrl}
+                alt={image.alt}
                 fill
                 className="object-cover grayscale-[8%]"
                 priority
@@ -87,10 +94,10 @@ export default function Hero() {
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0c0a09]/82 via-[#0c0a09]/24 to-transparent p-6 text-white">
                 <p className="font-serif text-2xl leading-tight">
-                  Hussain Zahid
+                  {image.captionName}
                 </p>
                 <p className="mt-1 text-sm font-medium text-white/72">
-                  Shariah &amp; Law Specialist
+                  {image.captionTitle}
                 </p>
               </div>
             </div>

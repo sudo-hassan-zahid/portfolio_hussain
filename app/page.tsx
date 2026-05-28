@@ -7,17 +7,26 @@ import ScrollProgress from "@/components/scroll-progress";
 import Testimonials from "@/components/testimonials";
 import ContactForm from "@/components/contact-form";
 import TrustStrip from "@/components/trust-strip";
+import { getSiteContent } from "@/lib/data/site-content";
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const content = await getSiteContent();
+
   return (
     <main className="min-h-screen bg-background">
       <ScrollProgress />
       <Navigation />
-      <Hero />
+      <Hero image={content.heroImages[0]} />
       <TrustStrip />
       <PracticeAreas />
-      <Experience />
-      <Testimonials />
+      <Experience
+        certifications={content.certifications}
+        educations={content.educations}
+        experiences={content.experiences}
+      />
+      <Testimonials testimonials={content.testimonials} />
       <ContactForm />
       <Footer />
     </main>

@@ -17,6 +17,8 @@ Built with Next.js 16, React 19, and Framer Motion for smooth animations and opt
 - **Framework:** Next.js 16 (App Router)
 - **UI Library:** React 19
 - **Styling:** Tailwind CSS 4
+- **Database:** Supabase Postgres with Drizzle ORM
+- **Auth:** Supabase Auth for `/admin`
 - **Animations:** Framer Motion
 - **TypeScript:** Full type safety
 - **Analytics:** Vercel Analytics
@@ -50,6 +52,40 @@ cd portfolio_hussain
 
 ```bash
 npm install
+```
+
+3. Configure environment variables
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
+SUPABASE_DATABASE_URL=
+SUPABASE_SERVICE_ROLE_KEY=
+ADMIN_EMAILS=
+ADMIN_BOOTSTRAP_PASSWORD=
+
+# Optional contact email notifications
+RESEND_API_KEY=
+# Comma-separated recipients are supported.
+CONTACT_NOTIFY_EMAIL=
+CONTACT_NOTIFY_FROM_EMAIL=Law Clients <contact@hussain-zahid.vercel.app>
+```
+
+4. Run the migration in Supabase
+
+Open the Supabase SQL editor and run:
+
+```text
+supabase/migrations/001_initial_site_content.sql
+```
+
+Create the admin login user in Supabase Auth. If `ADMIN_EMAILS` is set, only
+those comma-separated email addresses can access `/admin/dashboard`.
+
+To create or reset the first admin user from `.env.local`, run:
+
+```bash
+npm run admin:create
 ```
 
 ## Running the Project
@@ -113,10 +149,8 @@ portfolio_hussain/
 
 ### Updating Content
 
-- **Personal Information:** Edit `/components/hero.tsx`
-- **Experience:** Edit `/components/experience.tsx`
+- **Hero image, experience, education, certifications, testimonials:** Use `/admin`
 - **Practice Areas:** Edit `/components/practice-areas.tsx`
-- **Testimonials:** Edit `/components/testimonials.tsx`
 - **Contact Information:** Edit `/components/footer.tsx`
 
 ### Styling

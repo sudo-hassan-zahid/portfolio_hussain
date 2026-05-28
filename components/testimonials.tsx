@@ -1,28 +1,15 @@
 import { Quote, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
-const testimonials = [
-  {
-    quote:
-      "Hussain handles our FBR business tax filing with excellent work quality, speed, and accuracy. The process has been smooth and reliable from start to finish.",
-    author: "Khawar Shehzad",
-    title: "Owner, Golden Five Star General Store, Rawalpindi",
-  },
-  {
-    quote:
-      "He helped with FBR NTN business tax filing, returns, and tax consultancy from business registration through regular filings. I was confused at the start, but he made everything clear.",
-    author: "Jalal Khan Khattak",
-    title: "Owner, Khattak Super Store, Rawalpindi",
-  },
-  {
-    quote:
-      "I needed to become a filer and was very anxious about the process. Hussain handled the work calmly and made it much easier than I expected.",
-    author: "Rehan Nafees",
-    title: "Government Employee",
-  },
-];
+type TestimonialItem = {
+  id: number;
+  quote: string;
+  author: string;
+  title: string;
+  rating: number;
+};
 
-export default function Testimonials() {
+export default function Testimonials({ testimonials }: { testimonials: TestimonialItem[] }) {
   return (
     <section id="reviews" className="relative overflow-hidden bg-[var(--canvas)] py-24 lg:py-28">
       <div className="orb-field orb-lavender left-[-7rem] top-20 h-72 w-72" />
@@ -44,15 +31,15 @@ export default function Testimonials() {
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.author} className="reveal-on-scroll">
+            <div key={testimonial.id} className="reveal-on-scroll">
               <Card className="editorial-card h-full py-0">
                 <CardContent className="relative z-10 flex h-full flex-col p-8">
                   <div className="mb-6 flex items-start justify-between">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--surface-strong)] text-[var(--ink)]">
                       <Quote size={18} aria-hidden="true" />
                     </div>
-                    <div className="flex gap-0.5 text-[var(--ink)]" aria-label="5 star rating">
-                      {[...Array(5)].map((_, i) => (
+                    <div className="flex gap-0.5 text-[var(--ink)]" aria-label={`${testimonial.rating} star rating`}>
+                      {[...Array(testimonial.rating)].map((_, i) => (
                         <Star key={i} size={14} fill="currentColor" aria-hidden="true" />
                       ))}
                     </div>
