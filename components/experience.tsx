@@ -8,25 +8,25 @@ import {
 
 const experiences = [
   {
-    period: "2028 - Present",
+    period: "2023 - Present",
     role: "Court Practice",
     firm: "RWP/ISB Session Courts",
     description:
       "Practicing before Rawalpindi and Islamabad session courts with a focus on criminal matters, case preparation, drafting, and client representation.",
   },
   {
-    period: "2028 - Present",
+    period: "2023 - Present",
     role: "Licensed Mediator",
     firm: "Dispute Resolution Practice",
     description:
       "Supporting clients through structured mediation and settlement-focused dispute resolution where practical, efficient outcomes are possible.",
   },
   {
-    period: "2027 - 2028",
-    role: "Legal Training & Case Support",
-    firm: "Criminal Litigation Preparation",
+    period: "2024 - Present",
+    role: "Certified Tax Advisor",
+    firm: "FBR Tax Filing & Consultancy",
     description:
-      "Built practical courtroom preparation skills through legal research, drafting support, case file organization, and procedural learning.",
+      "Advising individuals and businesses on NTN registration, FBR tax filing, returns, filer status, and regular tax compliance.",
   },
 ];
 
