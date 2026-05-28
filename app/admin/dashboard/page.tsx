@@ -175,21 +175,31 @@ export default async function AdminDashboardPage() {
 
 async function getDashboardContent() {
   const database = db();
-  const [
-    heroRows,
-    experienceRows,
-    educationRows,
-    certificationRows,
-    testimonialRows,
-    submissionRows,
-  ] = await Promise.all([
-    database.select().from(heroImages).orderBy(asc(heroImages.sortOrder), asc(heroImages.id)),
-    database.select().from(experiences).orderBy(asc(experiences.sortOrder), asc(experiences.id)),
-    database.select().from(educations).orderBy(asc(educations.sortOrder), asc(educations.id)),
-    database.select().from(certifications).orderBy(asc(certifications.sortOrder), asc(certifications.id)),
-    database.select().from(testimonials).orderBy(asc(testimonials.sortOrder), asc(testimonials.id)),
-    database.select().from(contactSubmissions).orderBy(desc(contactSubmissions.createdAt)).limit(10),
-  ]);
+  const heroRows = await database
+    .select()
+    .from(heroImages)
+    .orderBy(asc(heroImages.sortOrder), asc(heroImages.id));
+  const experienceRows = await database
+    .select()
+    .from(experiences)
+    .orderBy(asc(experiences.sortOrder), asc(experiences.id));
+  const educationRows = await database
+    .select()
+    .from(educations)
+    .orderBy(asc(educations.sortOrder), asc(educations.id));
+  const certificationRows = await database
+    .select()
+    .from(certifications)
+    .orderBy(asc(certifications.sortOrder), asc(certifications.id));
+  const testimonialRows = await database
+    .select()
+    .from(testimonials)
+    .orderBy(asc(testimonials.sortOrder), asc(testimonials.id));
+  const submissionRows = await database
+    .select()
+    .from(contactSubmissions)
+    .orderBy(desc(contactSubmissions.createdAt))
+    .limit(10);
 
   return {
     heroImages: heroRows.length ? heroRows : staticSiteContent.heroImages,
