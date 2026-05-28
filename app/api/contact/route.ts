@@ -30,15 +30,22 @@ export async function POST(request: Request) {
         ? "not_configured"
         : "failed";
 
+  let savedToDatabase = false;
+
   if (hasDatabase()) {
-    await db().insert(contactSubmissions).values({
-      ...parsed.data,
-      notificationStatus,
-      notificationError: notification.error,
-    });
+    try {
+      await db().insert(contactSubmissions).values({
+        ...parsed.data,
+        notificationStatus,
+        notificationError: notification.error,
+      });
+      savedToDatabase = true;
+    } catch (error) {
+      console.error("Contact submission database write failed:", error);
+    }
   }
 
-  if (!hasDatabase() && notification.status !== "sent") {
+  if (!savedToDatabase && notification.status !== "sent") {
     return NextResponse.json(
       { error: "Contact handling is not configured yet." },
       { status: 503 },
