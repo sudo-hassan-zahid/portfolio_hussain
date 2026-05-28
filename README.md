@@ -66,7 +66,7 @@ ADMIN_EMAILS=
 RESEND_API_KEY=
 # Comma-separated recipients are supported.
 CONTACT_NOTIFY_EMAIL=
-CONTACT_NOTIFY_FROM_EMAIL=
+CONTACT_NOTIFY_FROM_EMAIL=Law Clients <contact@hussain-zahid.vercel.app>
 ```
 
 4. Run the migration in Supabase

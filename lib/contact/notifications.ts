@@ -22,7 +22,9 @@ async function sendEmailNotification(
 ): Promise<NotificationResult> {
   const apiKey = process.env.RESEND_API_KEY;
   const to = getNotificationRecipients();
-  const from = process.env.CONTACT_NOTIFY_FROM_EMAIL ?? "Portfolio Contact <onboarding@resend.dev>";
+  const from =
+    process.env.CONTACT_NOTIFY_FROM_EMAIL ??
+    "Law Clients <contact@hussain-zahid.vercel.app>";
 
   if (!apiKey || !to.length) {
     return { status: "not_configured" };

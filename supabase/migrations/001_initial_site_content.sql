@@ -230,3 +230,4 @@ select setval(pg_get_serial_sequence('public.experiences', 'id'), coalesce(max(i
 select setval(pg_get_serial_sequence('public.educations', 'id'), coalesce(max(id), 1), true) from public.educations;
 select setval(pg_get_serial_sequence('public.certifications', 'id'), coalesce(max(id), 1), true) from public.certifications;
 select setval(pg_get_serial_sequence('public.testimonials', 'id'), coalesce(max(id), 1), true) from public.testimonials;
+select setval(pg_get_serial_sequence('public.contact_submissions', 'id'), coalesce(max(id), 1), true) from public.contact_submissions;
