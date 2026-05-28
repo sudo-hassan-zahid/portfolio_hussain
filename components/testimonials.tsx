@@ -5,14 +5,14 @@ const testimonials = [
   {
     quote:
       "Hussain handles our FBR business tax filing with excellent work quality, speed, and accuracy. The process has been smooth and reliable from start to finish.",
-    author: "Khawar Shehzab",
+    author: "Khawar Shehzad",
     title: "Owner, Golden Five Star General Store, Rawalpindi",
   },
   {
     quote:
       "He helped with FBR NTN business tax filing, returns, and tax consultancy from business registration through regular filings. I was confused at the start, but he made everything clear.",
-    author: "Jallal Khan Khattak",
-    title: "Owner, Khan Super Store, Rawalpindi",
+    author: "Jalal Khan Khattak",
+    title: "Owner, Khattak Super Store, Rawalpindi",
   },
   {
     quote:

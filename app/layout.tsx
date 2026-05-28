@@ -32,11 +32,15 @@ export function generateViewport(): Viewport {
 }
 
 export const metadata: Metadata = {
-  title:
-    "Hussain Zahid | Shariah & Law Specialist | Litigation & Legal Consultancy",
+  metadataBase: new URL("https://hussain-zahid.vercel.app"),
+  title: "Hussain Zahid | Tax Advisor & Legal Consultant",
   description:
-    "Professional legal services in Rawalpindi and Islamabad. Expert in litigation, legal drafting, consultancy, ADR, and mediation. Serving clients across RWP/ISB district and high courts.",
+    "Certified tax advisor and legal consultant in Rawalpindi and Islamabad, supporting FBR filings, NTN registration, tax returns, court practice, and mediation.",
   keywords: [
+    "Tax Advisor Pakistan",
+    "FBR Tax Filing",
+    "NTN Registration",
+    "Tax Returns Pakistan",
     "Lawyer Pakistan",
     "Rawalpindi Lawyer",
     "Islamabad Lawyer",
@@ -47,12 +51,32 @@ export const metadata: Metadata = {
     "Legal Services Pakistan",
   ],
   authors: [{ name: "Hussain Zahid" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Hussain Zahid | Legal Expert in Rawalpindi & Islamabad",
+    title: "Hussain Zahid | Tax Advisor & Legal Consultant",
     description:
-      "Professional legal services specializing in litigation, consultancy, and mediation across RWP/ISB courts.",
+      "FBR tax filing, NTN registration, tax returns, court practice, and mediation support across Rawalpindi and Islamabad.",
+    url: "/",
+    siteName: "Hussain Zahid",
+    images: [
+      {
+        url: "/images/lawyer/law1.jpg",
+        width: 653,
+        height: 949,
+        alt: "Hussain Zahid",
+      },
+    ],
     type: "website",
     locale: "en_PK",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hussain Zahid | Tax Advisor & Legal Consultant",
+    description:
+      "FBR tax filing, NTN registration, tax returns, court practice, and mediation support across Rawalpindi and Islamabad.",
+    images: ["/images/lawyer/law1.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
