@@ -63,11 +63,11 @@ function formatNotificationText(submission: ContactNotification) {
   return [
     "New portfolio contact submission",
     "",
-    `Name: ${submission.name}`,
-    `Email: ${submission.email}`,
-    `Phone: ${submission.phone}`,
-    `Case type: ${submission.caseType}`,
+    `<b>Name:</b> ${submission.name}`,
+    `<b>Email:</b> ${submission.email}`,
+    `<b>Phone:</b> ${submission.phone}`,
+    `<b>Case type:</b> ${submission.caseType}`,
     "",
-    submission.message,
+    `<b>Message:</b> ${submission.message}`,
   ].join("\n");
 }
