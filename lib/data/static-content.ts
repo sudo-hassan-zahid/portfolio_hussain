@@ -31,16 +31,16 @@ export const staticExperiences = [
     isActive: true,
     sortOrder: 1,
   },
-  {
-    id: 3,
-    period: "2023 - Present",
-    role: "Licensed Mediator",
-    firm: "Dispute Resolution Practice",
-    description:
-      "Supporting clients through structured mediation and settlement-focused dispute resolution where practical, efficient outcomes are possible.",
-    isActive: true,
-    sortOrder: 2,
-  },
+  // {
+  //   id: 3,
+  //   period: "2023 - Present",
+  //   role: "Licensed Mediator",
+  //   firm: "Dispute Resolution Practice",
+  //   description:
+  //     "Supporting clients through structured mediation and settlement-focused dispute resolution where practical, efficient outcomes are possible.",
+  //   isActive: true,
+  //   sortOrder: 2,
+  // },
 ];
 
 export const staticEducations = [

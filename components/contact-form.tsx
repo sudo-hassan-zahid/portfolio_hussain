@@ -24,7 +24,7 @@ interface FormErrors {
 const caseTypes = [
   "Litigation & Court Cases",
   "Legal Drafting & Documentation",
-  "ADR & Mediation",
+  // "ADR & Mediation",
   "Corporate Law Consultancy",
   "Shariah Law Matters",
   "Other Legal Consultation",
